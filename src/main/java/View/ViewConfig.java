@@ -8,8 +8,8 @@ public final class ViewConfig {
     public static void initUITheme() {
         try {
             UIManager.setLookAndFeel(new FlatDarkLaf());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } catch (Exception ignored) {
+
         }
     }
 

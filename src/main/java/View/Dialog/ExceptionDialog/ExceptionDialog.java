@@ -15,6 +15,13 @@ public class ExceptionDialog extends JDialog {
     public ExceptionDialog(Window owner) {
         super(owner);
         initComponents();
+        outPutTextArea.setEditable(false);
+    }
+    public void showMessage(String message){
+        outPutTextArea.setText(message);
+        setVisible(true);
+        setSize(600,400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     private void initComponents() {
@@ -25,7 +32,6 @@ public class ExceptionDialog extends JDialog {
         scrollPane1 = new JScrollPane();
         outPutTextArea = new JTextArea();
         buttonBar = new JPanel();
-        okButton = new JButton();
 
         //======== this ========
         var contentPane = getContentPane();
@@ -66,12 +72,6 @@ public class ExceptionDialog extends JDialog {
                 buttonBar.setLayout(new GridBagLayout());
                 ((GridBagLayout)buttonBar.getLayout()).columnWidths = new int[] {0, 80};
                 ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0};
-
-                //---- okButton ----
-                okButton.setText("OK");
-                buttonBar.add(okButton, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
-                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                    new Insets(0, 0, 0, 0), 0, 0));
             }
             dialogPane.add(buttonBar, BorderLayout.SOUTH);
         }
@@ -88,6 +88,5 @@ public class ExceptionDialog extends JDialog {
     private JScrollPane scrollPane1;
     private JTextArea outPutTextArea;
     private JPanel buttonBar;
-    private JButton okButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

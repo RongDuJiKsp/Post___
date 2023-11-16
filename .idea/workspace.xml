@@ -5,25 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/WebPortSys/HttpRequestBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/MainPage/MainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/MainPage/MainPage.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/MainWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/ViewConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/WebPortSys/HttpRequestCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/WebPortSys/HttpRequestBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainPage/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainPage/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainPage/MainPage.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainPage/MainPage.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/ViewConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/ViewConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
