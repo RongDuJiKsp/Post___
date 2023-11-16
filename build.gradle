@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'icu.rdjksp'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'com.formdev:flatlaf:3.2.5'
+    implementation 'org.mybatis:mybatis:3.5.14'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
