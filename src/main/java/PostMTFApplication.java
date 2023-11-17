@@ -1,5 +1,5 @@
 import View.Page.MainPage;
-import View.MainWindow;
+import View.Window.MainWindow;
 
 public class PostMTFApplication {
     public static void main(String[] args) {

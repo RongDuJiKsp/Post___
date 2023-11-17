@@ -1,4 +1,6 @@
-package View;
+package View.Window;
+
+import View.ViewConfig;
 
 import javax.swing.*;
 

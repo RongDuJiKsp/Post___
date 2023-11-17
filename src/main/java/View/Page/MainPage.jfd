@@ -4,41 +4,48 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-			"$columnSpecs": "95, 132, 177, 121, 0, 0, 0, 0, 0, 0, 0, 0"
-			"$rowSpecs": "0, 25, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
+			"$columnSpecs": "46, 72, 80, 71, 84, 77, 56, 62, 45, 63, 0, 0, 0, 0, 0"
+			"$rowSpecs": "0, 0, 62, 0, 33, 182, 0, 0, 0, 0"
 			"$hGap": 5
 			"$vGap": 5
-			"$alignLeft": true
 			"$alignTop": true
+			"$alignLeft": true
 		} ) {
 			name: "this"
-			add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-				name: "menu1"
-				"text": "text"
-				add( new FormComponent( "javax.swing.JMenuItem" ) {
-					name: "menuItem2"
-					"text": "text"
-				} )
-				add( new FormComponent( "javax.swing.JMenuItem" ) {
-					name: "menuItem1"
-					"text": "text"
-				} )
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridy": 2
-			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
-				"text": "      Url"
+				"text": "      Url:"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridy": 2
+				"gridy": 3
 				"gridx": 1
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "url"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 2
-				"gridy": 2
+				"gridy": 3
+				"gridwidth": 6
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Protrol:"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 9
+				"gridy": 3
+			} )
+			add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "selectMethodBar"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 10
+				"gridy": 3
+			} )
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabbedPane1"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 1
+				"gridy": 5
 				"gridwidth": 10
+				"gridheight": 5
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 110, 95 )
