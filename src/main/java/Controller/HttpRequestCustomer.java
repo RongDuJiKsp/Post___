@@ -1,4 +1,4 @@
-package Controller.WebPortSys;
+package Controller;
 
 import com.alibaba.fastjson2.JSON;
 import org.apache.http.HttpEntity;
@@ -25,7 +25,8 @@ public class HttpRequestCustomer {
         if (isJSON) {
             httpPost.addHeader("content-type", "application/json");
             if (strEntity.charAt(0) == '[') strEntity = JSON.parseArray(strEntity).toJSONString();
-            else strEntity = JSON.parseObject(strEntity).toJSONString();
+            else if (strEntity.charAt(0) == '{') strEntity = JSON.parseObject(strEntity).toJSONString();
+            else  throw new RuntimeException(" Illegal json string! Cannot be resolved");
         } else {
             httpPost.addHeader("content-type", "text/plain");
         }
@@ -33,5 +34,8 @@ public class HttpRequestCustomer {
         httpPost.setConfig(requestConfig);
         httpPost.setEntity(httpEntity);
         return httpClient.execute(httpPost);
+    }
+    public HttpResponse sendGetRequest(String uri){
+        return  null;
     }
 }

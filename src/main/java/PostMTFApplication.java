@@ -1,4 +1,4 @@
-import View.MainPage.MainPage;
+import View.Page.MainPage.MainPage;
 import View.MainWindow;
 
 public class PostMTFApplication {

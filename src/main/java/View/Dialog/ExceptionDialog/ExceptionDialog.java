@@ -21,7 +21,7 @@ public class ExceptionDialog extends JDialog {
         outPutTextArea.setText(message);
         setVisible(true);
         setSize(600,400);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     private void initComponents() {

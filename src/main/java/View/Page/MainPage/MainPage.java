@@ -2,16 +2,16 @@
  * Created by JFormDesigner on Thu Nov 16 09:09:24 CST 2023
  */
 
-package View.MainPage;
+package View.Page.MainPage;
 
-import Controller.WebPortSys.HttpRequestCustomer;
+import Controller.HttpRequestCustomer;
+import Controller.SimpleFunction;
 import View.Dialog.ExceptionDialog.ExceptionDialog;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Scanner;
 
 /**
  * @author rdjks
@@ -33,12 +33,9 @@ public class MainPage extends JPanel {
         postButton.addActionListener((actionEvent) -> {
             try {
                 HttpResponse httpResponse = httpRequestCustomer.sendPostRequest(url.getText(), dataArea.getText(), RequestConfig.custom().setConnectionRequestTimeout(500).setConnectTimeout(500).build(), isSendedByJSON.isSelected());
-                StringBuilder stringBuilder = new StringBuilder();
-                Scanner scanner = new Scanner(httpResponse.getEntity().getContent());
-                while (scanner.hasNextLine()) stringBuilder.append(scanner.nextLine());
-                resArea.setText(stringBuilder.toString());
+                resArea.setText(SimpleFunction.readInputToStrLine(httpResponse.getEntity().getContent()));
             } catch (Exception exception) {
-                new ExceptionDialog(mainWindow).showMessage(exception.getMessage());
+                new ExceptionDialog(mainWindow).showMessage(exception.getLocalizedMessage());
             }
         });
     }
