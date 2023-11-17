@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="开始了喵">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/SimpleFunction.java" afterDir="false" />
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="可以用了喵">
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/error.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/WebPortSys/HttpRequestCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainPage/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainPage/MainPage.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage/MainPage.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dialog/ExceptionDialog/ExceptionDialog.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage/MainPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage/MainPage.jfd" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +66,14 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\codefile\PostMTF\src\main\java\View\Page" />
+      <recent name="D:\codefile\PostMTF\src\main\java\View\Window" />
+      <recent name="D:\codefile\PostMTF\src\main\resources" />
+      <recent name="D:\codefile\PostMTF\src\main\java\View\ExceptionDialog" />
+    </key>
+  </component>
   <component name="RunManager" selected="应用程序.PostMTFApplication">
     <configuration name="PostMTFApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PostMTFApplication" />
@@ -110,6 +122,7 @@
       <workItem from="1700093714500" duration="3662000" />
       <workItem from="1700131894745" duration="1926000" />
       <workItem from="1700179385141" duration="1003000" />
+      <workItem from="1700222395597" duration="3801000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />

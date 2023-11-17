@@ -2,11 +2,11 @@
  * Created by JFormDesigner on Thu Nov 16 19:16:26 CST 2023
  */
 
-package View.Dialog.ExceptionDialog;
+package View.Window;
 
-import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 
 /**
  * @author rdjks
@@ -16,11 +16,14 @@ public class ExceptionDialog extends JDialog {
         super(owner);
         initComponents();
         outPutTextArea.setEditable(false);
+        setResizable(false);
+        label1.setIcon(new ImageIcon("src/main/resources/error.png"));
     }
-    public void showMessage(String message){
+
+    public void showMessage(String message) {
         outPutTextArea.setText(message);
         setVisible(true);
-        setSize(600,400);
+        setSize(400, 350);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
@@ -46,12 +49,12 @@ public class ExceptionDialog extends JDialog {
             {
                 contentPanel.setLayout(new GridBagLayout());
                 ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 0, 0};
-                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {35, 181, 0};
+                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {65, 127, 0};
                 ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {1.0, 1.0, 1.0E-4};
                 ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 1.0, 1.0E-4};
 
                 //---- label1 ----
-                label1.setText("\u53d1\u751f\u4e86\u9519\u8bef\uff1a");
+                label1.setText("oops~~\u53d1\u751f\u4e86\u9519\u8bef\u55b5~\uff1a");
                 contentPanel.add(label1, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));

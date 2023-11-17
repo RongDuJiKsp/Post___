@@ -15,12 +15,12 @@ new FormModel {
 					"$columnSpecs": "0:1.0, 0:1.0"
 					"$alignTop": true
 					"$alignLeft": true
-					"$rowSpecs": "35, 181:1.0"
+					"$rowSpecs": "65, 127:1.0"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "label1"
-						"text": "发生了错误："
+						"text": "oops~~发生了错误喵~："
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
 					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 						name: "scrollPane1"
