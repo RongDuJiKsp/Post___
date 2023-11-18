@@ -137,6 +137,16 @@ public class HttpKeyValueComponent extends JPanel {
         return kv;
     }
 
+    public DefaultTableModel getTableModel() {
+        return paramTableModel;
+    }
+
+    public void addKeyValue(Map<String, String> kvp) {
+        kvp.forEach((k, v) -> {
+            paramTableModel.addRow(new String[]{k, v});
+        });
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JScrollPane tableScrollPane;
     private JButton clearSelectedButtton;

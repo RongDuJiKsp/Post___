@@ -7,17 +7,25 @@ package View.Page;
 import Controller.HttpRequestCustomer;
 import Controller.SimpleFunction;
 import Model.BodyContain;
+import Model.HttpMethod;
+import Model.Protocol;
 import View.Component.HttpBodyComponent;
 import View.Component.HttpKeyValueComponent;
 import View.Component.WebSocketComponent;
 import View.FunctionalComponent.SelectItemComponent;
+import View.Window.ExceptionDialog;
+import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.FileEntity;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
@@ -35,15 +43,16 @@ public class MainPage extends JPanel {
         this.mainWindow = mainWindow;
         initComponents();
         init();
+        initSender();
     }
 
     private void init() {
         //init choice
-        ArrayList<String> protocol = new ArrayList<>(Arrays.asList("Http", "WebSocket", "Socket.IO"));
-        protocols = new SelectItemComponent(protocol, "Http", actionEvent -> {
+        ArrayList<String> protocol = new ArrayList<>(Arrays.asList(Protocol.Http.getValue(), Protocol.WebSocket.getValue(), Protocol.SocketIO.getValue()));
+        protocols = new SelectItemComponent(protocol, Protocol.Http.getValue(), actionEvent -> {
             String selected = ((JMenuItem) actionEvent.getSource()).getText();
-            methods.setVisible(selected.equals("Http"));
-            if (selected.equals("Http")) {
+            methods.setVisible(selected.equals(Protocol.Http.getValue()));
+            if (selected.equals(Protocol.Http.getValue())) {
                 httpRequestTab.setVisible(isRequestTab);
                 httpResponseTab.setVisible(!isRequestTab);
                 webSocketComponent.setVisible(false);
@@ -54,8 +63,8 @@ public class MainPage extends JPanel {
             }
         });
         selectMethodBar.add(protocols);
-        ArrayList<String> method = new ArrayList<>(Arrays.asList("Post", "Get"));
-        methods = new SelectItemComponent(method, "Post");
+        ArrayList<String> method = new ArrayList<>(Arrays.asList(HttpMethod.Post.getValue(), HttpMethod.Get.getValue()));
+        methods = new SelectItemComponent(method, HttpMethod.Post.getValue());
         selectMethodBar.add(methods);
         //init tab panel
         tabsLocal = new GridBagConstraints(1, 5, 10, 1, 0.0, 0.0,
@@ -94,6 +103,14 @@ public class MainPage extends JPanel {
         webSocketComponent = new WebSocketComponent();
         webSocketComponent.setVisible(false);
         add(webSocketComponent, tabsLocal);
+
+    }
+
+    private void initSender() {
+        sendButton.addActionListener(actionEvent -> {
+            if (protocols.getText().equals(Protocol.Http.getValue()) && methods.getText().equals(HttpMethod.Post.getValue()))
+                sendPost();
+        });
     }
 
     private void initComponents() {
@@ -152,20 +169,29 @@ public class MainPage extends JPanel {
                 Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
                 URIBuilder uriBuilder = new URIBuilder(url.getText());
                 paramContain.forEach(uriBuilder::addParameter);
-                String response = null;
-                if (!bodyContain.isUsingBin()) {
-                    HttpResponse httpResponse = httpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), null, bodyContain.isUsingJSON(), headerContain)
-                    response = SimpleFunction.readInputToStrLine(httpResponse.getEntity().getContent());
-                    lastResponseBody = httpResponse.getEntity().getContent().readAllBytes();
-
-                } else {
-
+                HttpResponse httpResponse = null;
+                if (!bodyContain.isUsingBin())
+                    httpResponse = httpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), null, bodyContain.isUsingJSON(), headerContain);
+                else {
+                    headerContain.put("content-type", Files.probeContentType(bodyContain.getSelectedFile().toPath()));
+                    httpResponse = httpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), null, headerContain);
+                }
+                InputStream inputStream = httpResponse.getEntity().getContent();
+                BufferedInputStream br = new BufferedInputStream(inputStream);
+                String response = SimpleFunction.readInputToStrLine(br);
+                lastResponseBody = inputStream.readAllBytes();
+                httpResponseBodyComponent.setBody(response);
+                httpResponseHeadComponent.getTableModel().getDataVector().clear();
+                for (Header header : httpResponse.getAllHeaders()) {
+                    httpResponseHeadComponent.getTableModel().addRow(new String[]{header.getName(), header.getValue()});
                 }
             } catch (URISyntaxException | IOException e) {
+                new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
                 throw new RuntimeException(e);
             }
 
         });
+        runningThread.start();
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off

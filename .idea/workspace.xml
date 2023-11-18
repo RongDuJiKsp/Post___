@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="壳子完工喵">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/BodyContain.java" afterDir="false" />
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="jvav写起来好啰嗦啊喵">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/HttpMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Protocol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -169,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700308812049</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="jvav写起来好啰嗦啊喵">
+      <option name="closed" value="true" />
+      <created>1700316039475</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700316039475</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +200,7 @@
     <MESSAGE value="3改喵" />
     <MESSAGE value="4改喵" />
     <MESSAGE value="壳子完工喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="壳子完工喵" />
+    <MESSAGE value="jvav写起来好啰嗦啊喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="jvav写起来好啰嗦啊喵" />
   </component>
 </project>

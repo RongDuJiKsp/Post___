@@ -99,7 +99,11 @@ public class HttpBodyComponent extends JPanel {
     }
 
     public BodyContain getBody() {
-        return new BodyContain(isUsingJSONButton.isSelected(), isUsingBinButton.isSelected(), new File(selectedFile.getPath()), textEditor.getText());
+        return new BodyContain(isUsingJSONButton.isSelected(), isUsingBinButton.isSelected(), selectedFile, textEditor.getText());
+    }
+
+    public void setBody(String s) {
+        textEditor.setText(s);
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
