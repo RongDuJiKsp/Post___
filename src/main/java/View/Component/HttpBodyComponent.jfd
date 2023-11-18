@@ -4,24 +4,27 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-			"$columnSpecs": "30, 29, 148, 171, 137, 114"
-			"$rowSpecs": "0, 0, 0, 164, 0"
+			"$columnSpecs": "61, 72, 82, 69, 74, 82, 104, 96, 123"
+			"$rowSpecs": "18, 64, 53, 58, 51, 0"
 			"$hGap": 5
 			"$vGap": 5
-			"$alignLeft": true
 			"$alignTop": true
+			"$alignLeft": true
 		} ) {
 			name: "this"
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-				name: "tableScrollPane"
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea1"
+				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridwidth": 6
-				"gridy": 2
-				"gridheight": 2
+				"gridy": 1
+				"gridwidth": 9
+				"gridheight": 4
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 685, 300 )
+			"size": new java.awt.Dimension( 870, 485 )
 		} )
 	}
 }

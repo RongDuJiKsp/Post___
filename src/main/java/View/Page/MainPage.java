@@ -5,7 +5,8 @@
 package View.Page;
 
 import Controller.HttpRequestCustomer;
-import View.Component.HttpComponent;
+import View.Component.HttpBodyComponent;
+import View.Component.HttpParamsComponent;
 import View.FunctionalComponent.SelectItemComponent;
 
 import javax.swing.*;
@@ -43,8 +44,18 @@ public class MainPage extends JPanel {
         ArrayList<String> method = new ArrayList<>(Arrays.asList("Post", "Get"));
         methods = new SelectItemComponent(method, "Post");
         selectMethodBar.add(methods);
+        //init tab panel
+        tabsLocal = new GridBagConstraints(1, 5, 10, 1, 0.0, 0.0,
+                GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                new Insets(0, 0, 5, 5), 0, 0);
+
         //init Tab
-        tabbedPane1.addTab("Params", new HttpComponent());
+        httpTab = new JTabbedPane();
+        httpParamsComponent = new HttpParamsComponent();
+        httpTab.addTab("Params", httpParamsComponent);
+        httpBodyComponent=new HttpBodyComponent();
+        httpTab.add("Body",httpBodyComponent);
+        add(httpTab, tabsLocal);
     }
 
     private void initComponents() {
@@ -53,11 +64,10 @@ public class MainPage extends JPanel {
         url = new JTextField();
         label1 = new JLabel();
         selectMethodBar = new JMenuBar();
-        tabbedPane1 = new JTabbedPane();
 
         //======== this ========
         setLayout(new GridBagLayout());
-        ((GridBagLayout)getLayout()).columnWidths = new int[] {51, 77, 85, 76, 89, 82, 61, 67, 50, 68, 0, 0, 0, 0, 0, 0};
+        ((GridBagLayout)getLayout()).columnWidths = new int[] {51, 77, 85, 76, 89, 82, 61, 67, 50, 65, 70, 0, 0, 0, 0, 0};
         ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 0, 67, 0, 38, 187, 0, 0, 0, 0, 0};
         ((GridBagLayout)getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
         ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
@@ -76,12 +86,9 @@ public class MainPage extends JPanel {
         add(label1, new GridBagConstraints(9, 3, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
-        add(selectMethodBar, new GridBagConstraints(10, 3, 1, 1, 0.0, 0.0,
+        add(selectMethodBar, new GridBagConstraints(9, 4, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
-        add(tabbedPane1, new GridBagConstraints(1, 5, 10, 5, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 0, 5), 0, 0));
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
@@ -90,8 +97,11 @@ public class MainPage extends JPanel {
     private JTextField url;
     private JLabel label1;
     private JMenuBar selectMethodBar;
-    private JTabbedPane tabbedPane1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
     private SelectItemComponent protocols, methods;
+    private JTabbedPane httpTab, webSocketTab, socketIOTab;
+    private GridBagConstraints tabsLocal;
+    private HttpParamsComponent httpParamsComponent;
+    private HttpBodyComponent httpBodyComponent;
 
 }

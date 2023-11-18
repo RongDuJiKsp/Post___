@@ -4,7 +4,7 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-			"$columnSpecs": "46, 72, 80, 71, 84, 77, 56, 62, 45, 63, 0, 0, 0, 0, 0"
+			"$columnSpecs": "46, 72, 80, 71, 84, 77, 56, 62, 45, 60, 65, 0, 0, 0, 0"
 			"$rowSpecs": "0, 0, 62, 0, 33, 182, 0, 0, 0, 0"
 			"$hGap": 5
 			"$vGap": 5
@@ -36,16 +36,8 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
 				name: "selectMethodBar"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 10
-				"gridy": 3
-			} )
-			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
-				name: "tabbedPane1"
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 1
-				"gridy": 5
-				"gridwidth": 10
-				"gridheight": 5
+				"gridx": 9
+				"gridy": 4
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 110, 95 )
