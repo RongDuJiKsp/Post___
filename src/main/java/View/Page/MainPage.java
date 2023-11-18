@@ -5,13 +5,19 @@
 package View.Page;
 
 import Controller.HttpRequestCustomer;
+import Controller.SimpleFunction;
+import Model.BodyContain;
 import View.Component.HttpBodyComponent;
 import View.Component.HttpKeyValueComponent;
 import View.Component.WebSocketComponent;
 import View.FunctionalComponent.SelectItemComponent;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.utils.URIBuilder;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
@@ -38,12 +44,12 @@ public class MainPage extends JPanel {
             String selected = ((JMenuItem) actionEvent.getSource()).getText();
             methods.setVisible(selected.equals("Http"));
             if (selected.equals("Http")) {
-                httpTab.setVisible(isRequestTab);
+                httpRequestTab.setVisible(isRequestTab);
                 httpResponseTab.setVisible(!isRequestTab);
                 webSocketComponent.setVisible(false);
-            }else  {
+            } else {
                 httpResponseTab.setVisible(false);
-                httpTab.setVisible(false);
+                httpRequestTab.setVisible(false);
                 webSocketComponent.setVisible(true);
             }
         });
@@ -57,16 +63,16 @@ public class MainPage extends JPanel {
                 new Insets(0, 0, 5, 5), 0, 0);
 
         //init http Tab
-        httpTab = new JTabbedPane();
-        httpParamsComponent = new HttpKeyValueComponent();
-        httpTab.addTab("Params", httpParamsComponent);
-        httpBodyComponent = new HttpBodyComponent();
-        httpTab.addTab("Body", httpBodyComponent);
-        httpHeadComponent = new HttpKeyValueComponent(Map.ofEntries(
+        httpRequestTab = new JTabbedPane();
+        httpRequestParamsComponent = new HttpKeyValueComponent();
+        httpRequestTab.addTab("Params", httpRequestParamsComponent);
+        httpRequestBodyComponent = new HttpBodyComponent();
+        httpRequestTab.addTab("Body", httpRequestBodyComponent);
+        httpRequestHeadComponent = new HttpKeyValueComponent(Map.ofEntries(
                 Map.entry("crossOrigin", "*")
         ));
-        httpTab.addTab("Head", httpHeadComponent);
-        add(httpTab, tabsLocal);
+        httpRequestTab.addTab("Head", httpRequestHeadComponent);
+        add(httpRequestTab, tabsLocal);
         //init httpRepTab
         httpResponseTab = new JTabbedPane();
         httpResponseHeadComponent = new HttpKeyValueComponent();
@@ -81,7 +87,7 @@ public class MainPage extends JPanel {
         httpResponseTab.setVisible(false);
         toChangeReqResButton.addActionListener(actionEvent -> {
             isRequestTab = !isRequestTab;
-            httpTab.setVisible(isRequestTab);
+            httpRequestTab.setVisible(isRequestTab);
             httpResponseTab.setVisible(!isRequestTab);
         });
         //init WebSocket Tab
@@ -138,6 +144,30 @@ public class MainPage extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
+    private void sendPost() {
+        if (!(runningThread == null || runningThread.getState() == Thread.State.TERMINATED)) return;
+        runningThread = new Thread(() -> {
+            try {
+                BodyContain bodyContain = httpRequestBodyComponent.getBody();
+                Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
+                URIBuilder uriBuilder = new URIBuilder(url.getText());
+                paramContain.forEach(uriBuilder::addParameter);
+                String response = null;
+                if (!bodyContain.isUsingBin()) {
+                    HttpResponse httpResponse = httpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), null, bodyContain.isUsingJSON(), headerContain)
+                    response = SimpleFunction.readInputToStrLine(httpResponse.getEntity().getContent());
+                    lastResponseBody = httpResponse.getEntity().getContent().readAllBytes();
+
+                } else {
+
+                }
+            } catch (URISyntaxException | IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        });
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JLabel label2;
     private JTextField url;
@@ -147,11 +177,13 @@ public class MainPage extends JPanel {
     private JButton sendButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
     private SelectItemComponent protocols, methods;
-    private JTabbedPane httpTab, httpResponseTab;
+    private JTabbedPane httpRequestTab, httpResponseTab;
     private GridBagConstraints tabsLocal;
-    private HttpKeyValueComponent httpParamsComponent, httpHeadComponent, httpResponseHeadComponent;
-    private HttpBodyComponent httpBodyComponent, httpResponseBodyComponent;
+    private HttpKeyValueComponent httpRequestParamsComponent, httpRequestHeadComponent, httpResponseHeadComponent;
+    private HttpBodyComponent httpRequestBodyComponent, httpResponseBodyComponent;
     private WebSocketComponent webSocketComponent;
     private boolean isRequestTab;
+    private Thread runningThread;
+    private byte[] lastResponseBody;
 
 }

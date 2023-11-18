@@ -4,8 +4,11 @@
 
 package View.Component;
 
+import Model.BodyContain;
+
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 /**
  * @author rdjks
@@ -95,6 +98,10 @@ public class HttpBodyComponent extends JPanel {
         uploadBinFileButton.setVisible(false);
     }
 
+    public BodyContain getBody() {
+        return new BodyContain(isUsingJSONButton.isSelected(), isUsingBinButton.isSelected(), new File(selectedFile.getPath()), textEditor.getText());
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JScrollPane scrollPane1;
     private JEditorPane textEditor;
@@ -104,4 +111,5 @@ public class HttpBodyComponent extends JPanel {
     private JTextField upLoadFileName;
     private JButton uploadBinFileButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+    File selectedFile;
 }
