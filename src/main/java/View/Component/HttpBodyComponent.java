@@ -86,6 +86,15 @@ public class HttpBodyComponent extends JPanel {
         isUsingJSONButton.setEnabled(!isJSONEnabled);
     }
 
+    public void setEditable(boolean flag) {
+        textEditor.setEditable(false);
+        isUsingBinButton.setVisible(false);
+        isUsingJSONButton.setVisible(false);
+        label1.setVisible(false);
+        upLoadFileName.setVisible(false);
+        uploadBinFileButton.setVisible(false);
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JScrollPane scrollPane1;
     private JEditorPane textEditor;

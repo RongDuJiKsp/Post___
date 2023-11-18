@@ -29,11 +29,11 @@ public class HttpKeyValueComponent extends JPanel {
     private void init() {
         //init table
         paramTableModel = new DefaultTableModel(new String[]{"Key", "Value"}, 0);
-        JTable jTable = new JTable(paramTableModel);
-        jTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
+        paramTable = new JTable(paramTableModel);
+        paramTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 
 
-        tableScrollPane.setViewportView(jTable);
+        tableScrollPane.setViewportView(paramTable);
         //init adder
         addParamButton.addActionListener(actionEvent -> {
             if (keyInputholder.getText().isEmpty()) return;
@@ -41,13 +41,13 @@ public class HttpKeyValueComponent extends JPanel {
         });
         //init deleter
         deleteSelectedButton.addActionListener(actionEvent -> {
-            int n = jTable.getSelectedRows().length;
+            int n = paramTable.getSelectedRows().length;
             for (int i = 0; i < n; i++)
-                paramTableModel.removeRow(jTable.getSelectedRow());
+                paramTableModel.removeRow(paramTable.getSelectedRow());
         });
         //init clear select
         clearSelectedButtton.addActionListener(actionEvent -> {
-            jTable.clearSelection();
+            paramTable.clearSelection();
         });
     }
 
@@ -110,6 +110,24 @@ public class HttpKeyValueComponent extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
+    public void setEditable(boolean flag) {
+        clearSelectedButtton.setVisible(flag);
+        label1.setVisible(flag);
+        label2.setVisible(flag);
+        keyInputholder.setVisible(flag);
+        valueInputholder.setVisible(flag);
+        deleteSelectedButton.setVisible(flag);
+        addParamButton.setVisible(flag);
+        if (!flag) {
+            paramTable = new JTable(paramTableModel) {
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    return false;
+                }
+            };
+            tableScrollPane.setViewportView(paramTable);
+        }
+    }
 
     public Map<String, String> getKeyValueData() {
         HashMap<String, String> kv = new HashMap<>();
@@ -130,5 +148,6 @@ public class HttpKeyValueComponent extends JPanel {
     private JButton addParamButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
     private DefaultTableModel paramTableModel;
+    private JTable paramTable;
 
 }

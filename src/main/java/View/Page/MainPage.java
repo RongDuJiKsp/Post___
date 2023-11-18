@@ -29,18 +29,23 @@ public class MainPage extends JPanel {
         this.mainWindow = mainWindow;
         initComponents();
         init();
-        connectEvent();
-    }
-
-    private void connectEvent() {
-
     }
 
     private void init() {
         //init choice
         ArrayList<String> protocol = new ArrayList<>(Arrays.asList("Http", "WebSocket", "Socket.IO"));
         protocols = new SelectItemComponent(protocol, "Http", actionEvent -> {
-            methods.setVisible(((JMenuItem) actionEvent.getSource()).getText().equals("Http"));
+            String selected = ((JMenuItem) actionEvent.getSource()).getText();
+            methods.setVisible(selected.equals("Http"));
+            if (selected.equals("Http")) {
+                httpTab.setVisible(isRequestTab);
+                httpResponseTab.setVisible(!isRequestTab);
+                webSocketComponent.setVisible(false);
+            }else  {
+                httpResponseTab.setVisible(false);
+                httpTab.setVisible(false);
+                webSocketComponent.setVisible(true);
+            }
         });
         selectMethodBar.add(protocols);
         ArrayList<String> method = new ArrayList<>(Arrays.asList("Post", "Get"));
@@ -62,10 +67,27 @@ public class MainPage extends JPanel {
         ));
         httpTab.addTab("Head", httpHeadComponent);
         add(httpTab, tabsLocal);
+        //init httpRepTab
+        httpResponseTab = new JTabbedPane();
+        httpResponseHeadComponent = new HttpKeyValueComponent();
+        httpResponseHeadComponent.setEditable(false);
+        httpResponseTab.addTab("ResponseHead", httpResponseHeadComponent);
+        httpResponseBodyComponent = new HttpBodyComponent();
+        httpResponseBodyComponent.setEditable(false);
+        httpResponseTab.addTab("ResponseBody", httpResponseBodyComponent);
+        add(httpResponseTab, tabsLocal);
+        //connect changer
+        isRequestTab = true;
+        httpResponseTab.setVisible(false);
+        toChangeReqResButton.addActionListener(actionEvent -> {
+            isRequestTab = !isRequestTab;
+            httpTab.setVisible(isRequestTab);
+            httpResponseTab.setVisible(!isRequestTab);
+        });
         //init WebSocket Tab
-        remove(httpTab);
-        add(new WebSocketComponent(),tabsLocal);
-
+        webSocketComponent = new WebSocketComponent();
+        webSocketComponent.setVisible(false);
+        add(webSocketComponent, tabsLocal);
     }
 
     private void initComponents() {
@@ -73,9 +95,9 @@ public class MainPage extends JPanel {
         label2 = new JLabel();
         url = new JTextField();
         label1 = new JLabel();
-        button2 = new JButton();
+        toChangeReqResButton = new JButton();
         selectMethodBar = new JMenuBar();
-        button1 = new JButton();
+        sendButton = new JButton();
 
         //======== this ========
         setLayout(new GridBagLayout());
@@ -99,18 +121,18 @@ public class MainPage extends JPanel {
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
-        //---- button2 ----
-        button2.setText("ToResponsePage");
-        add(button2, new GridBagConstraints(2, 4, 1, 1, 0.0, 0.0,
+        //---- toChangeReqResButton ----
+        toChangeReqResButton.setText("Change Req/Res Page");
+        add(toChangeReqResButton, new GridBagConstraints(2, 4, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
         add(selectMethodBar, new GridBagConstraints(9, 4, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
-        //---- button1 ----
-        button1.setText("Send");
-        add(button1, new GridBagConstraints(10, 4, 1, 1, 0.0, 0.0,
+        //---- sendButton ----
+        sendButton.setText("Send");
+        add(sendButton, new GridBagConstraints(10, 4, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
@@ -120,14 +142,16 @@ public class MainPage extends JPanel {
     private JLabel label2;
     private JTextField url;
     private JLabel label1;
-    private JButton button2;
+    private JButton toChangeReqResButton;
     private JMenuBar selectMethodBar;
-    private JButton button1;
+    private JButton sendButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
     private SelectItemComponent protocols, methods;
     private JTabbedPane httpTab, httpResponseTab;
     private GridBagConstraints tabsLocal;
-    private HttpKeyValueComponent httpParamsComponent, httpHeadComponent;
-    private HttpBodyComponent httpBodyComponent;
+    private HttpKeyValueComponent httpParamsComponent, httpHeadComponent, httpResponseHeadComponent;
+    private HttpBodyComponent httpBodyComponent, httpResponseBodyComponent;
+    private WebSocketComponent webSocketComponent;
+    private boolean isRequestTab;
 
 }

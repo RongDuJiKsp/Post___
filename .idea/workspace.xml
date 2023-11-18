@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="4改喵">
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketComponent.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpParamsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpParamsComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" afterDir="false" />
     </list>

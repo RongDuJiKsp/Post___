@@ -34,8 +34,8 @@ new FormModel {
 				"gridy": 3
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button2"
-				"text": "ToResponsePage"
+				name: "toChangeReqResButton"
+				"text": "Change Req/Res Page"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 2
 				"gridy": 4
@@ -47,7 +47,7 @@ new FormModel {
 				"gridy": 4
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
+				name: "sendButton"
 				"text": "Send"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 10
