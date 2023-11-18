@@ -5,7 +5,7 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
 			"$columnSpecs": "43, 46, 131, 189, 144, 195"
-			"$rowSpecs": "17, 31, 226, 35, 33"
+			"$rowSpecs": "17, 129, 35, 33"
 			"$hGap": 5
 			"$vGap": 5
 			"$alignLeft": true
@@ -17,13 +17,12 @@ new FormModel {
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridwidth": 6
 				"gridy": 1
-				"gridheight": 2
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "addParamButton"
-				"text": "Add Param"
+				name: "clearSelectedButtton"
+				"text": "Clear Selected"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridy": 3
+				"gridy": 2
 				"gridwidth": 2
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -31,44 +30,45 @@ new FormModel {
 				"text": "            Key:"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 2
-				"gridy": 3
+				"gridy": 2
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "keyInputholder"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 3
-				"gridy": 3
+				"gridy": 2
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
 				"text": "           Value:"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 4
-				"gridy": 3
+				"gridy": 2
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "valueInputholder"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 5
-				"gridy": 3
+				"gridy": 2
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "deleteSelectedButton"
 				"text": "Delect Selected"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridy": 4
+				"gridy": 3
 				"gridwidth": 2
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "clearSelectedButtton"
-				"text": "Clear Selected"
+				name: "addParamButton"
+				"text": "Add Key_ValuePair"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridy": 3
+				"gridwidth": 4
 				"gridx": 2
-				"gridy": 4
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 805, 365 )
+			"size": new java.awt.Dimension( 805, 255 )
 		} )
 	}
 }

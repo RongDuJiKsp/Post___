@@ -6,13 +6,15 @@ package View.Page;
 
 import Controller.HttpRequestCustomer;
 import View.Component.HttpBodyComponent;
-import View.Component.HttpParamsComponent;
+import View.Component.HttpKeyValueComponent;
+import View.Component.WebSocketComponent;
 import View.FunctionalComponent.SelectItemComponent;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 
 /**
  * @author rdjks
@@ -49,13 +51,21 @@ public class MainPage extends JPanel {
                 GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                 new Insets(0, 0, 5, 5), 0, 0);
 
-        //init Tab
+        //init http Tab
         httpTab = new JTabbedPane();
-        httpParamsComponent = new HttpParamsComponent();
+        httpParamsComponent = new HttpKeyValueComponent();
         httpTab.addTab("Params", httpParamsComponent);
-        httpBodyComponent=new HttpBodyComponent();
-        httpTab.add("Body",httpBodyComponent);
+        httpBodyComponent = new HttpBodyComponent();
+        httpTab.addTab("Body", httpBodyComponent);
+        httpHeadComponent = new HttpKeyValueComponent(Map.ofEntries(
+                Map.entry("crossOrigin", "*")
+        ));
+        httpTab.addTab("Head", httpHeadComponent);
         add(httpTab, tabsLocal);
+        //init WebSocket Tab
+        remove(httpTab);
+        add(new WebSocketComponent(),tabsLocal);
+
     }
 
     private void initComponents() {
@@ -63,12 +73,14 @@ public class MainPage extends JPanel {
         label2 = new JLabel();
         url = new JTextField();
         label1 = new JLabel();
+        button2 = new JButton();
         selectMethodBar = new JMenuBar();
+        button1 = new JButton();
 
         //======== this ========
         setLayout(new GridBagLayout());
         ((GridBagLayout)getLayout()).columnWidths = new int[] {51, 77, 85, 76, 89, 82, 61, 67, 50, 65, 70, 0, 0, 0, 0, 0};
-        ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 0, 67, 0, 38, 187, 0, 0, 0, 0, 0};
+        ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 24, 29, 0, 38, 91, 0, 0, 0, 0, 0};
         ((GridBagLayout)getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
         ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
@@ -86,7 +98,19 @@ public class MainPage extends JPanel {
         add(label1, new GridBagConstraints(9, 3, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
+
+        //---- button2 ----
+        button2.setText("ToResponsePage");
+        add(button2, new GridBagConstraints(2, 4, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
         add(selectMethodBar, new GridBagConstraints(9, 4, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+
+        //---- button1 ----
+        button1.setText("Send");
+        add(button1, new GridBagConstraints(10, 4, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
@@ -96,12 +120,14 @@ public class MainPage extends JPanel {
     private JLabel label2;
     private JTextField url;
     private JLabel label1;
+    private JButton button2;
     private JMenuBar selectMethodBar;
+    private JButton button1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
     private SelectItemComponent protocols, methods;
-    private JTabbedPane httpTab, webSocketTab, socketIOTab;
+    private JTabbedPane httpTab, httpResponseTab;
     private GridBagConstraints tabsLocal;
-    private HttpParamsComponent httpParamsComponent;
+    private HttpKeyValueComponent httpParamsComponent, httpHeadComponent;
     private HttpBodyComponent httpBodyComponent;
 
 }

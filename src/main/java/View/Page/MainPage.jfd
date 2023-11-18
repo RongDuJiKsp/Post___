@@ -5,7 +5,7 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
 			"$columnSpecs": "46, 72, 80, 71, 84, 77, 56, 62, 45, 60, 65, 0, 0, 0, 0"
-			"$rowSpecs": "0, 0, 62, 0, 33, 182, 0, 0, 0, 0"
+			"$rowSpecs": "0, 19, 24, 0, 33, 86, 0, 0, 0, 0"
 			"$hGap": 5
 			"$vGap": 5
 			"$alignTop": true
@@ -33,10 +33,24 @@ new FormModel {
 				"gridx": 9
 				"gridy": 3
 			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "ToResponsePage"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+				"gridy": 4
+			} )
 			add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
 				name: "selectMethodBar"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 9
+				"gridy": 4
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Send"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 10
 				"gridy": 4
 			} )
 		}, new FormLayoutConstraints( null ) {

@@ -4,21 +4,26 @@
 
 package View.Component;
 
-import org.apache.http.client.utils.URIBuilder;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author rdjks
  */
-public class HttpParamsComponent extends JPanel {
-    public HttpParamsComponent() {
+public class HttpKeyValueComponent extends JPanel {
+    public HttpKeyValueComponent() {
         initComponents();
         init();
+    }
+
+    public HttpKeyValueComponent(Map<String, String> keyValuePairs) {
+        this();
+        keyValuePairs.forEach((key, value) -> {
+            paramTableModel.addRow(new String[]{key, value});
+        });
     }
 
     private void init() {
@@ -49,83 +54,80 @@ public class HttpParamsComponent extends JPanel {
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         tableScrollPane = new JScrollPane();
-        addParamButton = new JButton();
+        clearSelectedButtton = new JButton();
         label1 = new JLabel();
         keyInputholder = new JTextField();
         label2 = new JLabel();
         valueInputholder = new JTextField();
         deleteSelectedButton = new JButton();
-        clearSelectedButtton = new JButton();
+        addParamButton = new JButton();
 
         //======== this ========
         setLayout(new GridBagLayout());
         ((GridBagLayout)getLayout()).columnWidths = new int[] {48, 51, 136, 194, 149, 195, 0};
-        ((GridBagLayout)getLayout()).rowHeights = new int[] {22, 36, 231, 40, 33, 0};
+        ((GridBagLayout)getLayout()).rowHeights = new int[] {22, 134, 40, 33, 0};
         ((GridBagLayout)getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
-        ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
-        add(tableScrollPane, new GridBagConstraints(0, 1, 6, 2, 0.0, 0.0,
+        ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0E-4};
+        add(tableScrollPane, new GridBagConstraints(0, 1, 6, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 0), 0, 0));
 
-        //---- addParamButton ----
-        addParamButton.setText("Add Param");
-        add(addParamButton, new GridBagConstraints(0, 3, 2, 1, 0.0, 0.0,
+        //---- clearSelectedButtton ----
+        clearSelectedButtton.setText("Clear Selected");
+        add(clearSelectedButtton, new GridBagConstraints(0, 2, 2, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
         //---- label1 ----
         label1.setText("            Key:");
-        add(label1, new GridBagConstraints(2, 3, 1, 1, 0.0, 0.0,
+        add(label1, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
-        add(keyInputholder, new GridBagConstraints(3, 3, 1, 1, 0.0, 0.0,
+        add(keyInputholder, new GridBagConstraints(3, 2, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
         //---- label2 ----
         label2.setText("           Value:");
-        add(label2, new GridBagConstraints(4, 3, 1, 1, 0.0, 0.0,
+        add(label2, new GridBagConstraints(4, 2, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
-        add(valueInputholder, new GridBagConstraints(5, 3, 1, 1, 0.0, 0.0,
+        add(valueInputholder, new GridBagConstraints(5, 2, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 0), 0, 0));
 
         //---- deleteSelectedButton ----
         deleteSelectedButton.setText("Delect Selected");
-        add(deleteSelectedButton, new GridBagConstraints(0, 4, 2, 1, 0.0, 0.0,
+        add(deleteSelectedButton, new GridBagConstraints(0, 3, 2, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 0, 5), 0, 0));
 
-        //---- clearSelectedButtton ----
-        clearSelectedButtton.setText("Clear Selected");
-        add(clearSelectedButtton, new GridBagConstraints(2, 4, 1, 1, 0.0, 0.0,
+        //---- addParamButton ----
+        addParamButton.setText("Add Key_ValuePair");
+        add(addParamButton, new GridBagConstraints(2, 3, 4, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 0, 5), 0, 0));
+            new Insets(0, 0, 0, 0), 0, 0));
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
-    public URI addParamsToUrI(URI uri) throws URISyntaxException {
-        URIBuilder uriBuilder = new URIBuilder(uri);
-        for (int i = 0; i < paramTableModel.getRowCount(); i++) {
-            uriBuilder.addParameter((String) paramTableModel.getValueAt(i, 0), (String) paramTableModel.getValueAt(i, 1));
-        }
-        return uriBuilder.build();
-    }
 
-    public URI addParamsToUrI(String uri) throws URISyntaxException {
-        return addParamsToUrI(new URI(uri));
+    public Map<String, String> getKeyValueData() {
+        HashMap<String, String> kv = new HashMap<>();
+        for (int i = 0; i < paramTableModel.getRowCount(); i++) {
+            kv.put((String) paramTableModel.getValueAt(i, 0), (String) paramTableModel.getValueAt(i, 1));
+        }
+        return kv;
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JScrollPane tableScrollPane;
-    private JButton addParamButton;
+    private JButton clearSelectedButtton;
     private JLabel label1;
     private JTextField keyInputholder;
     private JLabel label2;
     private JTextField valueInputholder;
     private JButton deleteSelectedButton;
-    private JButton clearSelectedButtton;
+    private JButton addParamButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
     private DefaultTableModel paramTableModel;
 

@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="3改喵">
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.jfd" afterDir="false" />
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="4改喵">
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketComponent.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpParamsComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpParamsComponent.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/FunctionalComponent/KeyValueListAdderComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpParamsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpParamsComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" afterDir="false" />
     </list>
@@ -122,7 +123,7 @@
       <workItem from="1700179385141" duration="1003000" />
       <workItem from="1700222395597" duration="12508000" />
       <workItem from="1700281070242" duration="3523000" />
-      <workItem from="1700295897380" duration="3336000" />
+      <workItem from="1700295897380" duration="8679000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -148,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700234401853</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="4改喵">
+      <option name="closed" value="true" />
+      <created>1700299268050</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700299268050</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -156,6 +165,7 @@
     <MESSAGE value="开始了喵" />
     <MESSAGE value="2改喵" />
     <MESSAGE value="3改喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="3改喵" />
+    <MESSAGE value="4改喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="4改喵" />
   </component>
 </project>
