@@ -34,9 +34,7 @@ public class WebSocketIOComponent extends JPanel {
     }
 
     private void initAction() {
-        cleanMessageButton.addActionListener(actionEvent -> {
-            messageShower.setText("");
-        });
+        cleanMessageButton.addActionListener(actionEvent -> messageShower.setText(""));
         sendMessageButton.addActionListener(actionEvent -> {
             addMessage(messageInputHolder.getText(), "you");
             if(isUsingWebSocket)webSocketCustomer.send(messageInputHolder.getText());
