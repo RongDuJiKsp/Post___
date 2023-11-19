@@ -129,6 +129,7 @@ public class MainPage extends JPanel {
                     sendGet();
                 updateTabs(false);
             } else if (protocols.getText().equals(Protocol.WebSocket.getValue())) connectWebSocket();
+            else if (protocols.getText().equals(Protocol.SocketIO.getValue())) connectSocketIO();
         });
     }
 
@@ -230,8 +231,18 @@ public class MainPage extends JPanel {
     private void connectWebSocket() {
         try {
             webSocketIOComponent.connectWebSocket(new URI(url.getText()));
-        } catch (Exception ignore) {
+            webSocketIOComponent.setUsingWebSocket(true);
+        } catch (Exception e) {
+            new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
+        }
+    }
 
+    private void connectSocketIO() {
+        try {
+            webSocketIOComponent.connectSocketIO(new URI(url.getText()));
+            webSocketIOComponent.setUsingWebSocket(false);
+        } catch (Exception e) {
+            new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
         }
     }
 

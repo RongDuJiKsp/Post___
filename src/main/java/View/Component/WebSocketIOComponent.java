@@ -4,8 +4,9 @@
 
 package View.Component;
 
-import Controller.SocketIOCustomer;
 import Controller.WebSocketCustomer;
+import io.socket.client.IO;
+import io.socket.client.Socket;
 import lombok.Setter;
 
 import javax.swing.*;
@@ -18,7 +19,7 @@ import java.util.Date;
  */
 public class WebSocketIOComponent extends JPanel {
     private WebSocketCustomer webSocketCustomer;
-    private SocketIOCustomer socketIOCustomer;
+    private Socket socketIO;
     @Setter
     private boolean isUsingWebSocket;
 
@@ -38,11 +39,12 @@ public class WebSocketIOComponent extends JPanel {
         });
         sendMessageButton.addActionListener(actionEvent -> {
             addMessage(messageInputHolder.getText(), "you");
-            webSocketCustomer.send(messageInputHolder.getText());
+            if(isUsingWebSocket)webSocketCustomer.send(messageInputHolder.getText());
+            else socketIO.send(messageInputHolder.getText());
         });
         disConnectButton.addActionListener(actionEvent -> {
-            if(isUsingWebSocket)webSocketCustomer.close();
-
+            if (isUsingWebSocket) webSocketCustomer.close();
+            else socketIO.close();
         });
     }
 
@@ -98,15 +100,31 @@ public class WebSocketIOComponent extends JPanel {
     }
 
     public void connectWebSocket(URI uri) {
-        clearWebSocketConnect();
+        clearConnect();
         webSocketCustomer = new WebSocketCustomer(uri, message -> addMessage(message, "server"));
         webSocketCustomer.connect();
+    }
+
+    public void connectSocketIO(URI uri) {
+        clearConnect();
+        socketIO = IO.socket(uri);
     }
 
     public void clearWebSocketConnect() {
         if (webSocketCustomer != null && webSocketCustomer.isOpen()) webSocketCustomer.close();
         messageShower.setText("");
     }
+
+    public void clearSocketIOConnect() {
+        if (socketIO != null && socketIO.connected()) socketIO.close();
+        messageShower.setText("");
+    }
+
+    public void clearConnect() {
+        clearSocketIOConnect();
+        clearWebSocketConnect();
+    }
+
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JScrollPane scrollPane1;
