@@ -4,7 +4,7 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-			"$columnSpecs": "0, 66, 180, 171, 150, 74, 138, 0, 0, 0, 0, 0"
+			"$columnSpecs": "0, 66, 180, 171, 96, 74, 138, 0, 0, 0, 0, 0"
 			"$rowSpecs": "0, 47, 49, 58, 65, 76, 86, 19, 34, 0, 0, 0, 0, 0"
 			"$hGap": 5
 			"$vGap": 5
@@ -28,15 +28,28 @@ new FormModel {
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 1
 				"gridy": 8
-				"gridwidth": 4
+				"gridwidth": 3
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "sendMessagebutton"
+				name: "sendMessageButton"
 				"text": "Send Message"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 4
+				"gridy": 8
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "cleanMessageButton"
+				"text": "Clean Messages"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 5
 				"gridy": 8
-				"gridwidth": 2
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "disConnectButton"
+				"text": "Close Connect"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 6
+				"gridy": 8
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

@@ -24,6 +24,7 @@ import java.awt.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 /**
- * @author rdjks
+ * @author rdjksp
  */
 public class MainPage extends JPanel {
     private final HttpRequestCustomer httpRequestCustomer;
@@ -45,9 +46,9 @@ public class MainPage extends JPanel {
 
     private void init() {
         initComponents();
-        initChoicer();
         initTabs();
         initSender();
+        initChoicer();
     }
 
     private void initTabs() {
@@ -101,7 +102,7 @@ public class MainPage extends JPanel {
             httpRequestTab.setVisible(isSelectedHttp);
             toChangeReqResButton.setEnabled(isSelectedHttp);
             webSocketComponent.setVisible(!isSelectedHttp);
-            updateTabs(isRequestTab);
+            if (isSelectedHttp) updateTabs(isRequestTab);
         });
         selectMethodBar.add(protocols);
         ArrayList<String> method = new ArrayList<>(Arrays.asList(HttpMethod.Post.getValue(), HttpMethod.Get.getValue()));
@@ -117,7 +118,7 @@ public class MainPage extends JPanel {
                 else if (methods.getText().equals(HttpMethod.Get.getValue()))
                     sendGet();
                 updateTabs(false);
-            }
+            } else if (protocols.getText().equals(Protocol.WebSocket.getValue())) connectWebSocket();
         });
     }
 
@@ -216,8 +217,16 @@ public class MainPage extends JPanel {
         runningThread.start();
     }
 
+    private void connectWebSocket() {
+        try {
+            webSocketComponent.connectWebSocket(new URI(url.getText()));
+        } catch (Exception ignore) {
+
+        }
+    }
+
     private void parseHttpResponse(HttpResponse httpResponse) throws IOException {
-        if(httpResponse==null) return;
+        if (httpResponse == null) return;
         ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
         httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
         httpResponseHeadComponent.getTableModel().getDataVector().clear();
