@@ -37,31 +37,20 @@ public class MainPage extends JPanel {
     private final HttpRequestCustomer httpRequestCustomer;
     private final JFrame mainWindow;
 
-
     public MainPage(JFrame mainWindow) {
         httpRequestCustomer = new HttpRequestCustomer();
         this.mainWindow = mainWindow;
-        initComponents();
         init();
-        initSender();
     }
 
     private void init() {
-        //init choice
-        ArrayList<String> protocol = new ArrayList<>(Arrays.asList(Protocol.Http.getValue(), Protocol.WebSocket.getValue(), Protocol.SocketIO.getValue()));
-        protocols = new SelectItemComponent(protocol, Protocol.Http.getValue(), actionEvent -> {
-            boolean isSelectedHttp = ((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.Http.getValue());
-            methods.setVisible(isSelectedHttp);
-            httpResponseTab.setVisible(isSelectedHttp);
-            httpRequestTab.setVisible(isSelectedHttp);
-            toChangeReqResButton.setEnabled(isSelectedHttp);
-            webSocketComponent.setVisible(!isSelectedHttp);
-            updateTabs(isRequestTab);
-        });
-        selectMethodBar.add(protocols);
-        ArrayList<String> method = new ArrayList<>(Arrays.asList(HttpMethod.Post.getValue(), HttpMethod.Get.getValue()));
-        methods = new SelectItemComponent(method, HttpMethod.Post.getValue());
-        selectMethodBar.add(methods);
+        initComponents();
+        initChoicer();
+        initTabs();
+        initSender();
+    }
+
+    private void initTabs() {
         //init tab panel
         tabsLocal = new GridBagConstraints(1, 5, 10, 1, 0.0, 0.0,
                 GridBagConstraints.CENTER, GridBagConstraints.BOTH,
@@ -74,7 +63,11 @@ public class MainPage extends JPanel {
         httpRequestBodyComponent = new HttpBodyComponent();
         httpRequestTab.addTab("Body", httpRequestBodyComponent);
         httpRequestHeadComponent = new HttpKeyValueComponent(Map.ofEntries(
-                Map.entry("crossOrigin", "*")
+                Map.entry("crossOrigin", "*"),
+                Map.entry("User-Agent", "PostmtfRuntime/1.0.0"),
+                Map.entry("Accept", "*/*"),
+                Map.entry("Accept-Encoding", "gzip, deflate, br"),
+                Map.entry("Connection", "keep-alive")
         ));
         httpRequestTab.addTab("Head", httpRequestHeadComponent);
         add(httpRequestTab, tabsLocal);
@@ -97,7 +90,23 @@ public class MainPage extends JPanel {
         webSocketComponent = new WebSocketComponent();
         webSocketComponent.setVisible(false);
         add(webSocketComponent, tabsLocal);
+    }
 
+    private void initChoicer() {
+        ArrayList<String> protocol = new ArrayList<>(Arrays.asList(Protocol.Http.getValue(), Protocol.WebSocket.getValue(), Protocol.SocketIO.getValue()));
+        protocols = new SelectItemComponent(protocol, Protocol.Http.getValue(), actionEvent -> {
+            boolean isSelectedHttp = ((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.Http.getValue());
+            methods.setVisible(isSelectedHttp);
+            httpResponseTab.setVisible(isSelectedHttp);
+            httpRequestTab.setVisible(isSelectedHttp);
+            toChangeReqResButton.setEnabled(isSelectedHttp);
+            webSocketComponent.setVisible(!isSelectedHttp);
+            updateTabs(isRequestTab);
+        });
+        selectMethodBar.add(protocols);
+        ArrayList<String> method = new ArrayList<>(Arrays.asList(HttpMethod.Post.getValue(), HttpMethod.Get.getValue()));
+        methods = new SelectItemComponent(method, HttpMethod.Post.getValue());
+        selectMethodBar.add(methods);
     }
 
     private void initSender() {
@@ -105,6 +114,8 @@ public class MainPage extends JPanel {
             if (protocols.getText().equals(Protocol.Http.getValue())) {
                 if (methods.getText().equals(HttpMethod.Post.getValue()))
                     sendPost();
+                else if (methods.getText().equals(HttpMethod.Get.getValue()))
+                    sendGet();
                 updateTabs(false);
             }
         });
@@ -172,20 +183,13 @@ public class MainPage extends JPanel {
                 Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
                 URIBuilder uriBuilder = new URIBuilder(url.getText());
                 paramContain.forEach(uriBuilder::addParameter);
-                HttpResponse httpResponse = null;
                 if (!bodyContain.isUsingBin())
-                    httpResponse = httpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), null, bodyContain.isUsingJSON(), headerContain);
+                    parseHttpResponse(httpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), null, bodyContain.isUsingJSON(), headerContain));
                 else {
                     headerContain.put("content-type", Files.probeContentType(bodyContain.getSelectedFile().toPath()));
-                    httpResponse = httpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), null, headerContain);
+                    parseHttpResponse(httpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), null, headerContain));
                 }
-                ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
-                httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
-                httpResponseHeadComponent.getTableModel().getDataVector().clear();
-                for (Header header : httpResponse.getAllHeaders()) {
-                    httpResponseHeadComponent.getTableModel().addRow(new String[]{header.getName(), header.getValue()});
-                }
-                lastResponseBody = byteArrayOutputStream.toByteArray();
+
             } catch (URISyntaxException | IOException e) {
                 new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
                 throw new RuntimeException(e);
@@ -193,6 +197,34 @@ public class MainPage extends JPanel {
 
         });
         runningThread.start();
+    }
+
+    private void sendGet() {
+        if (!(runningThread == null || runningThread.getState() == Thread.State.TERMINATED)) return;
+        runningThread = new Thread(() -> {
+            try {
+                Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
+                URIBuilder uriBuilder = new URIBuilder(url.getText());
+                paramContain.forEach(uriBuilder::addParameter);
+                parseHttpResponse(httpRequestCustomer.sendGetRequest(uriBuilder.build(), null, headerContain));
+            } catch (URISyntaxException | IOException e) {
+                new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
+                throw new RuntimeException(e);
+            }
+
+        });
+        runningThread.start();
+    }
+
+    private void parseHttpResponse(HttpResponse httpResponse) throws IOException {
+        if(httpResponse==null) return;
+        ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
+        httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
+        httpResponseHeadComponent.getTableModel().getDataVector().clear();
+        for (Header header : httpResponse.getAllHeaders()) {
+            httpResponseHeadComponent.getTableModel().addRow(new String[]{header.getName(), header.getValue()});
+        }
+        lastResponseBody = byteArrayOutputStream.toByteArray();
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off

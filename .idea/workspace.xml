@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="post能用了喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SimpleFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/SimpleFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,19 +46,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "java.suggest.annotation.dependency": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\codefile\PostMTF\src\main\java\View\Page" />
@@ -120,7 +120,7 @@
       <workItem from="1700281070242" duration="3523000" />
       <workItem from="1700295897380" duration="8679000" />
       <workItem from="1700362026248" duration="2016000" />
-      <workItem from="1700369916218" duration="2767000" />
+      <workItem from="1700369916218" duration="5178000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -186,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700322281278</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="post能用了喵">
+      <option name="closed" value="true" />
+      <created>1700372759686</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700372759686</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

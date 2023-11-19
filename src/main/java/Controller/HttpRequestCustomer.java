@@ -1,22 +1,17 @@
 package Controller;
 
 import com.alibaba.fastjson2.JSON;
-import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 
 import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
 import java.util.Map;
 
 public class HttpRequestCustomer {
@@ -46,11 +41,10 @@ public class HttpRequestCustomer {
         return httpClient.execute(httpPost);
     }
 
-    public HttpResponse sendGetRequest(URI uri, List<Header> headerList, List<NameValuePair> nameValuePairs) throws URISyntaxException, IOException {
-        URIBuilder uriBuilder = new URIBuilder(uri);
-        uriBuilder.addParameters(nameValuePairs);
-        HttpGet httpGet = new HttpGet(uriBuilder.build());
-        if (headerList != null) for (Header header : headerList) httpGet.addHeader(header);
+    public HttpResponse sendGetRequest(URI uri, RequestConfig requestConfig, Map<String, String> headerList) throws IOException {
+        HttpGet httpGet = new HttpGet(uri);
+        httpGet.setConfig(requestConfig);
+        if (headerList != null) headerList.forEach(httpGet::addHeader);
         return httpClient.execute(httpGet);
     }
 }
