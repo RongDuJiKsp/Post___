@@ -4,7 +4,9 @@
 
 package View.Component;
 
+import Controller.SocketIOCustomer;
 import Controller.WebSocketCustomer;
+import lombok.Setter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,10 +16,13 @@ import java.util.Date;
 /**
  * @author rdjks
  */
-public class WebSocketComponent extends JPanel {
+public class WebSocketIOComponent extends JPanel {
     private WebSocketCustomer webSocketCustomer;
+    private SocketIOCustomer socketIOCustomer;
+    @Setter
+    private boolean isUsingWebSocket;
 
-    public WebSocketComponent() {
+    public WebSocketIOComponent() {
         init();
     }
 
@@ -36,7 +41,8 @@ public class WebSocketComponent extends JPanel {
             webSocketCustomer.send(messageInputHolder.getText());
         });
         disConnectButton.addActionListener(actionEvent -> {
-            webSocketCustomer.close();
+            if(isUsingWebSocket)webSocketCustomer.close();
+
         });
     }
 
@@ -92,8 +98,14 @@ public class WebSocketComponent extends JPanel {
     }
 
     public void connectWebSocket(URI uri) {
+        clearWebSocketConnect();
         webSocketCustomer = new WebSocketCustomer(uri, message -> addMessage(message, "server"));
         webSocketCustomer.connect();
+    }
+
+    public void clearWebSocketConnect() {
+        if (webSocketCustomer != null && webSocketCustomer.isOpen()) webSocketCustomer.close();
+        messageShower.setText("");
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off

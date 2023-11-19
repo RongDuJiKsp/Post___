@@ -11,7 +11,7 @@ import Model.HttpMethod;
 import Model.Protocol;
 import View.Component.HttpBodyComponent;
 import View.Component.HttpKeyValueComponent;
-import View.Component.WebSocketComponent;
+import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
 import org.apache.http.Header;
@@ -37,6 +37,15 @@ import java.util.Map;
 public class MainPage extends JPanel {
     private final HttpRequestCustomer httpRequestCustomer;
     private final JFrame mainWindow;
+    private SelectItemComponent protocols, methods;
+    private JTabbedPane httpRequestTab, httpResponseTab;
+    private GridBagConstraints tabsLocal;
+    private HttpKeyValueComponent httpRequestParamsComponent, httpRequestHeadComponent, httpResponseHeadComponent;
+    private HttpBodyComponent httpRequestBodyComponent, httpResponseBodyComponent;
+    private WebSocketIOComponent webSocketIOComponent;
+    private boolean isRequestTab;
+    private Thread runningThread;
+    private byte[] lastResponseBody;
 
     public MainPage(JFrame mainWindow) {
         httpRequestCustomer = new HttpRequestCustomer();
@@ -88,9 +97,9 @@ public class MainPage extends JPanel {
             updateTabs(!isRequestTab);
         });
         //init WebSocket Tab
-        webSocketComponent = new WebSocketComponent();
-        webSocketComponent.setVisible(false);
-        add(webSocketComponent, tabsLocal);
+        webSocketIOComponent = new WebSocketIOComponent();
+        webSocketIOComponent.setVisible(false);
+        add(webSocketIOComponent, tabsLocal);
     }
 
     private void initChoicer() {
@@ -101,7 +110,8 @@ public class MainPage extends JPanel {
             httpResponseTab.setVisible(isSelectedHttp);
             httpRequestTab.setVisible(isSelectedHttp);
             toChangeReqResButton.setEnabled(isSelectedHttp);
-            webSocketComponent.setVisible(!isSelectedHttp);
+            webSocketIOComponent.setVisible(!isSelectedHttp);
+            webSocketIOComponent.clearWebSocketConnect();
             if (isSelectedHttp) updateTabs(isRequestTab);
         });
         selectMethodBar.add(protocols);
@@ -219,7 +229,7 @@ public class MainPage extends JPanel {
 
     private void connectWebSocket() {
         try {
-            webSocketComponent.connectWebSocket(new URI(url.getText()));
+            webSocketIOComponent.connectWebSocket(new URI(url.getText()));
         } catch (Exception ignore) {
 
         }
@@ -244,14 +254,6 @@ public class MainPage extends JPanel {
     private JMenuBar selectMethodBar;
     private JButton sendButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
-    private SelectItemComponent protocols, methods;
-    private JTabbedPane httpRequestTab, httpResponseTab;
-    private GridBagConstraints tabsLocal;
-    private HttpKeyValueComponent httpRequestParamsComponent, httpRequestHeadComponent, httpResponseHeadComponent;
-    private HttpBodyComponent httpRequestBodyComponent, httpResponseBodyComponent;
-    private WebSocketComponent webSocketComponent;
-    private boolean isRequestTab;
-    private Thread runningThread;
-    private byte[] lastResponseBody;
+
 
 }

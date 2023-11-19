@@ -18,6 +18,8 @@ import java.nio.charset.StandardCharsets;
  * @author rdjks
  */
 public class HttpBodyComponent extends JPanel {
+    File selectedFile;
+
     public HttpBodyComponent() {
         initComponents();
         init();
@@ -120,5 +122,4 @@ public class HttpBodyComponent extends JPanel {
     private JTextField upLoadFileName;
     private JButton uploadBinFileButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
-    File selectedFile;
 }

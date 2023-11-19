@@ -14,6 +14,9 @@ import java.util.Map;
  * @author rdjks
  */
 public class HttpKeyValueComponent extends JPanel {
+    private DefaultTableModel paramTableModel;
+    private JTable paramTable;
+
     public HttpKeyValueComponent() {
         initComponents();
         init();
@@ -157,7 +160,6 @@ public class HttpKeyValueComponent extends JPanel {
     private JButton deleteSelectedButton;
     private JButton addParamButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
-    private DefaultTableModel paramTableModel;
-    private JTable paramTable;
+
 
 }

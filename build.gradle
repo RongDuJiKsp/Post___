@@ -17,6 +17,7 @@ dependencies {
     implementation group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.4'
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.9'
     implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '2.0.9'
+    implementation ('io.socket:socket.io-client:2.1.0')
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     testImplementation platform('org.junit:junit-bom:5.9.1')
