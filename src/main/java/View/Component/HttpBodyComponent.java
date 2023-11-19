@@ -9,6 +9,10 @@ import Model.BodyContain;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author rdjks
@@ -102,8 +106,9 @@ public class HttpBodyComponent extends JPanel {
         return new BodyContain(isUsingJSONButton.isSelected(), isUsingBinButton.isSelected(), selectedFile, textEditor.getText());
     }
 
-    public void setBody(String s) {
-        textEditor.setText(s);
+    public void setBody(InputStream inputStream, String contentType) throws IOException {
+        textEditor.setContentType(contentType);
+        textEditor.read(new InputStreamReader(inputStream, StandardCharsets.UTF_8), contentType);
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off

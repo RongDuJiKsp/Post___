@@ -21,9 +21,9 @@ import org.apache.http.entity.FileEntity;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -50,17 +50,13 @@ public class MainPage extends JPanel {
         //init choice
         ArrayList<String> protocol = new ArrayList<>(Arrays.asList(Protocol.Http.getValue(), Protocol.WebSocket.getValue(), Protocol.SocketIO.getValue()));
         protocols = new SelectItemComponent(protocol, Protocol.Http.getValue(), actionEvent -> {
-            String selected = ((JMenuItem) actionEvent.getSource()).getText();
-            methods.setVisible(selected.equals(Protocol.Http.getValue()));
-            if (selected.equals(Protocol.Http.getValue())) {
-                httpRequestTab.setVisible(isRequestTab);
-                httpResponseTab.setVisible(!isRequestTab);
-                webSocketComponent.setVisible(false);
-            } else {
-                httpResponseTab.setVisible(false);
-                httpRequestTab.setVisible(false);
-                webSocketComponent.setVisible(true);
-            }
+            boolean isSelectedHttp = ((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.Http.getValue());
+            methods.setVisible(isSelectedHttp);
+            httpResponseTab.setVisible(isSelectedHttp);
+            httpRequestTab.setVisible(isSelectedHttp);
+            toChangeReqResButton.setEnabled(isSelectedHttp);
+            webSocketComponent.setVisible(!isSelectedHttp);
+            updateTabs(isRequestTab);
         });
         selectMethodBar.add(protocols);
         ArrayList<String> method = new ArrayList<>(Arrays.asList(HttpMethod.Post.getValue(), HttpMethod.Get.getValue()));
@@ -95,9 +91,7 @@ public class MainPage extends JPanel {
         isRequestTab = true;
         httpResponseTab.setVisible(false);
         toChangeReqResButton.addActionListener(actionEvent -> {
-            isRequestTab = !isRequestTab;
-            httpRequestTab.setVisible(isRequestTab);
-            httpResponseTab.setVisible(!isRequestTab);
+            updateTabs(!isRequestTab);
         });
         //init WebSocket Tab
         webSocketComponent = new WebSocketComponent();
@@ -108,9 +102,18 @@ public class MainPage extends JPanel {
 
     private void initSender() {
         sendButton.addActionListener(actionEvent -> {
-            if (protocols.getText().equals(Protocol.Http.getValue()) && methods.getText().equals(HttpMethod.Post.getValue()))
-                sendPost();
+            if (protocols.getText().equals(Protocol.Http.getValue())) {
+                if (methods.getText().equals(HttpMethod.Post.getValue()))
+                    sendPost();
+                updateTabs(false);
+            }
         });
+    }
+
+    private void updateTabs(boolean isRequestTab) {
+        this.isRequestTab = isRequestTab;
+        httpRequestTab.setVisible(isRequestTab);
+        httpResponseTab.setVisible(!isRequestTab);
     }
 
     private void initComponents() {
@@ -176,15 +179,13 @@ public class MainPage extends JPanel {
                     headerContain.put("content-type", Files.probeContentType(bodyContain.getSelectedFile().toPath()));
                     httpResponse = httpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), null, headerContain);
                 }
-                InputStream inputStream = httpResponse.getEntity().getContent();
-                BufferedInputStream br = new BufferedInputStream(inputStream);
-                String response = SimpleFunction.readInputToStrLine(br);
-                lastResponseBody = inputStream.readAllBytes();
-                httpResponseBodyComponent.setBody(response);
+                ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
+                httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
                 httpResponseHeadComponent.getTableModel().getDataVector().clear();
                 for (Header header : httpResponse.getAllHeaders()) {
                     httpResponseHeadComponent.getTableModel().addRow(new String[]{header.getName(), header.getValue()});
                 }
+                lastResponseBody = byteArrayOutputStream.toByteArray();
             } catch (URISyntaxException | IOException e) {
                 new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
                 throw new RuntimeException(e);
