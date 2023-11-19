@@ -96,7 +96,7 @@ public class WebSocketIOComponent extends JPanel {
     }
 
     private void addMessage(String message, String sender) {
-        messageShower.setText(messageShower.getText() + "\n at  " + new Date().toString() + " --- " + sender + " send a message: \n\n" + message + "\n\n");
+        messageShower.setText(messageShower.getText() + "\n at  " + new Date() + " --- " + sender + " send a message: \n\n" + message + "\n\n");
     }
 
     public void connectWebSocket(URI uri) {
