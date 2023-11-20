@@ -113,6 +113,10 @@ public class MainPage extends JPanel {
             webSocketIOComponent.setVisible(!isSelectedHttp);
             webSocketIOComponent.clearWebSocketConnect();
             if (isSelectedHttp) updateTabs(isRequestTab);
+            if (((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.WebSocket.getValue()))
+                webSocketIOComponent.setUsingWebSocket(true);
+            else if (((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.SocketIO.getValue()))
+                webSocketIOComponent.setUsingWebSocket(false);
         });
         selectMethodBar.add(protocols);
         ArrayList<String> method = new ArrayList<>(Arrays.asList(HttpMethod.Post.getValue(), HttpMethod.Get.getValue()));
@@ -231,7 +235,6 @@ public class MainPage extends JPanel {
     private void connectWebSocket() {
         try {
             webSocketIOComponent.connectWebSocket(new URI(url.getText()));
-            webSocketIOComponent.setUsingWebSocket(true);
         } catch (Exception e) {
             new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
         }
@@ -240,7 +243,6 @@ public class MainPage extends JPanel {
     private void connectSocketIO() {
         try {
             webSocketIOComponent.connectSocketIO(new URI(url.getText()));
-            webSocketIOComponent.setUsingWebSocket(false);
         } catch (Exception e) {
             new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
         }

@@ -20,7 +20,7 @@ import java.util.Date;
 public class WebSocketIOComponent extends JPanel {
     private WebSocketCustomer webSocketCustomer;
     private Socket socketIO;
-    @Setter
+
     private boolean isUsingWebSocket;
 
     public WebSocketIOComponent() {
@@ -50,8 +50,11 @@ public class WebSocketIOComponent extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         scrollPane1 = new JScrollPane();
         messageShower = new JTextPane();
-        textField1 = new JTextField();
-        button1 = new JButton();
+        iolabel1 = new JLabel();
+        socketIOEventInputholder = new JTextField();
+        iolabel2 = new JLabel();
+        socketIOListeningInputholder = new JTextField();
+        setListeningButton = new JButton();
         messageInputHolder = new JTextField();
         sendMessageButton = new JButton();
         cleanMessageButton = new JButton();
@@ -71,13 +74,28 @@ public class WebSocketIOComponent extends JPanel {
         add(scrollPane1, new GridBagConstraints(1, 2, 6, 5, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
-        add(textField1, new GridBagConstraints(3, 7, 1, 1, 0.0, 0.0,
+
+        //---- iolabel1 ----
+        iolabel1.setText("     SocketIO Event Name");
+        add(iolabel1, new GridBagConstraints(2, 7, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+        add(socketIOEventInputholder, new GridBagConstraints(3, 7, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
-        //---- button1 ----
-        button1.setText("set as socket event");
-        add(button1, new GridBagConstraints(4, 7, 1, 1, 0.0, 0.0,
+        //---- iolabel2 ----
+        iolabel2.setText("Event listening name");
+        add(iolabel2, new GridBagConstraints(4, 7, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+        add(socketIOListeningInputholder, new GridBagConstraints(5, 7, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+
+        //---- setListeningButton ----
+        setListeningButton.setText("set listening");
+        add(setListeningButton, new GridBagConstraints(6, 7, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
         add(messageInputHolder, new GridBagConstraints(1, 8, 3, 1, 0.0, 0.0,
@@ -104,6 +122,14 @@ public class WebSocketIOComponent extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
+    public void setUsingWebSocket(boolean isUsingWebSocket){
+        this.isUsingWebSocket=isUsingWebSocket;
+        iolabel1.setVisible(!isUsingWebSocket);
+        iolabel2.setVisible(!isUsingWebSocket);
+        setListeningButton.setVisible(!isUsingWebSocket);
+        socketIOEventInputholder.setVisible(!isUsingWebSocket);
+        socketIOListeningInputholder.setVisible(!isUsingWebSocket);
+    }
     private void addMessage(String message, String sender) {
         messageShower.setText(messageShower.getText() + "\n at  " + new Date() + " --- " + sender + " send a message: \n\n" + message + "\n\n");
     }
@@ -138,8 +164,11 @@ public class WebSocketIOComponent extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JScrollPane scrollPane1;
     private JTextPane messageShower;
-    private JTextField textField1;
-    private JButton button1;
+    private JLabel iolabel1;
+    private JTextField socketIOEventInputholder;
+    private JLabel iolabel2;
+    private JTextField socketIOListeningInputholder;
+    private JButton setListeningButton;
     private JTextField messageInputHolder;
     private JButton sendMessageButton;
     private JButton cleanMessageButton;

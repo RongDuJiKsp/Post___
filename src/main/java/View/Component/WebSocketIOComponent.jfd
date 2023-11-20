@@ -23,17 +23,37 @@ new FormModel {
 				"gridwidth": 6
 				"gridheight": 5
 			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "iolabel1"
+				"text": "     SocketIO Event Name"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+				"gridy": 7
+			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField1"
+				name: "socketIOEventInputholder"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 3
 				"gridy": 7
 			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
-				"text": "set as socket event"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "iolabel2"
+				"text": "Event listening name"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 4
+				"gridy": 7
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "socketIOListeningInputholder"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 5
+				"gridy": 7
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "setListeningButton"
+				"text": "set listening"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 6
 				"gridy": 7
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
