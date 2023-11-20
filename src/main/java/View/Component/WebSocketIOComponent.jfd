@@ -36,22 +36,22 @@ new FormModel {
 				"gridx": 3
 				"gridy": 7
 			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "iolabel2"
-				"text": "Event listening name"
-			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 4
-				"gridy": 7
-			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "socketIOListeningInputholder"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-				"gridx": 5
+				"gridx": 4
 				"gridy": 7
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "setListeningButton"
 				"text": "set listening"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 5
+				"gridy": 7
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "removeListeningButton"
+				"text": "remove listening"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 6
 				"gridy": 7

@@ -7,12 +7,12 @@ package View.Component;
 import Controller.WebSocketCustomer;
 import io.socket.client.IO;
 import io.socket.client.Socket;
-import lombok.Setter;
 
 import javax.swing.*;
+import javax.swing.text.Document;
+import javax.swing.text.SimpleAttributeSet;
 import java.awt.*;
 import java.net.URI;
-import java.util.Date;
 
 /**
  * @author rdjks
@@ -27,6 +27,15 @@ public class WebSocketIOComponent extends JPanel {
         init();
     }
 
+    public void setUsingWebSocket(boolean isUsingWebSocket) {
+        this.isUsingWebSocket = isUsingWebSocket;
+        iolabel1.setVisible(!isUsingWebSocket);
+        removeListeningButton.setVisible(!isUsingWebSocket);
+        setListeningButton.setVisible(!isUsingWebSocket);
+        socketIOEventInputholder.setVisible(!isUsingWebSocket);
+        socketIOListeningInputholder.setVisible(!isUsingWebSocket);
+    }
+
     private void init() {
         initComponents();
         messageShower.setEditable(false);
@@ -36,13 +45,35 @@ public class WebSocketIOComponent extends JPanel {
     private void initAction() {
         cleanMessageButton.addActionListener(actionEvent -> messageShower.setText(""));
         sendMessageButton.addActionListener(actionEvent -> {
-            addMessage(messageInputHolder.getText(), "you");
-            if(isUsingWebSocket)webSocketCustomer.send(messageInputHolder.getText());
-            else socketIO.send(messageInputHolder.getText());
+            addMessage(messageInputHolder.getText(), "you", "");
+            if (isUsingWebSocket) webSocketCustomer.send(messageInputHolder.getText());
+            else socketIO.emit(socketIOEventInputholder.getText(), messageInputHolder.getText());
         });
         disConnectButton.addActionListener(actionEvent -> {
             if (isUsingWebSocket) webSocketCustomer.close();
             else socketIO.close();
+        });
+        setListeningButton.addActionListener(actionEvent -> {
+            String onEventName = socketIOListeningInputholder.getText();
+            addMessage(" add a listener named" + onEventName, "client", "");
+            socketIO.on(onEventName, fn -> {
+                StringBuilder stringBuilder = new StringBuilder();
+                for (Object o : fn) stringBuilder.append((String) o);
+                addMessage(stringBuilder.toString(), "server", "-----on event: " + onEventName);
+            });
+        });
+        removeListeningButton.addActionListener(actionEvent -> {
+            socketIO.off(socketIOListeningInputholder.getText());
+            addMessage(" remove a listener named" + socketIOListeningInputholder.getText(), "client", "");
+        });
+    }
+
+    private void initSocketIO() {
+        socketIO.on(Socket.EVENT_CONNECT, (message) -> {
+            addMessage("server connected", "server", "");
+        });
+        socketIO.on(Socket.EVENT_DISCONNECT, (message) -> {
+            addMessage("server disconnected", "server", "");
         });
     }
 
@@ -52,9 +83,9 @@ public class WebSocketIOComponent extends JPanel {
         messageShower = new JTextPane();
         iolabel1 = new JLabel();
         socketIOEventInputholder = new JTextField();
-        iolabel2 = new JLabel();
         socketIOListeningInputholder = new JTextField();
         setListeningButton = new JButton();
+        removeListeningButton = new JButton();
         messageInputHolder = new JTextField();
         sendMessageButton = new JButton();
         cleanMessageButton = new JButton();
@@ -83,19 +114,19 @@ public class WebSocketIOComponent extends JPanel {
         add(socketIOEventInputholder, new GridBagConstraints(3, 7, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
-
-        //---- iolabel2 ----
-        iolabel2.setText("Event listening name");
-        add(iolabel2, new GridBagConstraints(4, 7, 1, 1, 0.0, 0.0,
-            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-            new Insets(0, 0, 5, 5), 0, 0));
-        add(socketIOListeningInputholder, new GridBagConstraints(5, 7, 1, 1, 0.0, 0.0,
+        add(socketIOListeningInputholder, new GridBagConstraints(4, 7, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
         //---- setListeningButton ----
         setListeningButton.setText("set listening");
-        add(setListeningButton, new GridBagConstraints(6, 7, 1, 1, 0.0, 0.0,
+        add(setListeningButton, new GridBagConstraints(5, 7, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+
+        //---- removeListeningButton ----
+        removeListeningButton.setText("remove listening");
+        add(removeListeningButton, new GridBagConstraints(6, 7, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
         add(messageInputHolder, new GridBagConstraints(1, 8, 3, 1, 0.0, 0.0,
@@ -122,27 +153,15 @@ public class WebSocketIOComponent extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
-    public void setUsingWebSocket(boolean isUsingWebSocket){
-        this.isUsingWebSocket=isUsingWebSocket;
-        iolabel1.setVisible(!isUsingWebSocket);
-        iolabel2.setVisible(!isUsingWebSocket);
-        setListeningButton.setVisible(!isUsingWebSocket);
-        socketIOEventInputholder.setVisible(!isUsingWebSocket);
-        socketIOListeningInputholder.setVisible(!isUsingWebSocket);
-    }
-    private void addMessage(String message, String sender) {
-        messageShower.setText(messageShower.getText() + "\n at  " + new Date() + " --- " + sender + " send a message: \n\n" + message + "\n\n");
-    }
 
-    public void connectWebSocket(URI uri) {
-        clearConnect();
-        webSocketCustomer = new WebSocketCustomer(uri, message -> addMessage(message, "server"));
-        webSocketCustomer.connect();
-    }
-
-    public void connectSocketIO(URI uri) {
-        clearConnect();
-        socketIO = IO.socket(uri);
+    private void addMessage(String message, String sender, String adder) {
+       try {
+           Document document = messageShower.getDocument();
+           String toAdd = "The " + sender + " sent a message is \n" + message + "  " + adder + "\n\n";
+           document.insertString(document.getLength(), toAdd, new SimpleAttributeSet());
+       }catch (Exception e){
+           System.err.println(e.getMessage());
+       }
     }
 
     public void clearWebSocketConnect() {
@@ -160,15 +179,29 @@ public class WebSocketIOComponent extends JPanel {
         clearWebSocketConnect();
     }
 
+    public void connectWebSocket(URI uri) {
+        clearConnect();
+        webSocketCustomer = new WebSocketCustomer(uri, message -> addMessage(message, "server", ""));
+        webSocketCustomer.connect();
+    }
+
+    public void connectSocketIO(URI uri) {
+        clearConnect();
+        socketIO = IO.socket(uri);
+        addMessage("client is sending handshake", "client", "");
+        initSocketIO();
+        socketIO.connect();
+    }
+
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JScrollPane scrollPane1;
     private JTextPane messageShower;
     private JLabel iolabel1;
     private JTextField socketIOEventInputholder;
-    private JLabel iolabel2;
     private JTextField socketIOListeningInputholder;
     private JButton setListeningButton;
+    private JButton removeListeningButton;
     private JTextField messageInputHolder;
     private JButton sendMessageButton;
     private JButton cleanMessageButton;
