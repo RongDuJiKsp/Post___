@@ -19,8 +19,10 @@ import java.nio.charset.StandardCharsets;
  */
 public class HttpBodyComponent extends JPanel {
     File selectedFile;
+    final JFileChooser jFileChooser;
 
     public HttpBodyComponent() {
+        jFileChooser = new JFileChooser();
         initComponents();
         init();
     }
@@ -31,6 +33,11 @@ public class HttpBodyComponent extends JPanel {
         upLoadFileName.setEditable(false);
         isUsingBinButton.addActionListener(actionEvent -> {
             setIsJSONEnabled(isUsingBinButton.isSelected());
+        });
+        uploadBinFileButton.addActionListener(actionEvent -> {
+            jFileChooser.showOpenDialog(this);
+            selectedFile=jFileChooser.getSelectedFile();
+            upLoadFileName.setText(selectedFile.getName());
         });
     }
 

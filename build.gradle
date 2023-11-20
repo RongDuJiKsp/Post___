@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'icu.rdjksp'
-version = '1.0-SNAPSHOT'
+version = '1'
 
 repositories {
     mavenCentral()
@@ -26,4 +26,20 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        archivesBaseName = 'PostMTF'
+        archiveVersion = '1'
+        attributes (
+                'Main-Class' : 'PostMTFApplication',
+                "Manifest-Version": 1.0
+        )
+    }
+    from {
+        (configurations.runtimeClasspath).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
 }

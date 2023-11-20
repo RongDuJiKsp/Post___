@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="史山代码写成了喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="究极史山代码写成了喵">
+      <change afterPath="$PROJECT_DIR$/log/kuang.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,21 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -68,13 +85,35 @@
       <recent name="D:\codefile\PostMTF\src\main\java\View\ExceptionDialog" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.PostMTFApplication">
+  <component name="RunManager" selected="Gradle.PostMTF [jar]">
     <configuration name="PostMTFApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PostMTFApplication" />
       <module name="PostMTF.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="PostMTF [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="PostMTF [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -98,8 +137,32 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="PostMTF [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PostMTF [jar]" />
+        <item itemvalue="Gradle.PostMTF [clean]" />
         <item itemvalue="Gradle.PostMTF [dependencies]" />
         <item itemvalue="应用程序.PostMTFApplication" />
       </list>
@@ -126,7 +189,7 @@
       <workItem from="1700405393980" duration="2164000" />
       <workItem from="1700461334818" duration="4550000" />
       <workItem from="1700470828948" duration="1512000" />
-      <workItem from="1700488032663" duration="962000" />
+      <workItem from="1700488032663" duration="3264000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -264,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700464307999</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="究极史山代码写成了喵">
+      <option name="closed" value="true" />
+      <created>1700489228540</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700489228540</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,6 +365,7 @@
     <MESSAGE value="顺手改个警告喵" />
     <MESSAGE value="寄了喵" />
     <MESSAGE value="史山代码写成了喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="史山代码写成了喵" />
+    <MESSAGE value="究极史山代码写成了喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="究极史山代码写成了喵" />
   </component>
 </project>
