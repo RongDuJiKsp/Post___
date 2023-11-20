@@ -50,6 +50,8 @@ public class WebSocketIOComponent extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         scrollPane1 = new JScrollPane();
         messageShower = new JTextPane();
+        textField1 = new JTextField();
+        button1 = new JButton();
         messageInputHolder = new JTextField();
         sendMessageButton = new JButton();
         cleanMessageButton = new JButton();
@@ -58,7 +60,7 @@ public class WebSocketIOComponent extends JPanel {
         //======== this ========
         setLayout(new GridBagLayout());
         ((GridBagLayout)getLayout()).columnWidths = new int[] {0, 71, 185, 176, 101, 79, 143, 0, 0, 0, 0, 0, 0};
-        ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 52, 54, 63, 70, 81, 91, 24, 39, 0, 0, 0, 0, 0, 0};
+        ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 52, 54, 63, 70, 81, 91, 35, 39, 0, 0, 0, 0, 0, 0};
         ((GridBagLayout)getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
         ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
@@ -67,6 +69,15 @@ public class WebSocketIOComponent extends JPanel {
             scrollPane1.setViewportView(messageShower);
         }
         add(scrollPane1, new GridBagConstraints(1, 2, 6, 5, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+        add(textField1, new GridBagConstraints(3, 7, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+
+        //---- button1 ----
+        button1.setText("set as socket event");
+        add(button1, new GridBagConstraints(4, 7, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
         add(messageInputHolder, new GridBagConstraints(1, 8, 3, 1, 0.0, 0.0,
@@ -127,6 +138,8 @@ public class WebSocketIOComponent extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JScrollPane scrollPane1;
     private JTextPane messageShower;
+    private JTextField textField1;
+    private JButton button1;
     private JTextField messageInputHolder;
     private JButton sendMessageButton;
     private JButton cleanMessageButton;
