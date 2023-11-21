@@ -24,14 +24,14 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JToggleButton" ) {
 				name: "isUsingJSONButton"
-				"text": "使用JSON"
+				"text": "Use JSON"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridy": 5
 				"gridwidth": 2
 			} )
 			add( new FormComponent( "javax.swing.JToggleButton" ) {
 				name: "isUsingBinButton"
-				"text": "使用二进制文件"
+				"text": "Use Bin File"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridx": 3
 				"gridy": 5
@@ -39,7 +39,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
-				"text": "                  BinFileName："
+				"text": "                  BinFileName:"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridy": 6
 				"gridwidth": 3

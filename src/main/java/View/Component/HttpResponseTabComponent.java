@@ -10,8 +10,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class HttpResponseTabComponent extends JTabbedPane {
-    private HttpKeyValueComponent httpResponseHeadComponent, httpResponseCookieComponent;
-    private HttpBodyComponent httpResponseBodyComponent;
+    private final HttpKeyValueComponent httpResponseHeadComponent, httpResponseCookieComponent;
+    private final HttpBodyComponent httpResponseBodyComponent;
     private byte[] lastResponseBody;
 
     public HttpResponseTabComponent() {

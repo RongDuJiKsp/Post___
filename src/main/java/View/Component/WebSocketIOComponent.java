@@ -20,67 +20,30 @@ import java.net.URI;
 public class WebSocketIOComponent extends JPanel {
     private WebSocketCustomer webSocketCustomer;
     private Socket socketIO;
-
     private boolean isUsingWebSocket;
 
     public WebSocketIOComponent() {
         init();
     }
 
-    public void setUsingWebSocket(boolean isUsingWebSocket) {
-        this.isUsingWebSocket = isUsingWebSocket;
-        iolabel1.setVisible(!isUsingWebSocket);
-        removeListeningButton.setVisible(!isUsingWebSocket);
-        setListeningButton.setVisible(!isUsingWebSocket);
-        socketIOEventInputholder.setVisible(!isUsingWebSocket);
-        socketIOListeningInputholder.setVisible(!isUsingWebSocket);
-    }
 
     private void init() {
         initComponents();
-        messageShower.setEditable(false);
         initAction();
+        messageShower.setEditable(false);
     }
 
     private void initAction() {
-        cleanMessageButton.addActionListener(actionEvent -> messageShower.setText(""));
-        sendMessageButton.addActionListener(actionEvent -> {
-            addMessage(messageInputHolder.getText(), "you", isUsingWebSocket ? "" : ("---emit event : " + socketIOEventInputholder.getText()));
-            if (isUsingWebSocket) webSocketCustomer.send(messageInputHolder.getText());
-            else socketIO.emit(socketIOEventInputholder.getText(), messageInputHolder.getText());
-        });
-        disConnectButton.addActionListener(actionEvent -> {
-            if (isUsingWebSocket) webSocketCustomer.close();
-            else socketIO.close();
-        });
-        setListeningButton.addActionListener(actionEvent -> {
-            String onEventName = socketIOListeningInputholder.getText();
-            addMessage(" add a listener named : " + onEventName, "client", "");
-            socketIO.on(onEventName, fn -> {
-                StringBuilder stringBuilder = new StringBuilder();
-                for (Object o : fn) stringBuilder.append((String) o);
-                addMessage(stringBuilder.toString(), "server", "-----on event : " + onEventName);
-            });
-        });
-        removeListeningButton.addActionListener(actionEvent -> {
-            socketIO.off(socketIOListeningInputholder.getText());
-            addMessage(" remove a listener named" + socketIOListeningInputholder.getText(), "client", "");
-        });
+        cleanMessageButton.addActionListener(actionEvent -> clear());
+        sendMessageButton.addActionListener(actionEvent -> onSendMessage());
+        disConnectButton.addActionListener(actionEvent -> onCloseConnect());
+        setListeningButton.addActionListener(actionEvent -> onSetListening());
+        removeListeningButton.addActionListener(actionEvent -> onRemoveListening());
     }
 
-    private void initSocketIO() {
-        socketIO.on(Socket.EVENT_CONNECT, (message) -> {
-            addMessage("server connected", "server", "");
-        });
-        socketIO.on(Socket.EVENT_DISCONNECT, (message) -> {
-            addMessage("server disconnected", "server", "");
-        });
-        socketIO.on(Socket.EVENT_CONNECT_ERROR, (message) -> {
-            addMessage("server meeting Error", "server", "");
-        });
-    }
 
     private void initComponents() {
+
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         scrollPane1 = new JScrollPane();
         messageShower = new JTextPane();
@@ -156,25 +119,69 @@ public class WebSocketIOComponent extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
+    public void setUsingWebSocket(boolean isUsingWebSocket) {
+        this.isUsingWebSocket = isUsingWebSocket;
+        iolabel1.setVisible(!isUsingWebSocket);
+        removeListeningButton.setVisible(!isUsingWebSocket);
+        setListeningButton.setVisible(!isUsingWebSocket);
+        socketIOEventInputholder.setVisible(!isUsingWebSocket);
+        socketIOListeningInputholder.setVisible(!isUsingWebSocket);
+    }
 
     private void addMessage(String message, String sender, String adder) {
         try {
             Document document = messageShower.getDocument();
             String toAdd = "The " + sender + " sent a message is \n" + message + "  " + adder + "\n\n";
             document.insertString(document.getLength(), toAdd, new SimpleAttributeSet());
-        } catch (Exception ignored) {
-
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
         }
+    }
+
+    private void initSocketIO() {
+        socketIO.on(Socket.EVENT_CONNECT, (message) -> addMessage("server connected", "server", ""));
+        socketIO.on(Socket.EVENT_DISCONNECT, (message) -> addMessage("server disconnected", "server", ""));
+        socketIO.on(Socket.EVENT_CONNECT_ERROR, (message) -> addMessage("server meeting Error", "server", ""));
+    }
+
+    private void onSendMessage() {
+        addMessage(messageInputHolder.getText(), "you", isUsingWebSocket ? "" : ("---emit event : " + socketIOEventInputholder.getText()));
+        if (isUsingWebSocket) webSocketCustomer.send(messageInputHolder.getText());
+        else socketIO.emit(socketIOEventInputholder.getText(), messageInputHolder.getText());
+    }
+
+    private void onCloseConnect() {
+        if (isUsingWebSocket) webSocketCustomer.close();
+        else socketIO.close();
+    }
+
+    private void onSetListening() {
+        String onEventName = socketIOListeningInputholder.getText();
+        addMessage(" add a listener named : " + onEventName, "client", "");
+        socketIO.on(onEventName, fn -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (Object o : fn) stringBuilder.append((String) o);
+            addMessage(stringBuilder.toString(), "server", "-----on event : " + onEventName);
+        });
+    }
+
+    private void onRemoveListening() {
+        socketIO.off(socketIOListeningInputholder.getText());
+        addMessage(" remove a listener named" + socketIOListeningInputholder.getText(), "client", "");
+    }
+
+    public void clear() {
+        messageShower.setText("");
     }
 
     public void clearWebSocketConnect() {
         if (webSocketCustomer != null && webSocketCustomer.isOpen()) webSocketCustomer.close();
-        messageShower.setText("");
+        clear();
     }
 
     public void clearSocketIOConnect() {
         if (socketIO != null && socketIO.connected()) socketIO.close();
-        messageShower.setText("");
+        clear();
     }
 
     public void clearConnect() {

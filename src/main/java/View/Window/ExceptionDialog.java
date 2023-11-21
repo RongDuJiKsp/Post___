@@ -12,19 +12,16 @@ import java.awt.*;
  * @author rdjks
  */
 public class ExceptionDialog extends JDialog {
-    public ExceptionDialog(Window owner) {
+    public ExceptionDialog(Window owner, String message) {
         super(owner);
         initComponents();
-        outPutTextArea.setEditable(false);
         setResizable(false);
-        label1.setIcon(new ImageIcon("src/main/resources/error.png"));
-    }
-
-    public void showMessage(String message) {
-        outPutTextArea.setText(message);
         setVisible(true);
         setSize(400, 350);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        label1.setIcon(new ImageIcon("src/main/resources/error.png"));
+        outPutTextArea.setEditable(false);
+        outPutTextArea.setText(message);
     }
 
     private void initComponents() {
@@ -54,7 +51,7 @@ public class ExceptionDialog extends JDialog {
                 ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 1.0, 1.0E-4};
 
                 //---- label1 ----
-                label1.setText("oops~~\u53d1\u751f\u4e86\u9519\u8bef\u55b5~\uff1a");
+                label1.setText("oops~~ some bad thing happened nya~");
                 contentPanel.add(label1, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));

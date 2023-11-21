@@ -14,50 +14,41 @@ import java.util.Map;
  * @author rdjks
  */
 public class HttpKeyValueComponent extends JPanel {
-    private DefaultTableModel paramTableModel;
-    private JTable paramTable;
+    private DefaultTableModel keyValueTableModel;
+    private JTable keyValueTable;
 
     public HttpKeyValueComponent() {
-        initComponents();
         init();
     }
 
     public HttpKeyValueComponent(Map<String, String> keyValuePairs) {
         this();
-        keyValuePairs.forEach((key, value) -> {
-            paramTableModel.addRow(new String[]{key, value});
-        });
+        addKeyValue(keyValuePairs);
     }
 
     private void init() {
+        initComponents();
+        initAction();
+    }
+
+    private void initAction() {
         //init table
-        paramTableModel = new DefaultTableModel(new String[]{"Key", "Value"}, 0);
-        paramTable = new JTable(paramTableModel);
-        paramTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
-
-
-        tableScrollPane.setViewportView(paramTable);
+        keyValueTableModel = new DefaultTableModel(new String[]{"Key", "Value"}, 0);
+        keyValueTable = new JTable(keyValueTableModel);
+        keyValueTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
+        tableScrollPane.setViewportView(keyValueTable);
         //init adder
-        addParamButton.addActionListener(actionEvent -> {
-            if (keyInputholder.getText().isEmpty()) return;
-            paramTableModel.addRow(new String[]{keyInputholder.getText(), valueInputholder.getText()});
-        });
+        addParamButton.addActionListener(actionEvent -> onAddKeyValue());
         //init deleter
-        deleteSelectedButton.addActionListener(actionEvent -> {
-            int n = paramTable.getSelectedRows().length;
-            for (int i = 0; i < n; i++)
-                paramTableModel.removeRow(paramTable.getSelectedRow());
-        });
+        deleteSelectedButton.addActionListener(actionEvent -> onDeleteKeyValue());
         //init clear select
-        clearSelectedButtton.addActionListener(actionEvent -> {
-            paramTable.clearSelection();
-        });
+        clearSelectedButton.addActionListener(actionEvent -> onClearSelected());
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         tableScrollPane = new JScrollPane();
-        clearSelectedButtton = new JButton();
+        clearSelectedButton = new JButton();
         label1 = new JLabel();
         keyInputholder = new JTextField();
         label2 = new JLabel();
@@ -75,9 +66,9 @@ public class HttpKeyValueComponent extends JPanel {
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 0), 0, 0));
 
-        //---- clearSelectedButtton ----
-        clearSelectedButtton.setText("Clear Selected");
-        add(clearSelectedButtton, new GridBagConstraints(0, 2, 2, 1, 0.0, 0.0,
+        //---- clearSelectedButton ----
+        clearSelectedButton.setText("Clear Selected");
+        add(clearSelectedButton, new GridBagConstraints(0, 2, 2, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
@@ -100,7 +91,7 @@ public class HttpKeyValueComponent extends JPanel {
             new Insets(0, 0, 5, 0), 0, 0));
 
         //---- deleteSelectedButton ----
-        deleteSelectedButton.setText("Delect Selected");
+        deleteSelectedButton.setText("Delete Selected");
         add(deleteSelectedButton, new GridBagConstraints(0, 3, 2, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 0, 5), 0, 0));
@@ -113,8 +104,23 @@ public class HttpKeyValueComponent extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
+    private void onAddKeyValue() {
+        if (keyInputholder.getText().isEmpty()) return;
+        keyValueTableModel.addRow(new String[]{keyInputholder.getText(), valueInputholder.getText()});
+    }
+
+    private void onDeleteKeyValue() {
+        int n = keyValueTable.getSelectedRows().length;
+        for (int i = 0; i < n; i++)
+            keyValueTableModel.removeRow(keyValueTable.getSelectedRow());
+    }
+
+    private void onClearSelected() {
+        keyValueTable.clearSelection();
+    }
+
     public void setEditable(boolean flag) {
-        clearSelectedButtton.setVisible(flag);
+        clearSelectedButton.setVisible(flag);
         label1.setVisible(flag);
         label2.setVisible(flag);
         keyInputholder.setVisible(flag);
@@ -122,40 +128,40 @@ public class HttpKeyValueComponent extends JPanel {
         deleteSelectedButton.setVisible(flag);
         addParamButton.setVisible(flag);
         if (!flag) {
-            paramTable = new JTable(paramTableModel) {
+            keyValueTable = new JTable(keyValueTableModel) {
                 @Override
                 public boolean isCellEditable(int row, int column) {
                     return false;
                 }
             };
-            tableScrollPane.setViewportView(paramTable);
+            tableScrollPane.setViewportView(keyValueTable);
         }
+    }
+
+
+    public void addKeyValue(Map<String, String> kvp) {
+        kvp.forEach((k, v) -> keyValueTableModel.addRow(new String[]{k, v}));
+    }
+
+    public void clear() {
+        keyValueTableModel.getDataVector().clear();
     }
 
     public Map<String, String> getKeyValueData() {
         HashMap<String, String> kv = new HashMap<>();
-        for (int i = 0; i < paramTableModel.getRowCount(); i++) {
-            kv.put((String) paramTableModel.getValueAt(i, 0), (String) paramTableModel.getValueAt(i, 1));
+        for (int i = 0; i < keyValueTableModel.getRowCount(); i++) {
+            kv.put((String) keyValueTableModel.getValueAt(i, 0), (String) keyValueTableModel.getValueAt(i, 1));
         }
         return kv;
     }
 
     public DefaultTableModel getTableModel() {
-        return paramTableModel;
-    }
-    public void clear(){
-        paramTableModel.getDataVector().clear();
-    }
-
-    public void addKeyValue(Map<String, String> kvp) {
-        kvp.forEach((k, v) -> {
-            paramTableModel.addRow(new String[]{k, v});
-        });
+        return keyValueTableModel;
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JScrollPane tableScrollPane;
-    private JButton clearSelectedButtton;
+    private JButton clearSelectedButton;
     private JLabel label1;
     private JTextField keyInputholder;
     private JLabel label2;

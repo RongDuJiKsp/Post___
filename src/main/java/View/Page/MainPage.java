@@ -11,9 +11,12 @@ import View.Component.HttpResponseTabComponent;
 import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClients;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -27,6 +30,7 @@ import java.util.Arrays;
 public class MainPage extends JPanel {
     private Thread runningThread;
     private final JFrame mainWindow;
+    private final HttpClient httpClient;
     private SelectItemComponent protocols, methods;
     private HttpRequestTabComponent httpRequestTabComponent;
     private HttpResponseTabComponent httpResponseTabComponent;
@@ -34,25 +38,17 @@ public class MainPage extends JPanel {
     private boolean isRequestTab;
 
     public MainPage(JFrame mainWindow) {
+        httpClient = HttpClients.createDefault();
         this.mainWindow = mainWindow;
         init();
     }
 
-    private void updateTabs(boolean isRequestTab) {
-        this.isRequestTab = isRequestTab;
-        httpRequestTabComponent.setVisible(isRequestTab);
-        httpResponseTabComponent.setVisible(!isRequestTab);
-    }
-
-    private void sendError(String error) {
-        new ExceptionDialog(mainWindow).showMessage(new String(error.getBytes(), StandardCharsets.UTF_8));
-    }
 
     private void init() {
         initComponents();
         initTabs();
-        initSender();
         initChoicer();
+        initAction();
     }
 
     private void initTabs() {
@@ -67,12 +63,6 @@ public class MainPage extends JPanel {
         //init httpRepTab
         httpResponseTabComponent = new HttpResponseTabComponent();
         add(httpResponseTabComponent, tabsLocal);
-        //connect changer
-        isRequestTab = true;
-        httpResponseTabComponent.setVisible(false);
-        toChangeReqResButton.addActionListener(actionEvent -> {
-            updateTabs(!isRequestTab);
-        });
         //init WebSocket Tab
         webSocketIOComponent = new WebSocketIOComponent();
         webSocketIOComponent.setVisible(false);
@@ -81,39 +71,21 @@ public class MainPage extends JPanel {
 
     private void initChoicer() {
         ArrayList<String> protocol = new ArrayList<>(Arrays.asList(Protocol.Http.getValue(), Protocol.WebSocket.getValue(), Protocol.SocketIO.getValue()));
-        protocols = new SelectItemComponent(protocol, Protocol.Http.getValue(), actionEvent -> {
-            boolean isSelectedHttp = ((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.Http.getValue());
-            methods.setVisible(isSelectedHttp);
-            httpRequestTabComponent.setVisible(isSelectedHttp);
-            httpResponseTabComponent.setVisible(isSelectedHttp);
-            toChangeReqResButton.setEnabled(isSelectedHttp);
-            webSocketIOComponent.setVisible(!isSelectedHttp);
-            webSocketIOComponent.clearWebSocketConnect();
-            if (isSelectedHttp) updateTabs(isRequestTab);
-            if (((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.WebSocket.getValue()))
-                webSocketIOComponent.setUsingWebSocket(true);
-            else if (((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.SocketIO.getValue()))
-                webSocketIOComponent.setUsingWebSocket(false);
-        });
+        protocols = new SelectItemComponent(protocol, Protocol.Http.getValue(), this::onChangeProtocol);
         selectMethodBar.add(protocols);
         ArrayList<String> method = new ArrayList<>(Arrays.asList(HttpMethod.Post.getValue(), HttpMethod.Get.getValue()));
         methods = new SelectItemComponent(method, HttpMethod.Post.getValue());
         selectMethodBar.add(methods);
     }
 
-    private void initSender() {
-        sendButton.addActionListener(actionEvent -> {
-            if (protocols.getText().equals(Protocol.Http.getValue())) {
-                if (methods.getText().equals(HttpMethod.Post.getValue()))
-                    sendPost();
-                else if (methods.getText().equals(HttpMethod.Get.getValue()))
-                    sendGet();
-                updateTabs(false);
-            } else if (protocols.getText().equals(Protocol.WebSocket.getValue())) connectWebSocket();
-            else if (protocols.getText().equals(Protocol.SocketIO.getValue())) connectSocketIO();
-        });
+    private void initAction() {
+        //init change req/res action
+        isRequestTab = true;
+        httpResponseTabComponent.setVisible(false);
+        toChangeReqResButton.addActionListener(actionEvent -> onReverseSelectedTab());
+        //init send action
+        sendButton.addActionListener(actionEvent -> onPressSendButton());
     }
-
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
@@ -163,18 +135,28 @@ public class MainPage extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
-    synchronized private boolean isAvailableToSendARequest() {
-        return runningThread == null || runningThread.getState() == Thread.State.TERMINATED;
+    private void updateTabs(boolean isRequestTab) {
+        this.isRequestTab = isRequestTab;
+        httpRequestTabComponent.setVisible(isRequestTab);
+        httpResponseTabComponent.setVisible(!isRequestTab);
+    }
+
+    private void sendError(String error) {
+        new ExceptionDialog(mainWindow, new String(error.getBytes(), StandardCharsets.UTF_8));
+    }
+
+    private synchronized boolean isNotAvailableToSendARequest() {
+        return runningThread != null && runningThread.getState() != Thread.State.TERMINATED;
     }
 
     private void sendPost() {
-        if (!isAvailableToSendARequest()) {
+        if (isNotAvailableToSendARequest()) {
             sendError("存在正在进行的连接！无法进行post请求的发送！");
             return;
         }
         runningThread = new Thread(() -> {
             try {
-                httpResponseTabComponent.parseHttpResponse(httpRequestTabComponent.sendPost(url.getText()));
+                httpResponseTabComponent.parseHttpResponse(httpClient.execute(httpRequestTabComponent.sendPost(url.getText())));
             } catch (URISyntaxException | IOException e) {
                 sendError(e.getLocalizedMessage());
             }
@@ -184,13 +166,13 @@ public class MainPage extends JPanel {
     }
 
     private void sendGet() {
-        if (!isAvailableToSendARequest()) {
+        if (isNotAvailableToSendARequest()) {
             sendError("存在正在进行的连接！无法进行Get请求的发送！");
             return;
         }
         runningThread = new Thread(() -> {
             try {
-                httpResponseTabComponent.parseHttpResponse(httpRequestTabComponent.sendGet(url.getText()));
+                httpResponseTabComponent.parseHttpResponse(httpClient.execute(httpRequestTabComponent.sendGet(url.getText())));
             } catch (URISyntaxException | IOException e) {
                 sendError(e.getLocalizedMessage());
             }
@@ -213,6 +195,36 @@ public class MainPage extends JPanel {
         } catch (Exception e) {
             sendError(e.getLocalizedMessage());
         }
+    }
+
+    private void onPressSendButton() {
+        if (protocols.getText().equals(Protocol.Http.getValue())) {
+            if (methods.getText().equals(HttpMethod.Post.getValue()))
+                sendPost();
+            else if (methods.getText().equals(HttpMethod.Get.getValue()))
+                sendGet();
+            updateTabs(false);
+        } else if (protocols.getText().equals(Protocol.WebSocket.getValue())) connectWebSocket();
+        else if (protocols.getText().equals(Protocol.SocketIO.getValue())) connectSocketIO();
+    }
+
+    private void onChangeProtocol(ActionEvent actionEvent) {
+        boolean isSelectedHttp = ((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.Http.getValue());
+        methods.setVisible(isSelectedHttp);
+        httpRequestTabComponent.setVisible(isSelectedHttp);
+        httpResponseTabComponent.setVisible(isSelectedHttp);
+        toChangeReqResButton.setEnabled(isSelectedHttp);
+        webSocketIOComponent.setVisible(!isSelectedHttp);
+        webSocketIOComponent.clearWebSocketConnect();
+        if (isSelectedHttp) updateTabs(isRequestTab);
+        if (((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.WebSocket.getValue()))
+            webSocketIOComponent.setUsingWebSocket(true);
+        else if (((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.SocketIO.getValue()))
+            webSocketIOComponent.setUsingWebSocket(false);
+    }
+
+    private void onReverseSelectedTab() {
+        updateTabs(!isRequestTab);
     }
 
 

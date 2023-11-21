@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="重构成功！！！！哇哈哈哈哈哈&#10;哈哈哈哈哈">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="大大重构了代码结构，现在代码可读性大大增加了喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/kuang.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/kuang.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.jfd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +93,7 @@
       <recent name="D:\codefile\PostMTF\src\main\java\View\ExceptionDialog" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.PostMTFApplication">
+  <component name="RunManager" selected="Gradle.PostMTF [jar]">
     <configuration name="PostMTFApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PostMTFApplication" />
       <module name="PostMTF.main" />
@@ -191,7 +198,8 @@
       <workItem from="1700461334818" duration="4550000" />
       <workItem from="1700470828948" duration="1512000" />
       <workItem from="1700488032663" duration="3432000" />
-      <workItem from="1700547164218" duration="10959000" />
+      <workItem from="1700547164218" duration="12686000" />
+      <workItem from="1700578146393" duration="3655000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -369,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700561211002</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="添加了cookie解析">
+      <option name="closed" value="true" />
+      <created>1700562820478</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1700562820478</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -403,6 +419,8 @@
     <MESSAGE value="add log4j and builder" />
     <MESSAGE value="准备解耦合，备份一手" />
     <MESSAGE value="重构成功！！！！哇哈哈哈哈哈&#10;哈哈哈哈哈" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构成功！！！！哇哈哈哈哈哈&#10;哈哈哈哈哈" />
+    <MESSAGE value="添加了cookie解析" />
+    <MESSAGE value="大大重构了代码结构，现在代码可读性大大增加了喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="大大重构了代码结构，现在代码可读性大大增加了喵" />
   </component>
 </project>

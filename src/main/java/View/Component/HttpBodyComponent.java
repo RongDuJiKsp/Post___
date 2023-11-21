@@ -22,23 +22,17 @@ public class HttpBodyComponent extends JPanel {
     final JFileChooser jFileChooser;
 
     public HttpBodyComponent() {
-        jFileChooser = new JFileChooser();
         initComponents();
         init();
+        jFileChooser = new JFileChooser();
     }
 
     private void init() {
         uploadBinFileButton.setEnabled(false);
         upLoadFileName.setEnabled(false);
         upLoadFileName.setEditable(false);
-        isUsingBinButton.addActionListener(actionEvent -> {
-            setIsJSONEnabled(isUsingBinButton.isSelected());
-        });
-        uploadBinFileButton.addActionListener(actionEvent -> {
-            jFileChooser.showOpenDialog(this);
-            selectedFile = jFileChooser.getSelectedFile();
-            upLoadFileName.setText(selectedFile.getName());
-        });
+        isUsingBinButton.addActionListener(actionEvent -> onSelectIsUseBinFile());
+        uploadBinFileButton.addActionListener(actionEvent -> onUploadFile());
     }
 
     private void initComponents() {
@@ -67,19 +61,19 @@ public class HttpBodyComponent extends JPanel {
             new Insets(0, 0, 5, 0), 0, 0));
 
         //---- isUsingJSONButton ----
-        isUsingJSONButton.setText("\u4f7f\u7528JSON");
+        isUsingJSONButton.setText("Use JSON");
         add(isUsingJSONButton, new GridBagConstraints(0, 5, 2, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
         //---- isUsingBinButton ----
-        isUsingBinButton.setText("\u4f7f\u7528\u4e8c\u8fdb\u5236\u6587\u4ef6");
+        isUsingBinButton.setText("Use Bin File");
         add(isUsingBinButton, new GridBagConstraints(3, 5, 5, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
         //---- label1 ----
-        label1.setText("                  BinFileName\uff1a");
+        label1.setText("                  BinFileName:");
         add(label1, new GridBagConstraints(0, 6, 3, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 0, 5), 0, 0));
@@ -102,13 +96,23 @@ public class HttpBodyComponent extends JPanel {
         isUsingJSONButton.setEnabled(!isJSONEnabled);
     }
 
+    private void onSelectIsUseBinFile() {
+        setIsJSONEnabled(isUsingBinButton.isSelected());
+    }
+
+    private void onUploadFile() {
+        jFileChooser.showOpenDialog(this);
+        selectedFile = jFileChooser.getSelectedFile();
+        upLoadFileName.setText(selectedFile.getName());
+    }
+
     public void setEditable(boolean flag) {
-        textEditor.setEditable(false);
-        isUsingBinButton.setVisible(false);
-        isUsingJSONButton.setVisible(false);
-        label1.setVisible(false);
-        upLoadFileName.setVisible(false);
-        uploadBinFileButton.setVisible(false);
+        textEditor.setEditable(flag);
+        isUsingBinButton.setVisible(flag);
+        isUsingJSONButton.setVisible(flag);
+        label1.setVisible(flag);
+        upLoadFileName.setVisible(flag);
+        uploadBinFileButton.setVisible(flag);
     }
 
     public BodyContain getBody() {

@@ -19,7 +19,7 @@ new FormModel {
 				"gridy": 1
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "clearSelectedButtton"
+				name: "clearSelectedButton"
 				"text": "Clear Selected"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridy": 2
@@ -53,7 +53,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "deleteSelectedButton"
-				"text": "Delect Selected"
+				"text": "Delete Selected"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 				"gridy": 3
 				"gridwidth": 2
