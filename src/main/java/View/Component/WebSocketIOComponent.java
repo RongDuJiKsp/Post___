@@ -75,6 +75,9 @@ public class WebSocketIOComponent extends JPanel {
         socketIO.on(Socket.EVENT_DISCONNECT, (message) -> {
             addMessage("server disconnected", "server", "");
         });
+        socketIO.on(Socket.EVENT_CONNECT_ERROR, (message) -> {
+            addMessage("server meeting Error", "server", "");
+        });
     }
 
     private void initComponents() {
@@ -159,8 +162,8 @@ public class WebSocketIOComponent extends JPanel {
             Document document = messageShower.getDocument();
             String toAdd = "The " + sender + " sent a message is \n" + message + "  " + adder + "\n\n";
             document.insertString(document.getLength(), toAdd, new SimpleAttributeSet());
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
+        } catch (Exception ignored) {
+
         }
     }
 

@@ -10,31 +10,46 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class HttpResponseTabComponent extends JTabbedPane {
-    private HttpKeyValueComponent httpResponseHeadComponent;
+    private HttpKeyValueComponent httpResponseHeadComponent, httpResponseCookieComponent;
     private HttpBodyComponent httpResponseBodyComponent;
     private byte[] lastResponseBody;
 
     public HttpResponseTabComponent() {
         httpResponseHeadComponent = new HttpKeyValueComponent();
         httpResponseHeadComponent.setEditable(false);
-        addTab("ResponseHead", httpResponseHeadComponent);
+        addTab("Response Head", httpResponseHeadComponent);
         httpResponseBodyComponent = new HttpBodyComponent();
         httpResponseBodyComponent.setEditable(false);
-        addTab("ResponseBody", httpResponseBodyComponent);
+        addTab("Response Body", httpResponseBodyComponent);
+        httpResponseCookieComponent = new HttpKeyValueComponent();
+        httpResponseCookieComponent.setEditable(false);
+        addTab("Response Cookies", httpResponseCookieComponent);
     }
 
     public void parseHttpResponse(HttpResponse httpResponse) throws IOException {
+        httpResponseCookieComponent.clear();
+        httpResponseBodyComponent.clear();
+        httpResponseHeadComponent.clear();
+
         if (httpResponse == null) return;
         //save headers
-        httpResponseHeadComponent.getTableModel().getDataVector().clear();
         for (Header header : httpResponse.getAllHeaders()) {
+            if (header.getValue().equals("Set-Cookie")) continue;
             httpResponseHeadComponent.getTableModel().addRow(new String[]{header.getName(), header.getValue()});
+        }
+        // save cookie
+        if (httpResponse.containsHeader("Set-Cookie")) {
+            for (Header header : httpResponse.getHeaders("Set-Cookie")) {
+                String[] kv = header.getValue().split("=");
+                httpResponseCookieComponent.getTableModel().addRow(new String[]{kv[0], kv[1]});
+            }
         }
         //save body
         if (httpResponse.containsHeader("content-type")) {
             ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
             httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
             lastResponseBody = byteArrayOutputStream.toByteArray();
+            byteArrayOutputStream.close();
         }
     }
 }

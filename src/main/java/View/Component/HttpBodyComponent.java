@@ -36,7 +36,7 @@ public class HttpBodyComponent extends JPanel {
         });
         uploadBinFileButton.addActionListener(actionEvent -> {
             jFileChooser.showOpenDialog(this);
-            selectedFile=jFileChooser.getSelectedFile();
+            selectedFile = jFileChooser.getSelectedFile();
             upLoadFileName.setText(selectedFile.getName());
         });
     }
@@ -118,6 +118,12 @@ public class HttpBodyComponent extends JPanel {
     public void setBody(InputStream inputStream, String contentType) throws IOException {
         textEditor.setContentType(contentType);
         textEditor.read(new InputStreamReader(inputStream, StandardCharsets.UTF_8), contentType);
+        inputStream.close();
+    }
+
+    public void clear() {
+        textEditor.setText("");
+        upLoadFileName.setText("");
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off

@@ -143,6 +143,9 @@ public class HttpKeyValueComponent extends JPanel {
     public DefaultTableModel getTableModel() {
         return paramTableModel;
     }
+    public void clear(){
+        paramTableModel.getDataVector().clear();
+    }
 
     public void addKeyValue(Map<String, String> kvp) {
         kvp.forEach((k, v) -> {
