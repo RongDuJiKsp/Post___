@@ -4,54 +4,48 @@
 
 package View.Page;
 
-import Controller.HttpRequestCustomer;
-import Controller.SimpleFunction;
-import Model.BodyContain;
 import Model.HttpMethod;
 import Model.Protocol;
-import View.Component.HttpBodyComponent;
-import View.Component.HttpKeyValueComponent;
+import View.Component.HttpRequestTabComponent;
+import View.Component.HttpResponseTabComponent;
 import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
-import org.apache.http.Header;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.entity.FileEntity;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Map;
 
 /**
  * @author rdjksp
  */
 public class MainPage extends JPanel {
-    private final HttpRequestCustomer httpRequestCustomer;
+    private Thread runningThread;
     private final JFrame mainWindow;
     private SelectItemComponent protocols, methods;
-    private JTabbedPane httpRequestTab, httpResponseTab;
-    private GridBagConstraints tabsLocal;
-    private HttpKeyValueComponent httpRequestParamsComponent, httpRequestHeadComponent, httpResponseHeadComponent;
-    private HttpBodyComponent httpRequestBodyComponent, httpResponseBodyComponent;
+    private HttpRequestTabComponent httpRequestTabComponent;
+    private HttpResponseTabComponent httpResponseTabComponent;
     private WebSocketIOComponent webSocketIOComponent;
     private boolean isRequestTab;
-    private Thread runningThread;
-    private byte[] lastResponseBody;
 
     public MainPage(JFrame mainWindow) {
-        httpRequestCustomer = new HttpRequestCustomer();
         this.mainWindow = mainWindow;
         init();
+    }
+
+    private void updateTabs(boolean isRequestTab) {
+        this.isRequestTab = isRequestTab;
+        httpRequestTabComponent.setVisible(isRequestTab);
+        httpResponseTabComponent.setVisible(!isRequestTab);
+    }
+
+    private void sendError(String error) {
+        new ExceptionDialog(mainWindow).showMessage(new String(error.getBytes(), StandardCharsets.UTF_8));
     }
 
     private void init() {
@@ -63,37 +57,19 @@ public class MainPage extends JPanel {
 
     private void initTabs() {
         //init tab panel
-        tabsLocal = new GridBagConstraints(1, 5, 10, 1, 0.0, 0.0,
+        GridBagConstraints tabsLocal = new GridBagConstraints(1, 5, 10, 1, 0.0, 0.0,
                 GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                 new Insets(0, 0, 5, 5), 0, 0);
 
         //init http Tab
-        httpRequestTab = new JTabbedPane();
-        httpRequestParamsComponent = new HttpKeyValueComponent();
-        httpRequestTab.addTab("Params", httpRequestParamsComponent);
-        httpRequestBodyComponent = new HttpBodyComponent();
-        httpRequestTab.addTab("Body", httpRequestBodyComponent);
-        httpRequestHeadComponent = new HttpKeyValueComponent(Map.ofEntries(
-                Map.entry("crossOrigin", "*"),
-                Map.entry("User-Agent", "PostmtfRuntime/1.0.0"),
-                Map.entry("Accept", "*/*"),
-                Map.entry("Accept-Encoding", "gzip, deflate, br"),
-                Map.entry("Connection", "keep-alive")
-        ));
-        httpRequestTab.addTab("Head", httpRequestHeadComponent);
-        add(httpRequestTab, tabsLocal);
+        httpRequestTabComponent = new HttpRequestTabComponent();
+        add(httpRequestTabComponent, tabsLocal);
         //init httpRepTab
-        httpResponseTab = new JTabbedPane();
-        httpResponseHeadComponent = new HttpKeyValueComponent();
-        httpResponseHeadComponent.setEditable(false);
-        httpResponseTab.addTab("ResponseHead", httpResponseHeadComponent);
-        httpResponseBodyComponent = new HttpBodyComponent();
-        httpResponseBodyComponent.setEditable(false);
-        httpResponseTab.addTab("ResponseBody", httpResponseBodyComponent);
-        add(httpResponseTab, tabsLocal);
+        httpResponseTabComponent = new HttpResponseTabComponent();
+        add(httpResponseTabComponent, tabsLocal);
         //connect changer
         isRequestTab = true;
-        httpResponseTab.setVisible(false);
+        httpResponseTabComponent.setVisible(false);
         toChangeReqResButton.addActionListener(actionEvent -> {
             updateTabs(!isRequestTab);
         });
@@ -108,8 +84,8 @@ public class MainPage extends JPanel {
         protocols = new SelectItemComponent(protocol, Protocol.Http.getValue(), actionEvent -> {
             boolean isSelectedHttp = ((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.Http.getValue());
             methods.setVisible(isSelectedHttp);
-            httpResponseTab.setVisible(isSelectedHttp);
-            httpRequestTab.setVisible(isSelectedHttp);
+            httpRequestTabComponent.setVisible(isSelectedHttp);
+            httpResponseTabComponent.setVisible(isSelectedHttp);
             toChangeReqResButton.setEnabled(isSelectedHttp);
             webSocketIOComponent.setVisible(!isSelectedHttp);
             webSocketIOComponent.clearWebSocketConnect();
@@ -138,11 +114,6 @@ public class MainPage extends JPanel {
         });
     }
 
-    private void updateTabs(boolean isRequestTab) {
-        this.isRequestTab = isRequestTab;
-        httpRequestTab.setVisible(isRequestTab);
-        httpResponseTab.setVisible(!isRequestTab);
-    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
@@ -192,27 +163,20 @@ public class MainPage extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
+    synchronized private boolean isAvailableToSendARequest() {
+        return runningThread == null || runningThread.getState() == Thread.State.TERMINATED;
+    }
+
     private void sendPost() {
-        if (!(runningThread == null || runningThread.getState() == Thread.State.TERMINATED)) {
-            new ExceptionDialog(mainWindow).showMessage(new String("存在正在进行的连接！".getBytes(), StandardCharsets.UTF_8));
+        if (!isAvailableToSendARequest()) {
+            sendError("存在正在进行的连接！无法进行post请求的发送！");
             return;
         }
         runningThread = new Thread(() -> {
             try {
-                BodyContain bodyContain = httpRequestBodyComponent.getBody();
-                Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
-                URIBuilder uriBuilder = new URIBuilder(url.getText());
-                paramContain.forEach(uriBuilder::addParameter);
-                if (!bodyContain.isUsingBin())
-                    parseHttpResponse(httpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), null, bodyContain.isUsingJSON(), headerContain));
-                else {
-                    headerContain.put("content-type", Files.probeContentType(bodyContain.getSelectedFile().toPath()));
-                    parseHttpResponse(httpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), null, headerContain));
-                }
-
+                httpResponseTabComponent.parseHttpResponse(httpRequestTabComponent.sendPost(url.getText()));
             } catch (URISyntaxException | IOException e) {
-                new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
-                throw new RuntimeException(e);
+                sendError(e.getLocalizedMessage());
             }
 
         });
@@ -220,19 +184,15 @@ public class MainPage extends JPanel {
     }
 
     private void sendGet() {
-        if (!(runningThread == null || runningThread.getState() == Thread.State.TERMINATED)) {
-            new ExceptionDialog(mainWindow).showMessage(new String("存在正在进行的连接！".getBytes(), StandardCharsets.UTF_8));
+        if (!isAvailableToSendARequest()) {
+            sendError("存在正在进行的连接！无法进行Get请求的发送！");
             return;
         }
         runningThread = new Thread(() -> {
             try {
-                Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
-                URIBuilder uriBuilder = new URIBuilder(url.getText());
-                paramContain.forEach(uriBuilder::addParameter);
-                parseHttpResponse(httpRequestCustomer.sendGetRequest(uriBuilder.build(), null, headerContain));
+                httpResponseTabComponent.parseHttpResponse(httpRequestTabComponent.sendGet(url.getText()));
             } catch (URISyntaxException | IOException e) {
-                new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
-                throw new RuntimeException(e);
+                sendError(e.getLocalizedMessage());
             }
 
         });
@@ -243,7 +203,7 @@ public class MainPage extends JPanel {
         try {
             webSocketIOComponent.connectWebSocket(new URI(url.getText()));
         } catch (Exception e) {
-            new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
+            sendError(e.getLocalizedMessage());
         }
     }
 
@@ -251,24 +211,10 @@ public class MainPage extends JPanel {
         try {
             webSocketIOComponent.connectSocketIO(new URI(url.getText()));
         } catch (Exception e) {
-            new ExceptionDialog(mainWindow).showMessage(e.getLocalizedMessage());
+            sendError(e.getLocalizedMessage());
         }
     }
 
-    private void parseHttpResponse(HttpResponse httpResponse) throws IOException {
-        if (httpResponse == null) return;
-        //save headers
-        httpResponseHeadComponent.getTableModel().getDataVector().clear();
-        for (Header header : httpResponse.getAllHeaders()) {
-            httpResponseHeadComponent.getTableModel().addRow(new String[]{header.getName(), header.getValue()});
-        }
-        //save body
-        if (httpResponse.containsHeader("content-type")) {
-            ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
-            httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
-            lastResponseBody = byteArrayOutputStream.toByteArray();
-        }
-    }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JLabel label2;

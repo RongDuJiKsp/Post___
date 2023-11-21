@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="add log4j and builder">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="准备解耦合，备份一手">
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/kuang.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/kuang.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +189,7 @@
       <workItem from="1700461334818" duration="4550000" />
       <workItem from="1700470828948" duration="1512000" />
       <workItem from="1700488032663" duration="3432000" />
-      <workItem from="1700547164218" duration="3272000" />
+      <workItem from="1700547164218" duration="8925000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -343,7 +343,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700491942902</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="准备解耦合，备份一手">
+      <option name="closed" value="true" />
+      <created>1700551101811</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700551101811</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,6 +383,7 @@
     <MESSAGE value="史山代码写成了喵" />
     <MESSAGE value="究极史山代码写成了喵" />
     <MESSAGE value="add log4j and builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="add log4j and builder" />
+    <MESSAGE value="准备解耦合，备份一手" />
+    <option name="LAST_COMMIT_MESSAGE" value="准备解耦合，备份一手" />
   </component>
 </project>
