@@ -45,7 +45,7 @@ public class WebSocketIOComponent extends JPanel {
     private void initAction() {
         cleanMessageButton.addActionListener(actionEvent -> messageShower.setText(""));
         sendMessageButton.addActionListener(actionEvent -> {
-            addMessage(messageInputHolder.getText(), "you", "");
+            addMessage(messageInputHolder.getText(), "you", isUsingWebSocket ? "" : ("---emit event : " + socketIOEventInputholder.getText()));
             if (isUsingWebSocket) webSocketCustomer.send(messageInputHolder.getText());
             else socketIO.emit(socketIOEventInputholder.getText(), messageInputHolder.getText());
         });
@@ -55,11 +55,11 @@ public class WebSocketIOComponent extends JPanel {
         });
         setListeningButton.addActionListener(actionEvent -> {
             String onEventName = socketIOListeningInputholder.getText();
-            addMessage(" add a listener named" + onEventName, "client", "");
+            addMessage(" add a listener named : " + onEventName, "client", "");
             socketIO.on(onEventName, fn -> {
                 StringBuilder stringBuilder = new StringBuilder();
                 for (Object o : fn) stringBuilder.append((String) o);
-                addMessage(stringBuilder.toString(), "server", "-----on event: " + onEventName);
+                addMessage(stringBuilder.toString(), "server", "-----on event : " + onEventName);
             });
         });
         removeListeningButton.addActionListener(actionEvent -> {
@@ -155,13 +155,13 @@ public class WebSocketIOComponent extends JPanel {
 
 
     private void addMessage(String message, String sender, String adder) {
-       try {
-           Document document = messageShower.getDocument();
-           String toAdd = "The " + sender + " sent a message is \n" + message + "  " + adder + "\n\n";
-           document.insertString(document.getLength(), toAdd, new SimpleAttributeSet());
-       }catch (Exception e){
-           System.err.println(e.getMessage());
-       }
+        try {
+            Document document = messageShower.getDocument();
+            String toAdd = "The " + sender + " sent a message is \n" + message + "  " + adder + "\n\n";
+            document.insertString(document.getLength(), toAdd, new SimpleAttributeSet());
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     public void clearWebSocketConnect() {

@@ -26,6 +26,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -192,7 +193,10 @@ public class MainPage extends JPanel {
     }
 
     private void sendPost() {
-        if (!(runningThread == null || runningThread.getState() == Thread.State.TERMINATED)) return;
+        if (!(runningThread == null || runningThread.getState() == Thread.State.TERMINATED)) {
+            new ExceptionDialog(mainWindow).showMessage(new String("存在正在进行的连接！".getBytes(), StandardCharsets.UTF_8));
+            return;
+        }
         runningThread = new Thread(() -> {
             try {
                 BodyContain bodyContain = httpRequestBodyComponent.getBody();
@@ -216,7 +220,10 @@ public class MainPage extends JPanel {
     }
 
     private void sendGet() {
-        if (!(runningThread == null || runningThread.getState() == Thread.State.TERMINATED)) return;
+        if (!(runningThread == null || runningThread.getState() == Thread.State.TERMINATED)) {
+            new ExceptionDialog(mainWindow).showMessage(new String("存在正在进行的连接！".getBytes(), StandardCharsets.UTF_8));
+            return;
+        }
         runningThread = new Thread(() -> {
             try {
                 Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
@@ -250,13 +257,17 @@ public class MainPage extends JPanel {
 
     private void parseHttpResponse(HttpResponse httpResponse) throws IOException {
         if (httpResponse == null) return;
-        ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
-        httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
+        //save headers
         httpResponseHeadComponent.getTableModel().getDataVector().clear();
         for (Header header : httpResponse.getAllHeaders()) {
             httpResponseHeadComponent.getTableModel().addRow(new String[]{header.getName(), header.getValue()});
         }
-        lastResponseBody = byteArrayOutputStream.toByteArray();
+        //save body
+        if (httpResponse.containsHeader("content-type")) {
+            ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
+            httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
+            lastResponseBody = byteArrayOutputStream.toByteArray();
+        }
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off

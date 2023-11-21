@@ -860,3 +860,1579 @@
 [DEBUG][23-11-20][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
 [DEBUG][23-11-20][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
 [DEBUG][23-11-20][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.163.com:443][total available: 3; route allocated: 2 of 2; total allocated: 5 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:7208<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request GET /api?ww=1&par=vae&search=%E5%8E%9F%E7%A5%9E HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> GET /api?ww=1&par=vae&search=%E5%8E%9F%E7%A5%9E HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "GET /api?ww=1&par=vae&search=%E5%8E%9F%E7%A5%9E HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Type: text/html; charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Length: 16[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "ETag: W/"10-zMIUrZr9p2Go7LjjwqmbogrN2Y0"[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Date: Tue, 21 Nov 2023 06:17:07 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "fucking java get"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Type: text/html; charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Length: 16
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << ETag: W/"10-zMIUrZr9p2Go7LjjwqmbogrN2Y0"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Date: Tue, 21 Nov 2023 06:17:07 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 0][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.CPool]Connection [id:0][route:{}->http://localhost:8080][state:null] expired @ Tue Nov 21 14:17:12 CST 2023
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:7362<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api?ww=1&par=vae&search=%E5%8E%9F%E7%A5%9E HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST /api?ww=1&par=vae&search=%E5%8E%9F%E7%A5%9E HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 88
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST /api?ww=1&par=vae&search=%E5%8E%9F%E7%A5%9E HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 88[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "http://localhost:8080/api[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "{"data":"hello nodejs"}[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c][0xe5][0x91][0x9c]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Type: text/html; charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Length: 69[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "ETag: W/"45-iDyRfuNBld4Hxps3L/PiENlwGvM"[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Date: Tue, 21 Nov 2023 06:17:51 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "{"date":"2023-11-21T06:15:40.538Z","hello":{"java":"JSON","js":"TS"}}"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Type: text/html; charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Length: 69
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << ETag: W/"45-iDyRfuNBld4Hxps3L/PiENlwGvM"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Date: Tue, 21 Nov 2023 06:17:51 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 1][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->ws://localhost:8082][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {}->ws://localhost:8082][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->ws://localhost:8082
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {}->ws://localhost:8082][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[INFO][23-11-21][org.apache.http.impl.execchain.RetryExec]I/O exception (org.apache.http.conn.UnsupportedSchemeException) caught when processing request to {}->ws://localhost:8082: ws protocol is not supported
+[DEBUG][23-11-21][org.apache.http.impl.execchain.RetryExec]ws protocol is not supported
+org.apache.http.conn.UnsupportedSchemeException: ws protocol is not supported
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:109)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at Controller.HttpRequestCustomer.sendPostRequest(HttpRequestCustomer.java:41)
+	at Controller.HttpRequestCustomer.sendPostRequest(HttpRequestCustomer.java:33)
+	at View.Page.MainPage.lambda$sendPost$3(MainPage.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[INFO][23-11-21][org.apache.http.impl.execchain.RetryExec]Retrying request to {}->ws://localhost:8082
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->ws://localhost:8082][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {}->ws://localhost:8082][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->ws://localhost:8082
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {}->ws://localhost:8082][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[INFO][23-11-21][org.apache.http.impl.execchain.RetryExec]I/O exception (org.apache.http.conn.UnsupportedSchemeException) caught when processing request to {}->ws://localhost:8082: ws protocol is not supported
+[DEBUG][23-11-21][org.apache.http.impl.execchain.RetryExec]ws protocol is not supported
+org.apache.http.conn.UnsupportedSchemeException: ws protocol is not supported
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:109)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at Controller.HttpRequestCustomer.sendPostRequest(HttpRequestCustomer.java:41)
+	at Controller.HttpRequestCustomer.sendPostRequest(HttpRequestCustomer.java:33)
+	at View.Page.MainPage.lambda$sendPost$3(MainPage.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[INFO][23-11-21][org.apache.http.impl.execchain.RetryExec]Retrying request to {}->ws://localhost:8082
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->ws://localhost:8082][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 2][route: {}->ws://localhost:8082][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->ws://localhost:8082
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-2: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 2][route: {}->ws://localhost:8082][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[INFO][23-11-21][org.apache.http.impl.execchain.RetryExec]I/O exception (org.apache.http.conn.UnsupportedSchemeException) caught when processing request to {}->ws://localhost:8082: ws protocol is not supported
+[DEBUG][23-11-21][org.apache.http.impl.execchain.RetryExec]ws protocol is not supported
+org.apache.http.conn.UnsupportedSchemeException: ws protocol is not supported
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:109)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at Controller.HttpRequestCustomer.sendPostRequest(HttpRequestCustomer.java:41)
+	at Controller.HttpRequestCustomer.sendPostRequest(HttpRequestCustomer.java:33)
+	at View.Page.MainPage.lambda$sendPost$3(MainPage.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[INFO][23-11-21][org.apache.http.impl.execchain.RetryExec]Retrying request to {}->ws://localhost:8082
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->ws://localhost:8082][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 3][route: {}->ws://localhost:8082][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->ws://localhost:8082
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-3: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 3][route: {}->ws://localhost:8082][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8082][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 4][route: {}->http://localhost:8082][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8082
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8082
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:7745<->127.0.0.1:8082
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Host: localhost:8082
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "POST / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Host: localhost:8082[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "HTTP/1.1 404 Not Found[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Date: Tue, 21 Nov 2023 06:29:49 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Transfer-Encoding: chunked[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << HTTP/1.1 404 Not Found
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Date: Tue, 21 Nov 2023 06:29:49 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Transfer-Encoding: chunked
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 4][route: {}->http://localhost:8082] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-4: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 4][route: {}->http://localhost:8082][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 1; route allocated: 0 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 5][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 2 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:8380<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "POST / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "HTTP/1.1 404 Not Found[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Content-Security-Policy: default-src 'none'[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "X-Content-Type-Options: nosniff[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Content-Type: text/html; charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Content-Length: 140[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Date: Tue, 21 Nov 2023 06:34:02 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "<!DOCTYPE html>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "<html lang="en">[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "<head>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "<meta charset="utf-8">[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "<title>Error</title>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "</head>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "<body>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "<pre>Cannot POST /</pre>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "</body>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "</html>[\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << HTTP/1.1 404 Not Found
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Content-Security-Policy: default-src 'none'
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << X-Content-Type-Options: nosniff
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Content-Type: text/html; charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Content-Length: 140
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Date: Tue, 21 Nov 2023 06:34:02 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 5][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-5: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 5][route: {}->http://localhost:8080][total available: 2; route allocated: 1 of 2; total allocated: 2 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 2; route allocated: 1 of 2; total allocated: 2 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.CPool]Connection [id:5][route:{}->http://localhost:8080][state:null] expired @ Tue Nov 21 14:34:07 CST 2023
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-5: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 6][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 2 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:8395<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-6 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-6 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-6 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-6 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-6 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-6 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-6 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-6 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-6 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-6 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:8486<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "POST / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "HTTP/1.1 404 Not Found[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Security-Policy: default-src 'none'[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Type: text/html; charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Length: 140[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Date: Tue, 21 Nov 2023 06:35:47 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<!DOCTYPE html>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<html lang="en">[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<head>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<meta charset="utf-8">[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<title>Error</title>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "</head>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<body>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<pre>Cannot POST /</pre>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "</body>[\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "</html>[\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << HTTP/1.1 404 Not Found
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Security-Policy: default-src 'none'
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << X-Content-Type-Options: nosniff
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Type: text/html; charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Length: 140
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Date: Tue, 21 Nov 2023 06:35:47 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 0][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:8506<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[read] I/O error: Connection reset"
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:8538<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[read] I/O error: Connection reset"
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 2][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:8663<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Content-Length: 4
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Content-Length: 4[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "1111"
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:8777<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.baidu.com:443][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {s}->https://www.baidu.com:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://www.baidu.com:443
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to www.baidu.com/153.3.238.102:443
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to www.baidu.com/153.3.238.102:443 with timeout 0
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1.3, TLSv1.2]
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_AES_256_GCM_SHA384, TLS_AES_128_GCM_SHA256, TLS_CHACHA20_POLY1305_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256, TLS_DHE_DSS_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_DSS_WITH_AES_256_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Secure session established
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] negotiated protocol: TLSv1.2
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] peer principal: CN=baidu.com, O="Beijing Baidu Netcom Science Technology Co., Ltd", L=beijing, ST=beijing, C=CN
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] peer alternative names: [baidu.com, baifubao.com, www.baidu.cn, www.baidu.com.cn, mct.y.nuomi.com, apollo.auto, dwz.cn, *.baidu.com, *.baifubao.com, *.baidustatic.com, *.bdstatic.com, *.bdimg.com, *.hao123.com, *.nuomi.com, *.chuanke.com, *.trustgo.com, *.bce.baidu.com, *.eyun.baidu.com, *.map.baidu.com, *.mbd.baidu.com, *.fanyi.baidu.com, *.baidubce.com, *.mipcdn.com, *.news.baidu.com, *.baidupcs.com, *.aipage.com, *.aipage.cn, *.bcehost.com, *.safe.baidu.com, *.im.baidu.com, *.baiducontent.com, *.dlnel.com, *.dlnel.org, *.dueros.baidu.com, *.su.baidu.com, *.91.com, *.hao123.baidu.com, *.apollo.auto, *.xueshu.baidu.com, *.bj.baidubce.com, *.gz.baidubce.com, *.smartapps.cn, *.bdtjrcv.com, *.hao222.com, *.haokan.com, *.pae.baidu.com, *.vd.bdstatic.com, *.cloud.baidu.com, click.hm.baidu.com, log.hm.baidu.com, cm.pos.baidu.com, wn.pos.baidu.com, update.pan.baidu.com]
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] issuer principal: CN=GlobalSign RSA OV SSL CA 2018, O=GlobalSign nv-sa, C=BE
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 172.18.107.58:9421<->153.3.238.102:443
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request GET / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> GET / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Host: www.baidu.com
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "GET / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Host: www.baidu.com[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Accept-Ranges: bytes[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Cache-Control: no-cache[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Length: 227[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Security-Policy: frame-ancestors 'self' https://chat.baidu.com http://mirror-chat.baidu.com https://fj-chat.baidu.com https://hba-chat.baidu.com https://hbe-chat.baidu.com https://njjs-chat.baidu.com https://nj-chat.baidu.com https://hna-chat.baidu.com https://hnb-chat.baidu.com http://debug.baidu-int.com;[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Type: text/html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Date: Tue, 21 Nov 2023 06:47:02 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "P3p: CP=" OTI DSP COR IVA OUR IND COM "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "P3p: CP=" OTI DSP COR IVA OUR IND COM "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Pragma: no-cache[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Server: BWS/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Set-Cookie: BD_NOT_HTTPS=1; path=/; Max-Age=300[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Set-Cookie: BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Set-Cookie: PSTM=1700549222; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Set-Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; max-age=31536000; expires=Wed, 20-Nov-24 06:47:02 GMT; domain=.baidu.com; path=/; version=1; comment=bd[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Traceid: 1700549222054953319417095951570353144982[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "X-Ua-Compatible: IE=Edge,chrome=1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<head>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[0x9]<scr"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Accept-Ranges: bytes
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Cache-Control: no-cache
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Length: 227
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Security-Policy: frame-ancestors 'self' https://chat.baidu.com http://mirror-chat.baidu.com https://fj-chat.baidu.com https://hba-chat.baidu.com https://hbe-chat.baidu.com https://njjs-chat.baidu.com https://nj-chat.baidu.com https://hna-chat.baidu.com https://hnb-chat.baidu.com http://debug.baidu-int.com;
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Type: text/html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Date: Tue, 21 Nov 2023 06:47:02 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << P3p: CP=" OTI DSP COR IVA OUR IND COM "
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << P3p: CP=" OTI DSP COR IVA OUR IND COM "
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Pragma: no-cache
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Server: BWS/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Set-Cookie: BD_NOT_HTTPS=1; path=/; Max-Age=300
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Set-Cookie: BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Set-Cookie: PSTM=1700549222; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Set-Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; max-age=31536000; expires=Wed, 20-Nov-24 06:47:02 GMT; domain=.baidu.com; path=/; version=1; comment=bd
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Traceid: 1700549222054953319417095951570353144982
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << X-Ua-Compatible: IE=Edge,chrome=1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [BD_NOT_HTTPS="1", version:0, domain:www.baidu.com, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [BIDUPSID="3E6A07071B3B831D8EA4F9FAE305E634", version:0, domain:baidu.com, path:/, expiry:Fri Jan 01 07:55:55 CST 2038]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [PSTM="1700549222", version:0, domain:baidu.com, path:/, expiry:Fri Jan 01 07:55:55 CST 2038]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [BAIDUID="3E6A07071B3B831D3A25F5E6284400CE:FG=1", version:0, domain:baidu.com, path:/, expiry:Wed Nov 20 14:47:02 CST 2024]
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "ipt>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[0x9][0x9]location.replace(location.href.replace("https://","http://"));[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[0x9]</script>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "</head>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "<body>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[0x9]<noscript><meta http-equiv="refresh" content="0;url=http://www.baidu.com/"></noscript>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "</body>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "</html>"
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 0][route: {s}->https://www.baidu.com:443] can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BAIDUID][value: 3E6A07071B3B831D3A25F5E6284400CE:FG=1][domain: baidu.com][path: /][expiry: Wed Nov 20 14:47:02 CST 2024] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BD_NOT_HTTPS][value: 1][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BIDUPSID][value: 3E6A07071B3B831D8EA4F9FAE305E634][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: PSTM][value: 1700549222][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "end of stream"
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {s}->https://www.baidu.com:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://www.baidu.com:443
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to www.baidu.com/153.3.238.110:443
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Connecting socket to www.baidu.com/153.3.238.110:443 with timeout 0
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled protocols: [TLSv1.3, TLSv1.2]
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Enabled cipher suites:[TLS_AES_256_GCM_SHA384, TLS_AES_128_GCM_SHA256, TLS_CHACHA20_POLY1305_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256, TLS_DHE_DSS_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_DSS_WITH_AES_256_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Starting handshake
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory]Secure session established
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] negotiated protocol: TLSv1.2
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] peer principal: CN=baidu.com, O="Beijing Baidu Netcom Science Technology Co., Ltd", L=beijing, ST=beijing, C=CN
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] peer alternative names: [baidu.com, baifubao.com, www.baidu.cn, www.baidu.com.cn, mct.y.nuomi.com, apollo.auto, dwz.cn, *.baidu.com, *.baifubao.com, *.baidustatic.com, *.bdstatic.com, *.bdimg.com, *.hao123.com, *.nuomi.com, *.chuanke.com, *.trustgo.com, *.bce.baidu.com, *.eyun.baidu.com, *.map.baidu.com, *.mbd.baidu.com, *.fanyi.baidu.com, *.baidubce.com, *.mipcdn.com, *.news.baidu.com, *.baidupcs.com, *.aipage.com, *.aipage.cn, *.bcehost.com, *.safe.baidu.com, *.im.baidu.com, *.baiducontent.com, *.dlnel.com, *.dlnel.org, *.dueros.baidu.com, *.su.baidu.com, *.91.com, *.hao123.baidu.com, *.apollo.auto, *.xueshu.baidu.com, *.bj.baidubce.com, *.gz.baidubce.com, *.smartapps.cn, *.bdtjrcv.com, *.hao222.com, *.haokan.com, *.pae.baidu.com, *.vd.bdstatic.com, *.cloud.baidu.com, click.hm.baidu.com, log.hm.baidu.com, cm.pos.baidu.com, wn.pos.baidu.com, update.pan.baidu.com]
+[DEBUG][23-11-21][org.apache.http.conn.ssl.SSLConnectionSocketFactory] issuer principal: CN=GlobalSign RSA OV SSL CA 2018, O=GlobalSign nv-sa, C=BE
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 172.18.107.58:9530<->153.3.238.110:443
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: www.baidu.com
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: www.baidu.com[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "HTTP/1.1 302 Found[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Bdpagetype: 3[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Length: 154[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Type: text/html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Date: Tue, 21 Nov 2023 06:48:06 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Location: https://www.baidu.com/search/error.html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Server: BWS/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Set-Cookie: BDSVRTM=0; path=/[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Traceid: 170054928637371386987993827273072688384[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "X-Ua-Compatible: IE=Edge,chrome=1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<head><title>302 Found</title></head>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<body bgcolor="white">[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<center><h1>302 Found</h1></center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<hr><center>nginx</center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</body>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << HTTP/1.1 302 Found
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Bdpagetype: 3
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Length: 154
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Type: text/html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Date: Tue, 21 Nov 2023 06:48:06 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Location: https://www.baidu.com/search/error.html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Server: BWS/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Set-Cookie: BDSVRTM=0; path=/
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Traceid: 170054928637371386987993827273072688384
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << X-Ua-Compatible: IE=Edge,chrome=1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [BDSVRTM="0", version:0, domain:www.baidu.com, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 1][route: {s}->https://www.baidu.com:443] can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BAIDUID][value: 3E6A07071B3B831D3A25F5E6284400CE:FG=1][domain: baidu.com][path: /][expiry: Wed Nov 20 14:47:02 CST 2024] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BDSVRTM][value: 0][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BD_NOT_HTTPS][value: 1][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BIDUPSID][value: 3E6A07071B3B831D8EA4F9FAE305E634][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: PSTM][value: 1700549222][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[read] I/O error: Read timed out"
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {s}->https://www.baidu.com:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: www.baidu.com
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: www.baidu.com[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "HTTP/1.1 302 Found[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Bdpagetype: 3[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Length: 154[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Type: text/html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Date: Tue, 21 Nov 2023 06:48:11 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Location: https://www.baidu.com/search/error.html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Server: BWS/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Set-Cookie: BDSVRTM=0; path=/[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Traceid: 170054929126801740907584045856298091122[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "X-Ua-Compatible: IE=Edge,chrome=1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<head><title>302 Found</title></head>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<body bgcolor="white">[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<center><h1>302 Found</h1></center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<hr><center>nginx</center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</body>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << HTTP/1.1 302 Found
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Bdpagetype: 3
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Length: 154
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Type: text/html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Date: Tue, 21 Nov 2023 06:48:11 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Location: https://www.baidu.com/search/error.html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Server: BWS/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Set-Cookie: BDSVRTM=0; path=/
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Traceid: 170054929126801740907584045856298091122
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << X-Ua-Compatible: IE=Edge,chrome=1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [BDSVRTM="0", version:0, domain:www.baidu.com, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 1][route: {s}->https://www.baidu.com:443] can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BAIDUID][value: 3E6A07071B3B831D3A25F5E6284400CE:FG=1][domain: baidu.com][path: /][expiry: Wed Nov 20 14:47:02 CST 2024] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BDSVRTM][value: 0][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BD_NOT_HTTPS][value: 1][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BIDUPSID][value: 3E6A07071B3B831D8EA4F9FAE305E634][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: PSTM][value: 1700549222][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {s}->https://www.baidu.com:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: www.baidu.com
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: www.baidu.com[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "HTTP/1.1 302 Found[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Bdpagetype: 3[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Length: 154[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Type: text/html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Date: Tue, 21 Nov 2023 06:48:11 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Location: https://www.baidu.com/search/error.html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Server: BWS/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Set-Cookie: BDSVRTM=0; path=/[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Traceid: 170054929126299735147896558225279606969[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "X-Ua-Compatible: IE=Edge,chrome=1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<head><title>302 Found</title></head>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<body bgcolor="white">[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<center><h1>302 Found</h1></center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<hr><center>nginx</center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</body>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << HTTP/1.1 302 Found
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Bdpagetype: 3
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Length: 154
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Type: text/html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Date: Tue, 21 Nov 2023 06:48:11 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Location: https://www.baidu.com/search/error.html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Server: BWS/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Set-Cookie: BDSVRTM=0; path=/
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Traceid: 170054929126299735147896558225279606969
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << X-Ua-Compatible: IE=Edge,chrome=1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [BDSVRTM="0", version:0, domain:www.baidu.com, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 1][route: {s}->https://www.baidu.com:443] can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BAIDUID][value: 3E6A07071B3B831D3A25F5E6284400CE:FG=1][domain: baidu.com][path: /][expiry: Wed Nov 20 14:47:02 CST 2024] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BDSVRTM][value: 0][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BD_NOT_HTTPS][value: 1][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BIDUPSID][value: 3E6A07071B3B831D8EA4F9FAE305E634][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: PSTM][value: 1700549222][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {s}->https://www.baidu.com:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: www.baidu.com
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: www.baidu.com[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "HTTP/1.1 302 Found[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Bdpagetype: 3[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Length: 154[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Type: text/html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Date: Tue, 21 Nov 2023 06:48:12 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Location: https://www.baidu.com/search/error.html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Server: BWS/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Set-Cookie: BDSVRTM=0; path=/[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Traceid: 170054929204991360107501838957235176811[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "X-Ua-Compatible: IE=Edge,chrome=1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<head><title>302 Found</title></head>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<body bgcolor="white">[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<center><h1>302 Found</h1></center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<hr><center>nginx</center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</body>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << HTTP/1.1 302 Found
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Bdpagetype: 3
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Length: 154
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Type: text/html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Date: Tue, 21 Nov 2023 06:48:12 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Location: https://www.baidu.com/search/error.html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Server: BWS/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Set-Cookie: BDSVRTM=0; path=/
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Traceid: 170054929204991360107501838957235176811
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << X-Ua-Compatible: IE=Edge,chrome=1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [BDSVRTM="0", version:0, domain:www.baidu.com, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 1][route: {s}->https://www.baidu.com:443] can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BAIDUID][value: 3E6A07071B3B831D3A25F5E6284400CE:FG=1][domain: baidu.com][path: /][expiry: Wed Nov 20 14:47:02 CST 2024] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BDSVRTM][value: 0][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BD_NOT_HTTPS][value: 1][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BIDUPSID][value: 3E6A07071B3B831D8EA4F9FAE305E634][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: PSTM][value: 1700549222][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {s}->https://www.baidu.com:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: www.baidu.com
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: www.baidu.com[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "HTTP/1.1 302 Found[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Bdpagetype: 3[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Length: 154[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Type: text/html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Date: Tue, 21 Nov 2023 06:48:12 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Location: https://www.baidu.com/search/error.html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Server: BWS/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Set-Cookie: BDSVRTM=0; path=/[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Traceid: 170054929216568294507731486324095187974[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "X-Ua-Compatible: IE=Edge,chrome=1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<head><title>302 Found</title></head>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<body bgcolor="white">[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<center><h1>302 Found</h1></center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<hr><center>nginx</center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</body>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << HTTP/1.1 302 Found
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Bdpagetype: 3
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Length: 154
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Type: text/html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Date: Tue, 21 Nov 2023 06:48:12 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Location: https://www.baidu.com/search/error.html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Server: BWS/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Set-Cookie: BDSVRTM=0; path=/
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Traceid: 170054929216568294507731486324095187974
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << X-Ua-Compatible: IE=Edge,chrome=1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [BDSVRTM="0", version:0, domain:www.baidu.com, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 1][route: {s}->https://www.baidu.com:443] can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.baidu.n:443][total available: 1; route allocated: 0 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 2][route: {s}->https://www.baidu.n:443][total available: 1; route allocated: 1 of 2; total allocated: 2 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://www.baidu.n:443
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-2: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 2][route: {s}->https://www.baidu.n:443][total available: 1; route allocated: 0 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.baidu.n:443][total available: 1; route allocated: 0 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 3][route: {s}->https://www.baidu.n:443][total available: 1; route allocated: 1 of 2; total allocated: 2 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {s}->https://www.baidu.n:443
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-3: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 3][route: {s}->https://www.baidu.n:443][total available: 1; route allocated: 0 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BAIDUID][value: 3E6A07071B3B831D3A25F5E6284400CE:FG=1][domain: baidu.com][path: /][expiry: Wed Nov 20 14:47:02 CST 2024] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BDSVRTM][value: 0][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BD_NOT_HTTPS][value: 1][domain: www.baidu.com][path: /][expiry: null] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: BIDUPSID][value: 3E6A07071B3B831D8EA4F9FAE305E634][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: PSTM][value: 1700549222][domain: baidu.com][path: /][expiry: Fri Jan 01 07:55:55 CST 2038] match [(secure)www.baidu.com:443/]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[read] I/O error: Read timed out"
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {s}->https://www.baidu.com:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST / HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: www.baidu.com
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST / HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: www.baidu.com[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Cookie: BAIDUID=3E6A07071B3B831D3A25F5E6284400CE:FG=1; BDSVRTM=0; BD_NOT_HTTPS=1; BIDUPSID=3E6A07071B3B831D8EA4F9FAE305E634; PSTM=1700549222[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "HTTP/1.1 302 Found[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Bdpagetype: 3[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Length: 154[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Type: text/html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Date: Tue, 21 Nov 2023 06:48:30 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Location: https://www.baidu.com/search/error.html[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Server: BWS/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Set-Cookie: BDSVRTM=0; path=/[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Traceid: 170054931014219484267630127475242885067[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "X-Ua-Compatible: IE=Edge,chrome=1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<head><title>302 Found</title></head>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<body bgcolor="white">[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<center><h1>302 Found</h1></center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "<hr><center>nginx</center>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</body>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "</html>[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << HTTP/1.1 302 Found
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Bdpagetype: 3
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Length: 154
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Type: text/html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Date: Tue, 21 Nov 2023 06:48:30 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Location: https://www.baidu.com/search/error.html
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Server: BWS/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Set-Cookie: BDSVRTM=0; path=/
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Traceid: 170054931014219484267630127475242885067
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << X-Ua-Compatible: IE=Edge,chrome=1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [BDSVRTM="0", version:0, domain:www.baidu.com, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 1][route: {s}->https://www.baidu.com:443] can be kept alive indefinitely
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {s}->https://www.baidu.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:9563<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[read] I/O error: Connection reset"
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:9601<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[read] I/O error: Connection reset"
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 2][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:9626<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Content-Length: 8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Content-Length: 8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "11111111"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "[read] I/O error: Connection reset"
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-2: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-2: Shutdown connection
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection discarded
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 2][route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 3][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:9635<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request GET /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 >> GET /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 >> "GET /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "Content-Type: text/html; charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "Content-Length: 16[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "ETag: W/"10-zMIUrZr9p2Go7LjjwqmbogrN2Y0"[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "Date: Tue, 21 Nov 2023 06:51:22 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-3 << "fucking java get"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 << Content-Type: text/html; charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 << Content-Length: 16
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 << ETag: W/"10-zMIUrZr9p2Go7LjjwqmbogrN2Y0"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 << Date: Tue, 21 Nov 2023 06:51:22 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-3 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 3][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-3: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 3][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.CPool]Connection [id:3][route:{}->http://localhost:8080][state:null] expired @ Tue Nov 21 14:51:27 CST 2023
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-3: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 4][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:9647<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Content-Length: 8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Content-Length: 8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 >> "11111111"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Set-Cookie: type=ninja[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Set-Cookie: language=javascript[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Date: Tue, 21 Nov 2023 06:51:50 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-4 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Set-Cookie: type=ninja
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Set-Cookie: language=javascript
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Date: Tue, 21 Nov 2023 06:51:50 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-4 << Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 4][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-4: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 4][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [type="ninja", version:0, domain:localhost, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [language="javascript", version:0, domain:localhost, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: language][value: javascript][domain: localhost][path: /][expiry: null] match [localhost:8080/api]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: type][value: ninja][domain: localhost][path: /][expiry: null] match [localhost:8080/api]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.CPool]Connection [id:4][route:{}->http://localhost:8080][state:null] expired @ Tue Nov 21 14:51:55 CST 2023
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-4: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 5][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:9672<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Content-Length: 9
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 >> Cookie: language=javascript; type=ninja
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Content-Length: 9[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "Cookie: language=javascript; type=ninja[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 >> "111111112"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Set-Cookie: type=ninja[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Set-Cookie: language=javascript[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Date: Tue, 21 Nov 2023 06:52:39 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-5 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Set-Cookie: type=ninja
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Set-Cookie: language=javascript
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Date: Tue, 21 Nov 2023 06:52:39 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-5 << Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 5][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-5: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 5][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [type="ninja", version:0, domain:localhost, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [language="javascript", version:0, domain:localhost, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:10111<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Set-Cookie: language=javascript[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Date: Tue, 21 Nov 2023 06:58:19 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Set-Cookie: language=javascript
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Date: Tue, 21 Nov 2023 06:58:19 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 0][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [language="javascript", version:0, domain:localhost, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: language][value: javascript][domain: localhost][path: /][expiry: null] match [localhost:8080/api]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.CPool]Connection [id:0][route:{}->http://localhost:8080][state:null] expired @ Tue Nov 21 14:58:24 CST 2023
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:10156<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Cookie: language=javascript
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Cookie: language=javascript[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Date: Tue, 21 Nov 2023 06:59:41 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Date: Tue, 21 Nov 2023 06:59:41 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 1][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: language][value: javascript][domain: localhost][path: /][expiry: null] match [localhost:8080/api]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 1][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 >> Cookie: language=javascript
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "Cookie: language=javascript[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Date: Tue, 21 Nov 2023 06:59:42 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-1 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Date: Tue, 21 Nov 2023 06:59:42 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-1 << Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 1][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 1][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]Cookie [version: 0][name: language][value: javascript][domain: localhost][path: /][expiry: null] match [localhost:8080/api]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.CPool]Connection [id:1][route:{}->http://localhost:8080][state:null] expired @ Tue Nov 21 14:59:47 CST 2023
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-1: Close connection
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 2][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:10532<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 >> Cookie: language=javascript
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "Cookie: language=javascript[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "Set-Cookie: type=ninja[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "Set-Cookie: language=javascript[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "Date: Tue, 21 Nov 2023 07:03:09 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-2 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 << Set-Cookie: type=ninja
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 << Set-Cookie: language=javascript
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 << Date: Tue, 21 Nov 2023 07:03:09 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-2 << Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 2][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-2: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 2][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [type="ninja", version:0, domain:localhost, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [language="javascript", version:0, domain:localhost, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAddCookies]CookieSpec selected: default
+[DEBUG][23-11-21][org.apache.http.client.protocol.RequestAuthCache]Auth cache not set in the context
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection request: [route: {}->http://localhost:8080][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection leased: [id: 0][route: {}->http://localhost:8080][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Opening connection {}->http://localhost:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connecting to localhost/127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultHttpClientConnectionOperator]Connection established 127.0.0.1:10829<->127.0.0.1:8080
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Executing request POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Target auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Proxy auth state: UNCHALLENGED
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> POST /api HTTP/1.1
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept: */*
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> User-Agent: PostmtfRuntime/1.0.0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> crossOrigin: *
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> content-type: text/plain;charset=utf-8
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Accept-Encoding: gzip, deflate, br
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 >> Host: localhost:8080
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "POST /api HTTP/1.1[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept: */*[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "User-Agent: PostmtfRuntime/1.0.0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "crossOrigin: *[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "content-type: text/plain;charset=utf-8[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Accept-Encoding: gzip, deflate, br[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "Host: localhost:8080[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 >> "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Set-Cookie: type=ninja[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Set-Cookie: language=javascript[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Date: Tue, 21 Nov 2023 07:07:42 GMT[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Keep-Alive: timeout=5[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "Content-Length: 0[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.wire]http-outgoing-0 << "[\r][\n]"
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << HTTP/1.1 200 OK
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << X-Powered-By: Express
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Set-Cookie: type=ninja
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Set-Cookie: language=javascript
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Date: Tue, 21 Nov 2023 07:07:42 GMT
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Connection: keep-alive
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Keep-Alive: timeout=5
+[DEBUG][23-11-21][org.apache.http.headers]http-outgoing-0 << Content-Length: 0
+[DEBUG][23-11-21][org.apache.http.impl.execchain.MainClientExec]Connection can be kept alive for 5000 MILLISECONDS
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection [id: 0][route: {}->http://localhost:8080] can be kept alive for 5.0 seconds
+[DEBUG][23-11-21][org.apache.http.impl.conn.DefaultManagedHttpClientConnection]http-outgoing-0: set socket timeout to 0
+[DEBUG][23-11-21][org.apache.http.impl.conn.PoolingHttpClientConnectionManager]Connection released: [id: 0][route: {}->http://localhost:8080][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [type="ninja", version:0, domain:localhost, path:/, expiry:null]
+[DEBUG][23-11-21][org.apache.http.client.protocol.ResponseProcessCookies]Cookie accepted [language="javascript", version:0, domain:localhost, path:/, expiry:null]

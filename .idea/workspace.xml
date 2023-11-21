@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="究极史山代码写成了喵">
-      <change afterPath="$PROJECT_DIR$/log/kuang.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="add log4j and builder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/kuang.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/kuang.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
       <recent name="D:\codefile\PostMTF\src\main\java\View\ExceptionDialog" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PostMTF [jar]">
+  <component name="RunManager" selected="应用程序.PostMTFApplication">
     <configuration name="PostMTFApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PostMTFApplication" />
       <module name="PostMTF.main" />
@@ -189,7 +188,8 @@
       <workItem from="1700405393980" duration="2164000" />
       <workItem from="1700461334818" duration="4550000" />
       <workItem from="1700470828948" duration="1512000" />
-      <workItem from="1700488032663" duration="3264000" />
+      <workItem from="1700488032663" duration="3432000" />
+      <workItem from="1700547164218" duration="3272000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -335,7 +335,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700489228540</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add log4j and builder">
+      <option name="closed" value="true" />
+      <created>1700491942902</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1700491942902</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -366,6 +374,7 @@
     <MESSAGE value="寄了喵" />
     <MESSAGE value="史山代码写成了喵" />
     <MESSAGE value="究极史山代码写成了喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="究极史山代码写成了喵" />
+    <MESSAGE value="add log4j and builder" />
+    <option name="LAST_COMMIT_MESSAGE" value="add log4j and builder" />
   </component>
 </project>
