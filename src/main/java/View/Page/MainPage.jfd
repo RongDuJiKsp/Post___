@@ -40,6 +40,14 @@ new FormModel {
 				"gridx": 2
 				"gridy": 4
 			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "downloadBodyButton"
+				"text": "download response body as bin file"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 3
+				"gridy": 4
+				"gridwidth": 3
+			} )
 			add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
 				name: "selectMethodBar"
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {

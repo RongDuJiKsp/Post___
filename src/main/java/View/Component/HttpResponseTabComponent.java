@@ -1,6 +1,7 @@
 package View.Component;
 
 import Controller.SimpleFunction;
+import lombok.Getter;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 
@@ -12,7 +13,10 @@ import java.io.IOException;
 public class HttpResponseTabComponent extends JTabbedPane {
     private final HttpKeyValueComponent httpResponseHeadComponent, httpResponseCookieComponent;
     private final HttpBodyComponent httpResponseBodyComponent;
+    @Getter
     private byte[] lastResponseBody;
+    @Getter
+    private String contentType;
 
     public HttpResponseTabComponent() {
         httpResponseHeadComponent = new HttpKeyValueComponent();
@@ -49,7 +53,13 @@ public class HttpResponseTabComponent extends JTabbedPane {
             ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
             httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
             lastResponseBody = byteArrayOutputStream.toByteArray();
+            contentType=httpResponse.getFirstHeader("content-type").getValue();
             byteArrayOutputStream.close();
         }
     }
+
+    public boolean isReceivedBinFile() {
+        return lastResponseBody != null && lastResponseBody.length > 0;
+    }
+
 }

@@ -17,6 +17,7 @@ import org.apache.http.impl.client.HttpClients;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -85,6 +86,8 @@ public class MainPage extends JPanel {
         toChangeReqResButton.addActionListener(actionEvent -> onReverseSelectedTab());
         //init send action
         sendButton.addActionListener(actionEvent -> onPressSendButton());
+        //init download action
+        downloadBodyButton.addActionListener(actionEvent -> onDownloadBinFile());
     }
 
     private void initComponents() {
@@ -93,6 +96,7 @@ public class MainPage extends JPanel {
         url = new JTextField();
         label1 = new JLabel();
         toChangeReqResButton = new JButton();
+        downloadBodyButton = new JButton();
         selectMethodBar = new JMenuBar();
         sendButton = new JButton();
 
@@ -121,6 +125,12 @@ public class MainPage extends JPanel {
         //---- toChangeReqResButton ----
         toChangeReqResButton.setText("Change Req/Res Page");
         add(toChangeReqResButton, new GridBagConstraints(2, 4, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+
+        //---- downloadBodyButton ----
+        downloadBodyButton.setText("download response body as bin file");
+        add(downloadBodyButton, new GridBagConstraints(3, 4, 3, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
         add(selectMethodBar, new GridBagConstraints(9, 4, 1, 1, 0.0, 0.0,
@@ -211,6 +221,7 @@ public class MainPage extends JPanel {
     private void onChangeProtocol(ActionEvent actionEvent) {
         boolean isSelectedHttp = ((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.Http.getValue());
         methods.setVisible(isSelectedHttp);
+        downloadBodyButton.setEnabled(isSelectedHttp);
         httpRequestTabComponent.setVisible(isSelectedHttp);
         httpResponseTabComponent.setVisible(isSelectedHttp);
         toChangeReqResButton.setEnabled(isSelectedHttp);
@@ -227,12 +238,28 @@ public class MainPage extends JPanel {
         updateTabs(!isRequestTab);
     }
 
+    private void onDownloadBinFile() {
+        if (!httpResponseTabComponent.isReceivedBinFile()) {
+            sendError("没有等待下载的响应体!");
+            return;
+        }
+        try {
+            JFileChooser jFileChooser = new JFileChooser();
+            jFileChooser.showSaveDialog(this);
+            FileOutputStream fileOutputStream = new FileOutputStream(jFileChooser.getSelectedFile());
+            fileOutputStream.write(httpResponseTabComponent.getLastResponseBody());
+            fileOutputStream.close();
+        } catch (IOException exception) {
+            sendError(exception.getLocalizedMessage());
+        }
+    }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JLabel label2;
     private JTextField url;
     private JLabel label1;
     private JButton toChangeReqResButton;
+    private JButton downloadBodyButton;
     private JMenuBar selectMethodBar;
     private JButton sendButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on

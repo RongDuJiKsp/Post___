@@ -17,7 +17,7 @@ public final class HttpRequestCustomer {
             headerList.put("content-type", "application/json;charset=utf-8");
             if (strEntity.charAt(0) == '[') strEntity = JSON.parseArray(strEntity).toJSONString();
             else if (strEntity.charAt(0) == '{') strEntity = JSON.parseObject(strEntity).toJSONString();
-            else throw new RuntimeException("不合法的json！");
+            else throw new RuntimeException("不合法的json");
         } else {
             headerList.put("content-type", "text/plain;charset=utf-8");
         }
