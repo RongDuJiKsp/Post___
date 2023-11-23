@@ -15,10 +15,9 @@ import java.util.Map;
 
 public class HttpRequestTabComponent extends JTabbedPane {
     private final HttpBodyComponent httpRequestBodyComponent;
-    private final HttpKeyValueComponent httpRequestParamsComponent,httpRequestHeadComponent;
+    private final HttpKeyValueComponent httpRequestParamsComponent, httpRequestHeadComponent, httpRequestCookieComponent;
 
     public HttpRequestTabComponent() {
-
         httpRequestParamsComponent = new HttpKeyValueComponent();
         addTab("Params", httpRequestParamsComponent);
         httpRequestBodyComponent = new HttpBodyComponent();
@@ -31,11 +30,21 @@ public class HttpRequestTabComponent extends JTabbedPane {
                 Map.entry("Connection", "keep-alive")
         ));
         addTab("Head", httpRequestHeadComponent);
+        httpRequestCookieComponent = new HttpKeyValueComponent();
+        addTab("Cookie", httpRequestCookieComponent);
+
+    }
+
+    String serializeCookieKeyValue(Map<String, String> kvp) {
+        StringBuilder cookieStr = new StringBuilder();
+        kvp.forEach((k, v) -> cookieStr.append(k).append('=').append(v).append(';'));
+        return cookieStr.toString();
     }
 
     synchronized public HttpPost sendPost(String url) throws URISyntaxException, IOException {
         BodyContain bodyContain = httpRequestBodyComponent.getBody();
         Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
+        headerContain.put("Cookie", serializeCookieKeyValue(httpRequestCookieComponent.getKeyValueData()));
         URIBuilder uriBuilder = new URIBuilder(url);
         paramContain.forEach(uriBuilder::addParameter);
         if (!bodyContain.isUsingBin())
@@ -48,6 +57,7 @@ public class HttpRequestTabComponent extends JTabbedPane {
 
     synchronized public HttpGet sendGet(String url) throws URISyntaxException, IOException {
         Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
+        headerContain.put("Cookie", serializeCookieKeyValue(httpRequestCookieComponent.getKeyValueData()));
         URIBuilder uriBuilder = new URIBuilder(url);
         paramContain.forEach(uriBuilder::addParameter);
         return HttpRequestCustomer.sendGetRequest(uriBuilder.build(), null, headerContain);

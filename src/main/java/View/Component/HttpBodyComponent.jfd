@@ -29,6 +29,13 @@ new FormModel {
 				"gridy": 5
 				"gridwidth": 2
 			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "formatJSONButton"
+				"text": "format json"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"gridx": 2
+				"gridy": 5
+			} )
 			add( new FormComponent( "javax.swing.JToggleButton" ) {
 				name: "isUsingBinButton"
 				"text": "Use Bin File"

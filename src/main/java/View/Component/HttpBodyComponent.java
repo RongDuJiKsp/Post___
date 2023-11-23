@@ -5,6 +5,9 @@
 package View.Component;
 
 import Model.BodyContain;
+import View.Window.ExceptionDialog;
+import com.alibaba.fastjson2.JSONObject;
+import com.alibaba.fastjson2.JSONWriter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,17 +25,28 @@ public class HttpBodyComponent extends JPanel {
     final JFileChooser jFileChooser;
 
     public HttpBodyComponent() {
-        initComponents();
-        init();
         jFileChooser = new JFileChooser();
+        init();
     }
 
     private void init() {
+        initComponents();
+        initAction();
+        initCompStatus();
+    }
+
+    private void initAction() {
+        isUsingBinButton.addActionListener(actionEvent -> onSelectIsUseBinFile());
+        isUsingJSONButton.addActionListener(actionEvent -> onSelectIsUseJson());
+        uploadBinFileButton.addActionListener(actionEvent -> onUploadFile());
+        formatJSONButton.addActionListener(actionEvent -> onFormatJSON());
+    }
+
+    private void initCompStatus() {
         uploadBinFileButton.setEnabled(false);
         upLoadFileName.setEnabled(false);
         upLoadFileName.setEditable(false);
-        isUsingBinButton.addActionListener(actionEvent -> onSelectIsUseBinFile());
-        uploadBinFileButton.addActionListener(actionEvent -> onUploadFile());
+        formatJSONButton.setEnabled(false);
     }
 
     private void initComponents() {
@@ -40,6 +54,7 @@ public class HttpBodyComponent extends JPanel {
         scrollPane1 = new JScrollPane();
         textEditor = new JEditorPane();
         isUsingJSONButton = new JToggleButton();
+        formatJSONButton = new JButton();
         isUsingBinButton = new JToggleButton();
         label1 = new JLabel();
         upLoadFileName = new JTextField();
@@ -66,6 +81,12 @@ public class HttpBodyComponent extends JPanel {
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
 
+        //---- formatJSONButton ----
+        formatJSONButton.setText("format json");
+        add(formatJSONButton, new GridBagConstraints(2, 5, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
+
         //---- isUsingBinButton ----
         isUsingBinButton.setText("Use Bin File");
         add(isUsingBinButton, new GridBagConstraints(3, 5, 5, 1, 0.0, 0.0,
@@ -89,21 +110,35 @@ public class HttpBodyComponent extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
-    private void setIsJSONEnabled(boolean isJSONEnabled) {
-        uploadBinFileButton.setEnabled(isJSONEnabled);
-        upLoadFileName.setEnabled(isJSONEnabled);
-        textEditor.setEnabled(!isJSONEnabled);
-        isUsingJSONButton.setEnabled(!isJSONEnabled);
+    private void setIsTextEnabled(boolean isTextEnabled) {
+        uploadBinFileButton.setEnabled(!isTextEnabled);
+        upLoadFileName.setEnabled(!isTextEnabled);
+        textEditor.setEnabled(isTextEnabled);
+        isUsingJSONButton.setEnabled(isTextEnabled);
+        formatJSONButton.setEnabled(isTextEnabled);
     }
 
     private void onSelectIsUseBinFile() {
-        setIsJSONEnabled(isUsingBinButton.isSelected());
+        setIsTextEnabled(!isUsingBinButton.isSelected());
+    }
+
+    private void onSelectIsUseJson() {
+        formatJSONButton.setEnabled(isUsingJSONButton.isSelected());
     }
 
     private void onUploadFile() {
         jFileChooser.showOpenDialog(this);
         selectedFile = jFileChooser.getSelectedFile();
         upLoadFileName.setText(selectedFile.getName());
+    }
+
+    private void onFormatJSON() {
+        try {
+            JSONObject jsonObject = JSONObject.parseObject(textEditor.getText());
+            textEditor.setText(jsonObject.toJSONString(JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.WriteMapNullValue));
+        } catch (Exception e) {
+            new ExceptionDialog(null, e.getLocalizedMessage());
+        }
     }
 
     public void setEditable(boolean flag) {
@@ -113,6 +148,7 @@ public class HttpBodyComponent extends JPanel {
         label1.setVisible(flag);
         upLoadFileName.setVisible(flag);
         uploadBinFileButton.setVisible(flag);
+        formatJSONButton.setEnabled(!flag);
     }
 
     public BodyContain getBody() {
@@ -134,6 +170,7 @@ public class HttpBodyComponent extends JPanel {
     private JScrollPane scrollPane1;
     private JEditorPane textEditor;
     private JToggleButton isUsingJSONButton;
+    private JButton formatJSONButton;
     private JToggleButton isUsingBinButton;
     private JLabel label1;
     private JTextField upLoadFileName;

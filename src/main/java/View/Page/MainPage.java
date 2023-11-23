@@ -17,6 +17,7 @@ import org.apache.http.impl.client.HttpClients;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
@@ -152,6 +153,7 @@ public class MainPage extends JPanel {
     }
 
     private void sendError(String error) {
+        if (error == null) return;
         new ExceptionDialog(mainWindow, new String(error.getBytes(), StandardCharsets.UTF_8));
     }
 
@@ -246,10 +248,13 @@ public class MainPage extends JPanel {
         try {
             JFileChooser jFileChooser = new JFileChooser();
             jFileChooser.showSaveDialog(this);
-            FileOutputStream fileOutputStream = new FileOutputStream(jFileChooser.getSelectedFile());
+            File file = jFileChooser.getSelectedFile();
+            if (file==null) return;
+            if (file.exists()) throw new IllegalArgumentException("指定的文件已经存在！");
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
             fileOutputStream.write(httpResponseTabComponent.getLastResponseBody());
             fileOutputStream.close();
-        } catch (IOException exception) {
+        } catch (IOException | IllegalArgumentException exception) {
             sendError(exception.getLocalizedMessage());
         }
     }

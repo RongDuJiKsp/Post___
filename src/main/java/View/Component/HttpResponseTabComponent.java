@@ -18,6 +18,7 @@ public class HttpResponseTabComponent extends JTabbedPane {
     @Getter
     private String contentType;
 
+
     public HttpResponseTabComponent() {
         httpResponseHeadComponent = new HttpKeyValueComponent();
         httpResponseHeadComponent.setEditable(false);

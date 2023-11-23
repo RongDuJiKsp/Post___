@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="国际化了喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了发送请求时携带cookies的功能喵">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/kuang.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/kuang.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HttpRequestCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +195,8 @@
       <workItem from="1700488032663" duration="3432000" />
       <workItem from="1700547164218" duration="12686000" />
       <workItem from="1700578146393" duration="3793000" />
-      <workItem from="1700611510574" duration="2187000" />
+      <workItem from="1700611510574" duration="6145000" />
+      <workItem from="1700734953739" duration="3349000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -395,7 +398,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700581934272</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="添加了下载文件的功能喵">
+      <option name="closed" value="true" />
+      <created>1700613740085</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700613740085</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -432,6 +443,8 @@
     <MESSAGE value="添加了cookie解析" />
     <MESSAGE value="大大重构了代码结构，现在代码可读性大大增加了喵" />
     <MESSAGE value="国际化了喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="国际化了喵" />
+    <MESSAGE value="添加了下载文件的功能喵" />
+    <MESSAGE value="添加了发送请求时携带cookies的功能喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了发送请求时携带cookies的功能喵" />
   </component>
 </project>
