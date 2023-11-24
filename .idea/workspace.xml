@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了发送请求时携带cookies的功能喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了更改了请求配置的功能，优化了部分异常逻辑喵">
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/ConfigSettingComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/ConfigSettingComponent.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/kuang.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/kuang.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +195,9 @@
       <workItem from="1700547164218" duration="12686000" />
       <workItem from="1700578146393" duration="3793000" />
       <workItem from="1700611510574" duration="6145000" />
-      <workItem from="1700734953739" duration="3536000" />
+      <workItem from="1700734953739" duration="3840000" />
+      <workItem from="1700787512379" duration="2382000" />
+      <workItem from="1700814811983" duration="1226000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -409,7 +415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700738531748</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="把奇奇怪怪的日志配置删了">
+      <option name="closed" value="true" />
+      <created>1700738987074</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1700738987074</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -448,6 +462,8 @@
     <MESSAGE value="国际化了喵" />
     <MESSAGE value="添加了下载文件的功能喵" />
     <MESSAGE value="添加了发送请求时携带cookies的功能喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了发送请求时携带cookies的功能喵" />
+    <MESSAGE value="把奇奇怪怪的日志配置删了" />
+    <MESSAGE value="添加了更改了请求配置的功能，优化了部分异常逻辑喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了更改了请求配置的功能，优化了部分异常逻辑喵" />
   </component>
 </project>

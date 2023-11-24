@@ -16,6 +16,7 @@ import java.util.Map;
 public class HttpRequestTabComponent extends JTabbedPane {
     private final HttpBodyComponent httpRequestBodyComponent;
     private final HttpKeyValueComponent httpRequestParamsComponent, httpRequestHeadComponent, httpRequestCookieComponent;
+    private final ConfigSettingComponent configSettingComponent;
 
     public HttpRequestTabComponent() {
         httpRequestParamsComponent = new HttpKeyValueComponent();
@@ -32,10 +33,13 @@ public class HttpRequestTabComponent extends JTabbedPane {
         addTab("Head", httpRequestHeadComponent);
         httpRequestCookieComponent = new HttpKeyValueComponent();
         addTab("Cookie", httpRequestCookieComponent);
-
+        configSettingComponent = new ConfigSettingComponent();
+        addTab("Config", configSettingComponent);
     }
 
-    String serializeCookieKeyValue(Map<String, String> kvp) {
+
+
+    private String serializeCookieKeyValue(Map<String, String> kvp) {
         StringBuilder cookieStr = new StringBuilder();
         kvp.forEach((k, v) -> cookieStr.append(k).append('=').append(v).append(';'));
         return cookieStr.toString();
@@ -48,10 +52,10 @@ public class HttpRequestTabComponent extends JTabbedPane {
         URIBuilder uriBuilder = new URIBuilder(url);
         paramContain.forEach(uriBuilder::addParameter);
         if (!bodyContain.isUsingBin())
-            return HttpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), null, bodyContain.isUsingJSON(), headerContain);
+            return HttpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), configSettingComponent.buildRequestConfig(), bodyContain.isUsingJSON(), headerContain);
         else {
             headerContain.put("content-type", Files.probeContentType(bodyContain.getSelectedFile().toPath()));
-            return HttpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), null, headerContain);
+            return HttpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), configSettingComponent.buildRequestConfig(), headerContain);
         }
     }
 
@@ -60,7 +64,7 @@ public class HttpRequestTabComponent extends JTabbedPane {
         headerContain.put("Cookie", serializeCookieKeyValue(httpRequestCookieComponent.getKeyValueData()));
         URIBuilder uriBuilder = new URIBuilder(url);
         paramContain.forEach(uriBuilder::addParameter);
-        return HttpRequestCustomer.sendGetRequest(uriBuilder.build(), null, headerContain);
+        return HttpRequestCustomer.sendGetRequest(uriBuilder.build(), configSettingComponent.buildRequestConfig(), headerContain);
     }
 
 }

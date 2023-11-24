@@ -133,8 +133,8 @@ public class WebSocketIOComponent extends JPanel {
             Document document = messageShower.getDocument();
             String toAdd = "The " + sender + " sent a message is \n" + message + "  " + adder + "\n\n";
             document.insertString(document.getLength(), toAdd, new SimpleAttributeSet());
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
+        } catch (Exception ignored) {
+
         }
     }
 

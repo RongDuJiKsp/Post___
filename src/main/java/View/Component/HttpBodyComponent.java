@@ -5,7 +5,6 @@
 package View.Component;
 
 import Model.BodyContain;
-import View.Window.ExceptionDialog;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.JSONWriter;
 
@@ -133,12 +132,8 @@ public class HttpBodyComponent extends JPanel {
     }
 
     private void onFormatJSON() {
-        try {
-            JSONObject jsonObject = JSONObject.parseObject(textEditor.getText());
-            textEditor.setText(jsonObject.toJSONString(JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.WriteMapNullValue));
-        } catch (Exception e) {
-            new ExceptionDialog(null, e.getLocalizedMessage());
-        }
+        JSONObject jsonObject = JSONObject.parseObject(textEditor.getText());
+        textEditor.setText(jsonObject.toJSONString(JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.WriteMapNullValue));
     }
 
     public void setEditable(boolean flag) {

@@ -169,8 +169,8 @@ public class MainPage extends JPanel {
         runningThread = new Thread(() -> {
             try {
                 httpResponseTabComponent.parseHttpResponse(httpClient.execute(httpRequestTabComponent.sendPost(url.getText())));
-            } catch (URISyntaxException | IOException e) {
-                sendError(e.getLocalizedMessage());
+            } catch (URISyntaxException | IOException | NumberFormatException e) {
+                sendError(e.toString());
             }
 
         });
@@ -185,8 +185,8 @@ public class MainPage extends JPanel {
         runningThread = new Thread(() -> {
             try {
                 httpResponseTabComponent.parseHttpResponse(httpClient.execute(httpRequestTabComponent.sendGet(url.getText())));
-            } catch (URISyntaxException | IOException e) {
-                sendError(e.getLocalizedMessage());
+            } catch (URISyntaxException | IOException | NumberFormatException e) {
+                sendError(e.toString());
             }
 
         });
@@ -197,7 +197,7 @@ public class MainPage extends JPanel {
         try {
             webSocketIOComponent.connectWebSocket(new URI(url.getText()));
         } catch (Exception e) {
-            sendError(e.getLocalizedMessage());
+            sendError(e.toString());
         }
     }
 
@@ -205,7 +205,7 @@ public class MainPage extends JPanel {
         try {
             webSocketIOComponent.connectSocketIO(new URI(url.getText()));
         } catch (Exception e) {
-            sendError(e.getLocalizedMessage());
+            sendError(e.toString());
         }
     }
 
@@ -255,7 +255,7 @@ public class MainPage extends JPanel {
             fileOutputStream.write(httpResponseTabComponent.getLastResponseBody());
             fileOutputStream.close();
         } catch (IOException | IllegalArgumentException exception) {
-            sendError(exception.getLocalizedMessage());
+            sendError(exception.toString());
         }
     }
 
