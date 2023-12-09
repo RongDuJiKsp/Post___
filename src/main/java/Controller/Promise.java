@@ -2,24 +2,26 @@ package Controller;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Promise<ResolveType> {
-    //用户传入的成功回调函数
+    //Successful callback function passed by the user
     public interface ResolveCallBack<ResolveType> {
         void onResolve(ResolveType res);
     }
 
-    //用户传入的失败回调函数
+    //Failed callback function passed in by the user
     public interface RejectCallBack {
         void onReject(Exception e);
     }
 
-    //传给用户的返回值函数
+    //Return value function passed to the user
     public interface OnResolved<ResolveType> {
         void resolve(ResolveType resolveType);
     }
 
-    //传给用户的异常函数
+    //Exception function passed to the user
     public interface OnRejected {
         void reject(Exception e);
     }
@@ -34,25 +36,32 @@ public class Promise<ResolveType> {
     private Exception promiseErr;
     private final Queue<ResolveCallBack<ResolveType>> resolveCallBacks = new ArrayDeque<>();
     private final Queue<RejectCallBack> rejectCallBacks = new ArrayDeque<>();
+    private final Lock lock = new ReentrantLock();
 
-    Promise(PromiseFunc<ResolveType> promiseFunc) {
+    public Promise(PromiseFunc<ResolveType> promiseFunc) {
         promiseState = PromiseState.pending;
         OnResolved<ResolveType> onResolved = (res) -> {
-            if (promiseState == PromiseState.pending) {
-                promiseState = PromiseState.fulfilled;
-                promiseRes = res;
-                resolveCallBacks.forEach((resolveTypeResolveCallBack -> {
-                    resolveTypeResolveCallBack.onResolve(promiseRes);
-                }));
+            lock.lock();
+            try {
+                if (promiseState == PromiseState.pending) {
+                    promiseState = PromiseState.fulfilled;
+                    promiseRes = res;
+                    resolveCallBacks.forEach((resolveTypeResolveCallBack -> resolveTypeResolveCallBack.onResolve(promiseRes)));
+                }
+            } finally {
+                lock.unlock();
             }
         };
         OnRejected onRejected = (err) -> {
-            if (promiseState == PromiseState.pending) {
-                promiseState = PromiseState.rejected;
-                promiseErr = err;
-                rejectCallBacks.forEach(rejectCallBack -> {
-                    rejectCallBack.onReject(promiseErr);
-                });
+            lock.lock();
+            try {
+                if (promiseState == PromiseState.pending) {
+                    promiseState = PromiseState.rejected;
+                    promiseErr = err;
+                    rejectCallBacks.forEach(rejectCallBack -> rejectCallBack.onReject(promiseErr));
+                }
+            } finally {
+                lock.unlock();
             }
         };
         try {
@@ -64,23 +73,33 @@ public class Promise<ResolveType> {
     }
 
     public Promise<ResolveType> then(ResolveCallBack<ResolveType> resolveCallBack, RejectCallBack rejectCallBack) {
-        resolveCallBacks.add(resolveCallBack);
-        rejectCallBacks.add(rejectCallBack);
-        return this;
+        lock.lock();
+        try {
+            if (promiseState == PromiseState.pending) {
+                if (resolveCallBack != null) resolveCallBacks.add(resolveCallBack);
+                if (rejectCallBack != null) rejectCallBacks.add(rejectCallBack);
+            } else {
+                if (promiseRes != null && resolveCallBack != null) resolveCallBack.onResolve(promiseRes);
+                if (promiseErr != null && rejectCallBack != null) rejectCallBack.onReject(promiseErr);
+            }
+            return this;
+        } finally {
+            lock.unlock();
+        }
     }
 
     public Promise<ResolveType> then(ResolveCallBack<ResolveType> resolveCallBack) {
-        resolveCallBacks.add(resolveCallBack);
+        then(resolveCallBack, null);
         return this;
     }
 
     public Promise<ResolveType> catchE(RejectCallBack rejectCallBack) {
-        rejectCallBacks.add(rejectCallBack);
+        then(null, rejectCallBack);
         return this;
     }
 
 }
 
 enum PromiseState {
-    pending, fulfilled, rejected;
+    pending, fulfilled, rejected
 }

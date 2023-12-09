@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="实现了带有Js特色的promise对象，另外，为什么java不支持回调！！！！">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="讨厌多线程喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Promise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Promise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +202,7 @@
       <workItem from="1701771589733" duration="61000" />
       <workItem from="1701929582908" duration="26000" />
       <workItem from="1702033943945" duration="2551000" />
-      <workItem from="1702089383873" duration="4725000" />
+      <workItem from="1702089383873" duration="7966000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -443,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702092062679</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="基本实现了带有Js特色的promise对象喵">
+      <option name="closed" value="true" />
+      <created>1702104558474</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1702104558474</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,8 +471,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="2改喵" />
-    <MESSAGE value="3改喵" />
     <MESSAGE value="4改喵" />
     <MESSAGE value="壳子完工喵" />
     <MESSAGE value="jvav写起来好啰嗦啊喵" />
@@ -487,6 +494,8 @@
     <MESSAGE value="把奇奇怪怪的日志配置删了" />
     <MESSAGE value="添加了更改了请求配置的功能，优化了部分异常逻辑喵" />
     <MESSAGE value="实现了带有Js特色的promise对象，另外，为什么java不支持回调！！！！" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了带有Js特色的promise对象，另外，为什么java不支持回调！！！！" />
+    <MESSAGE value="基本实现了带有Js特色的promise对象喵" />
+    <MESSAGE value="讨厌多线程喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="讨厌多线程喵" />
   </component>
 </project>

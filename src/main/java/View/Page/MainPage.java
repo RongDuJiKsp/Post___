@@ -4,6 +4,7 @@
 
 package View.Page;
 
+import Controller.Promise;
 import Model.HttpMethod;
 import Model.Protocol;
 import View.Component.HttpRequestTabComponent;
@@ -11,6 +12,7 @@ import View.Component.HttpResponseTabComponent;
 import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
+import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
 
@@ -157,7 +159,7 @@ public class MainPage extends JPanel {
         new ExceptionDialog(mainWindow, new String(error.getBytes(), StandardCharsets.UTF_8));
     }
 
-    private synchronized boolean isNotAvailableToSendARequest() {
+    private boolean isNotAvailableToSendARequest() {
         return runningThread != null && runningThread.getState() != Thread.State.TERMINATED;
     }
 
@@ -166,16 +168,23 @@ public class MainPage extends JPanel {
             sendError("存在正在进行的连接！无法进行post请求的发送！");
             return;
         }
-
-        runningThread = new Thread(() -> {
+        new Promise<HttpResponse>((resolve, reject) -> {
+            runningThread = new Thread(() -> {
+                try {
+                    resolve.resolve(httpClient.execute(httpRequestTabComponent.sendPost(url.getText())));
+                } catch (URISyntaxException | IOException | NumberFormatException e) {
+                    reject.reject(e);
+                }
+            });
+            runningThread.start();
+        }).then(res -> {
             try {
-                httpResponseTabComponent.parseHttpResponse(httpClient.execute(httpRequestTabComponent.sendPost(url.getText())));
-            } catch (URISyntaxException | IOException | NumberFormatException e) {
-                sendError(e.toString());
+                httpResponseTabComponent.parseHttpResponse(res);
+            } catch (IOException ioException) {
+                sendError(ioException.toString());
             }
+        }, req -> sendError(req.toString()));
 
-        });
-        runningThread.start();
     }
 
     private void sendGet() {
@@ -183,15 +192,23 @@ public class MainPage extends JPanel {
             sendError("存在正在进行的连接！无法进行Get请求的发送！");
             return;
         }
-        runningThread = new Thread(() -> {
-            try {
-                httpResponseTabComponent.parseHttpResponse(httpClient.execute(httpRequestTabComponent.sendGet(url.getText())));
-            } catch (URISyntaxException | IOException | NumberFormatException e) {
-                sendError(e.toString());
-            }
+        new Promise<HttpResponse>(((resolve, reject) -> {
+            runningThread = new Thread(() -> {
+                try {
+                    resolve.resolve(httpClient.execute(httpRequestTabComponent.sendGet(url.getText())));
+                } catch (URISyntaxException | IOException | NumberFormatException e) {
+                    reject.reject(e);
+                }
 
-        });
-        runningThread.start();
+            });
+            runningThread.start();
+        })).then(res -> {
+            try {
+                httpResponseTabComponent.parseHttpResponse(res);
+            } catch (IOException ioException) {
+                sendError(ioException.toString());
+            }
+        }, req -> sendError(req.toString()));
     }
 
     private void connectWebSocket() {
@@ -250,7 +267,7 @@ public class MainPage extends JPanel {
             JFileChooser jFileChooser = new JFileChooser();
             jFileChooser.showSaveDialog(this);
             File file = jFileChooser.getSelectedFile();
-            if (file==null) return;
+            if (file == null) return;
             if (file.exists()) throw new IllegalArgumentException("指定的文件已经存在！");
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             fileOutputStream.write(httpResponseTabComponent.getLastResponseBody());
