@@ -52,9 +52,9 @@ public class HttpResponseTabComponent extends JTabbedPane {
         //save body
         if (httpResponse.containsHeader("content-type")) {
             ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
-            httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
             lastResponseBody = byteArrayOutputStream.toByteArray();
             contentType=httpResponse.getFirstHeader("content-type").getValue();
+            httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
             byteArrayOutputStream.close();
         }
     }
