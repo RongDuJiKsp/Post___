@@ -166,6 +166,7 @@ public class MainPage extends JPanel {
             sendError("存在正在进行的连接！无法进行post请求的发送！");
             return;
         }
+
         runningThread = new Thread(() -> {
             try {
                 httpResponseTabComponent.parseHttpResponse(httpClient.execute(httpRequestTabComponent.sendPost(url.getText())));
