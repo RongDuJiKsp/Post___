@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.PromiseState;
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.concurrent.locks.Lock;
@@ -65,7 +67,9 @@ public class Promise<ResolveType> {
             }
         };
         try {
-            promiseFunc.promise(onResolved, onRejected);
+            new Thread(() -> {
+                promiseFunc.promise(onResolved, onRejected);
+            }).start();
         } catch (Exception e) {
             onRejected.reject(e);
         }
@@ -100,6 +104,3 @@ public class Promise<ResolveType> {
 
 }
 
-enum PromiseState {
-    pending, fulfilled, rejected
-}

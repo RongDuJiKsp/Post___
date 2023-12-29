@@ -15,7 +15,7 @@ public class SimpleFunction {
 
     public static ByteArrayOutputStream cloneInputStream(InputStream input) throws IOException {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            byte[] buffer = new byte[32768];
+            byte[] buffer = new byte[512];
             int len;
             while ((len = input.read(buffer)) > -1) {
                 baos.write(buffer, 0, len);

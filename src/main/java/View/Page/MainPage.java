@@ -4,6 +4,7 @@
 
 package View.Page;
 
+import Controller.HistorySaver;
 import Controller.Promise;
 import Model.HttpMethod;
 import Model.Protocol;
@@ -13,7 +14,6 @@ import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 import javax.swing.*;
@@ -32,17 +32,15 @@ import java.util.Arrays;
  * @author rdjksp
  */
 public class MainPage extends JPanel {
-    private Thread runningThread;
     private final JFrame mainWindow;
-    private final HttpClient httpClient;
     private SelectItemComponent protocols, methods;
     private HttpRequestTabComponent httpRequestTabComponent;
     private HttpResponseTabComponent httpResponseTabComponent;
     private WebSocketIOComponent webSocketIOComponent;
     private boolean isRequestTab;
+    private HistorySaver historySaver;
 
     public MainPage(JFrame mainWindow) {
-        httpClient = HttpClients.createDefault();
         this.mainWindow = mainWindow;
         init();
     }
@@ -95,6 +93,7 @@ public class MainPage extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
+        saveHistoryButton = new JButton();
         label2 = new JLabel();
         url = new JTextField();
         label1 = new JLabel();
@@ -109,6 +108,12 @@ public class MainPage extends JPanel {
         ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 24, 29, 0, 38, 91, 0, 0, 0, 0, 0};
         ((GridBagLayout)getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
         ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+
+        //---- saveHistoryButton ----
+        saveHistoryButton.setText("SaveHistory");
+        add(saveHistoryButton, new GridBagConstraints(10, 2, 1, 1, 0.0, 0.0,
+            GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+            new Insets(0, 0, 5, 5), 0, 0));
 
         //---- label2 ----
         label2.setText("      Url:");
@@ -159,24 +164,14 @@ public class MainPage extends JPanel {
         new ExceptionDialog(mainWindow, new String(error.getBytes(), StandardCharsets.UTF_8));
     }
 
-    private boolean isNotAvailableToSendARequest() {
-        return runningThread != null && runningThread.getState() != Thread.State.TERMINATED;
-    }
 
     private void sendPost() {
-        if (isNotAvailableToSendARequest()) {
-            sendError("存在正在进行的连接！无法进行post请求的发送！");
-            return;
-        }
         new Promise<HttpResponse>((resolve, reject) -> {
-            runningThread = new Thread(() -> {
-                try {
-                    resolve.resolve(httpClient.execute(httpRequestTabComponent.sendPost(url.getText())));
-                } catch (URISyntaxException | IOException | NumberFormatException e) {
-                    reject.reject(e);
-                }
-            });
-            runningThread.start();
+            try {
+                resolve.resolve(HttpClients.createDefault().execute(httpRequestTabComponent.sendPost(url.getText())));
+            } catch (URISyntaxException | IOException | NumberFormatException e) {
+                reject.reject(e);
+            }
         }).then(res -> {
             try {
                 httpResponseTabComponent.parseHttpResponse(res);
@@ -188,20 +183,12 @@ public class MainPage extends JPanel {
     }
 
     private void sendGet() {
-        if (isNotAvailableToSendARequest()) {
-            sendError("存在正在进行的连接！无法进行Get请求的发送！");
-            return;
-        }
         new Promise<HttpResponse>(((resolve, reject) -> {
-            runningThread = new Thread(() -> {
-                try {
-                    resolve.resolve(httpClient.execute(httpRequestTabComponent.sendGet(url.getText())));
-                } catch (URISyntaxException | IOException | NumberFormatException e) {
-                    reject.reject(e);
-                }
-
-            });
-            runningThread.start();
+            try {
+                resolve.resolve(HttpClients.createDefault().execute(httpRequestTabComponent.sendGet(url.getText())));
+            } catch (URISyntaxException | IOException | NumberFormatException e) {
+                reject.reject(e);
+            }
         })).then(res -> {
             try {
                 httpResponseTabComponent.parseHttpResponse(res);
@@ -278,6 +265,7 @@ public class MainPage extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
+    private JButton saveHistoryButton;
     private JLabel label2;
     private JTextField url;
     private JLabel label1;

@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="讨厌多线程喵">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/MusicPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/UnrealSuperhero3_Loop.wav" afterDir="false" />
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="压缩了文件喵">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/HistoryStruct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/PromiseState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/SaveRecordsComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/SaveRecordsComponent.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Promise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Promise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SimpleFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/SimpleFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/HttpMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/HttpMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +62,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -82,27 +89,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Run",
-    "Gradle.PostMTF [clean].executor": "Run",
-    "Gradle.PostMTF [jar].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "java.suggest.annotation.dependency": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.PostMTF [:PostMTFApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;java.suggest.annotation.dependency&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\codefile\PostMTF\src\main\resources" />
@@ -111,7 +118,7 @@
       <recent name="D:\codefile\PostMTF\src\main\java\View\ExceptionDialog" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PostMTF [jar]">
+  <component name="RunManager" selected="应用程序.PostMTFApplication">
     <configuration name="PostMTFApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PostMTFApplication" />
       <module name="PostMTF.main" />
@@ -244,7 +251,8 @@
       <workItem from="1703408604652" duration="907000" />
       <workItem from="1703748197667" duration="213000" />
       <workItem from="1703771646372" duration="78000" />
-      <workItem from="1703812009852" duration="5844000" />
+      <workItem from="1703812009852" duration="7769000" />
+      <workItem from="1703831583492" duration="4711000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -510,7 +518,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702107777626</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="添加了使用参数 --music播放音乐的功能喵">
+      <option name="closed" value="true" />
+      <created>1703818147293</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1703818147294</updated>
+    </task>
+    <task id="LOCAL-00035" summary="压缩了文件喵">
+      <option name="closed" value="true" />
+      <created>1703818520298</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1703818520298</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,8 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="4改喵" />
-    <MESSAGE value="壳子完工喵" />
     <MESSAGE value="jvav写起来好啰嗦啊喵" />
     <MESSAGE value="post能用了喵" />
     <MESSAGE value="get能用了喵" />
@@ -554,6 +576,8 @@
     <MESSAGE value="实现了带有Js特色的promise对象，另外，为什么java不支持回调！！！！" />
     <MESSAGE value="基本实现了带有Js特色的promise对象喵" />
     <MESSAGE value="讨厌多线程喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="讨厌多线程喵" />
+    <MESSAGE value="添加了使用参数 --music播放音乐的功能喵" />
+    <MESSAGE value="压缩了文件喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="压缩了文件喵" />
   </component>
 </project>

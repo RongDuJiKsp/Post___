@@ -7,5 +7,5 @@ import lombok.Getter;
 @Getter
 public enum HttpMethod {
     Post("Post"), Get("Get");
-    private String value;
+    private final String value;
 }

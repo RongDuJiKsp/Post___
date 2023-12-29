@@ -31,7 +31,7 @@ public class HttpResponseTabComponent extends JTabbedPane {
         addTab("Response Cookies", httpResponseCookieComponent);
     }
 
-    public void parseHttpResponse(HttpResponse httpResponse) throws IOException {
+    synchronized public void parseHttpResponse(HttpResponse httpResponse) throws IOException {
         httpResponseCookieComponent.clear();
         httpResponseBodyComponent.clear();
         httpResponseHeadComponent.clear();
@@ -53,7 +53,7 @@ public class HttpResponseTabComponent extends JTabbedPane {
         if (httpResponse.containsHeader("content-type")) {
             ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
             lastResponseBody = byteArrayOutputStream.toByteArray();
-            contentType=httpResponse.getFirstHeader("content-type").getValue();
+            contentType = httpResponse.getFirstHeader("content-type").getValue();
             httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
             byteArrayOutputStream.close();
         }
