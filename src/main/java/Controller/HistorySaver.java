@@ -4,6 +4,7 @@ package Controller;
 import Model.HistoryStruct;
 import Model.HttpMethod;
 import com.alibaba.fastjson2.JSONObject;
+import lombok.Getter;
 
 import javax.swing.table.DefaultTableModel;
 import java.io.File;
@@ -14,9 +15,10 @@ import java.util.Vector;
 
 public class HistorySaver {
     private ArrayList<HistoryStruct> historyData;
+    @Getter
     private DefaultTableModel dataModel;
 
-    HistorySaver() {
+    public HistorySaver() {
         dataModel = new DefaultTableModel();
         dataModel.addColumn("Time");
         dataModel.addColumn("Url");

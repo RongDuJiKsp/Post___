@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="压缩了文件喵">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/HistoryStruct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/PromiseState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/SaveRecordsComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Component/SaveRecordsComponent.jfd" afterDir="false" />
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了历史记录相关的逻辑支持喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Promise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Promise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SimpleFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/SimpleFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/HttpMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/HttpMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/SaveRecordsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/SaveRecordsComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/SaveRecordsComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/SaveRecordsComponent.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" afterDir="false" />
     </list>
@@ -252,7 +246,7 @@
       <workItem from="1703748197667" duration="213000" />
       <workItem from="1703771646372" duration="78000" />
       <workItem from="1703812009852" duration="7769000" />
-      <workItem from="1703831583492" duration="4711000" />
+      <workItem from="1703831583492" duration="5979000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -534,7 +528,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703818520298</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="添加了历史记录相关的逻辑支持喵">
+      <option name="closed" value="true" />
+      <created>1703836371257</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1703836371258</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +555,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="jvav写起来好啰嗦啊喵" />
     <MESSAGE value="post能用了喵" />
     <MESSAGE value="get能用了喵" />
     <MESSAGE value="ws能用了(≧^.^≦)喵~" />
@@ -578,6 +579,7 @@
     <MESSAGE value="讨厌多线程喵" />
     <MESSAGE value="添加了使用参数 --music播放音乐的功能喵" />
     <MESSAGE value="压缩了文件喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="压缩了文件喵" />
+    <MESSAGE value="添加了历史记录相关的逻辑支持喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了历史记录相关的逻辑支持喵" />
   </component>
 </project>

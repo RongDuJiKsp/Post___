@@ -6,14 +6,18 @@ package View.Page;
 
 import Controller.HistorySaver;
 import Controller.Promise;
+import Model.HistoryStruct;
 import Model.HttpMethod;
 import Model.Protocol;
 import View.Component.HttpRequestTabComponent;
 import View.Component.HttpResponseTabComponent;
+import View.Component.SaveRecordsComponent;
 import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 
 import javax.swing.*;
@@ -27,6 +31,7 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * @author rdjksp
@@ -38,7 +43,7 @@ public class MainPage extends JPanel {
     private HttpResponseTabComponent httpResponseTabComponent;
     private WebSocketIOComponent webSocketIOComponent;
     private boolean isRequestTab;
-    private HistorySaver historySaver;
+    volatile private HistorySaver historySaver;
 
     public MainPage(JFrame mainWindow) {
         this.mainWindow = mainWindow;
@@ -51,6 +56,11 @@ public class MainPage extends JPanel {
         initTabs();
         initChoicer();
         initAction();
+        initOthers();
+    }
+
+    private void initOthers() {
+        historySaver = new HistorySaver();
     }
 
     private void initTabs() {
@@ -89,6 +99,8 @@ public class MainPage extends JPanel {
         sendButton.addActionListener(actionEvent -> onPressSendButton());
         //init download action
         downloadBodyButton.addActionListener(actionEvent -> onDownloadBinFile());
+        //init save history action
+        saveHistoryButton.addActionListener(actionEvent -> onDownLoadHistory());
     }
 
     private void initComponents() {
@@ -105,7 +117,7 @@ public class MainPage extends JPanel {
         //======== this ========
         setLayout(new GridBagLayout());
         ((GridBagLayout)getLayout()).columnWidths = new int[] {51, 77, 85, 76, 89, 82, 61, 67, 50, 65, 70, 0, 0, 0, 0, 0};
-        ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 24, 29, 0, 38, 91, 0, 0, 0, 0, 0};
+        ((GridBagLayout)getLayout()).rowHeights = new int[] {0, 19, 42, 0, 38, 91, 0, 0, 0, 0, 0};
         ((GridBagLayout)getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
         ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
@@ -168,7 +180,10 @@ public class MainPage extends JPanel {
     private void sendPost() {
         new Promise<HttpResponse>((resolve, reject) -> {
             try {
-                resolve.resolve(HttpClients.createDefault().execute(httpRequestTabComponent.sendPost(url.getText())));
+                HttpPost httpPost = httpRequestTabComponent.sendPost(url.getText());
+                HttpResponse httpResponse = HttpClients.createDefault().execute(httpPost);
+                historySaver.addData(new HistoryStruct(HttpMethod.Post, null, httpPost, httpResponse, new Date()));
+                resolve.resolve(httpResponse);
             } catch (URISyntaxException | IOException | NumberFormatException e) {
                 reject.reject(e);
             }
@@ -185,7 +200,10 @@ public class MainPage extends JPanel {
     private void sendGet() {
         new Promise<HttpResponse>(((resolve, reject) -> {
             try {
-                resolve.resolve(HttpClients.createDefault().execute(httpRequestTabComponent.sendGet(url.getText())));
+                HttpGet httpGet = httpRequestTabComponent.sendGet(url.getText());
+                HttpResponse httpResponse = HttpClients.createDefault().execute(httpGet);
+                historySaver.addData(new HistoryStruct(HttpMethod.Get, httpGet, null, httpResponse, new Date()));
+                resolve.resolve(httpResponse);
             } catch (URISyntaxException | IOException | NumberFormatException e) {
                 reject.reject(e);
             }
@@ -262,6 +280,10 @@ public class MainPage extends JPanel {
         } catch (IOException | IllegalArgumentException exception) {
             sendError(exception.toString());
         }
+    }
+
+    private void onDownLoadHistory() {
+        new SaveRecordsComponent(mainWindow, historySaver).setVisible(true);
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
