@@ -4,22 +4,47 @@
 
 package View.Window;
 
+import lombok.extern.slf4j.Slf4j;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * @author rdjks
  */
+@Slf4j
 public class ExceptionDialog extends JDialog {
     public ExceptionDialog(Window owner, String message) {
         super(owner);
         initComponents();
+        initSharp(message);
+        initImage();
+    }
+
+    private void initImage() {
+        try (InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("error.png")) {
+            if (inputStream == null) return;
+            File tmpFile = File.createTempFile("%%%%%%error%%%%%", "png");
+            tmpFile.deleteOnExit();
+            try (FileOutputStream fileOutputStream = new FileOutputStream(tmpFile)) {
+                fileOutputStream.write(inputStream.readAllBytes());
+            }
+            label1.setIcon(new ImageIcon(tmpFile.getPath()));
+        } catch (IOException e) {
+            log.error(e.getMessage());
+        }
+    }
+
+    private void initSharp(String message) {
         setResizable(false);
         setVisible(true);
         setSize(400, 350);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        label1.setIcon(new ImageIcon("src/main/resources/error.png"));
         outPutTextArea.setEditable(false);
         outPutTextArea.setText(message);
     }
