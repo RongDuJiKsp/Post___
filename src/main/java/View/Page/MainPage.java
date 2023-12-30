@@ -11,7 +11,7 @@ import Model.HttpMethod;
 import Model.Protocol;
 import View.Component.HttpRequestTabComponent;
 import View.Component.HttpResponseTabComponent;
-import View.Component.SaveRecordsComponent;
+import View.Window.SaveRecordsComponent;
 import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;

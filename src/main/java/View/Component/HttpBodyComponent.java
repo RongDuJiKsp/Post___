@@ -9,6 +9,7 @@ import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.JSONWriter;
 
 import javax.swing.*;
+import javax.swing.text.Document;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -149,10 +150,14 @@ public class HttpBodyComponent extends JPanel {
         return new BodyContain(isUsingJSONButton.isSelected(), isUsingBinButton.isSelected(), selectedFile, textEditor.getText());
     }
 
-    public void setBody(InputStream inputStream, String contentType) throws IOException {
-        textEditor.setContentType(contentType);
-        textEditor.read(new InputStreamReader(inputStream), contentType);
-        inputStream.close();
+    public void setBody(InputStream inputStream, String contentType) {
+        try (inputStream) {
+            textEditor.setContentType(contentType);
+            Document document = textEditor.getDocument();
+            textEditor.read(new InputStreamReader(inputStream), document);
+        } catch (IOException e) {
+            textEditor.setText("Sorry," + e);
+        }
     }
 
     public void clear() {

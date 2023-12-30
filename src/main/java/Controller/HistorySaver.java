@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -19,6 +20,7 @@ public class HistorySaver {
     private DefaultTableModel dataModel;
 
     public HistorySaver() {
+        historyData = new ArrayList<>();
         dataModel = new DefaultTableModel();
         dataModel.addColumn("Time");
         dataModel.addColumn("Url");
@@ -30,13 +32,13 @@ public class HistorySaver {
         HistoryStruct toSave = historyData.get(index);
         File tmpFile = null;
         if (toSave.getHttpMethod() == HttpMethod.Get) {
-            tmpFile = File.createTempFile("HttpGet-" + toSave.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toSave.getHttpResponseData().getStatusLine().getReasonPhrase() + Math.floor(Math.random() * 10000), "json");
+            tmpFile = File.createTempFile("HttpGet-" + toSave.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toSave.getHttpResponseData().getStatusLine().getReasonPhrase() + Math.floor(Math.random() * 10000), ".json");
         } else {
-            tmpFile = File.createTempFile("HttpPost-" + toSave.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toSave.getHttpResponseData().getStatusLine().getReasonPhrase() + Math.floor(Math.random() * 10000), "json");
+            tmpFile = File.createTempFile("HttpPost-" + toSave.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toSave.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000), ".json");
         }
         tmpFile.deleteOnExit();
         try (FileOutputStream fileOutputStream = new FileOutputStream(tmpFile)) {
-            fileOutputStream.write(JSONObject.from(toSave).toJSONBBytes());
+            fileOutputStream.write(JSONObject.from(toSave).toJSONString().getBytes(StandardCharsets.UTF_8));
         }
         return tmpFile;
     }
@@ -53,6 +55,7 @@ public class HistorySaver {
             col.add(HttpMethod.Post.getValue());
         }
         col.add(historyStruct.getHttpResponseData().getStatusLine().toString());
+        dataModel.addRow(col);
     }
 
 

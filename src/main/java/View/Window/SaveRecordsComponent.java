@@ -2,26 +2,70 @@
  * Created by JFormDesigner on Fri Dec 29 15:40:37 CST 2023
  */
 
-package View.Component;
+package View.Window;
 
 import Controller.HistorySaver;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 /**
  * @author rdjks
  */
 public class SaveRecordsComponent extends JDialog {
+    File directory;
+    HistorySaver model;
+
     public SaveRecordsComponent(Window owner, HistorySaver model) {
         super(owner);
         initComponents();
         initTable(model);
+        initSettings();
+        initAction();
     }
 
-    void initTable(HistorySaver model) {
-        histroyTable.setModel(model.getDataModel());
+    private void initTable(HistorySaver model) {
+        historyTable.setModel(model.getDataModel());
+        this.model = model;
+    }
+
+    private void initSettings() {
+        chosenFolderPanel.setEditable(false);
+    }
+
+    private void initAction() {
+        selectFolderButton.addActionListener(actionEvent -> onChoseFolder());
+        okButton.addActionListener(actionEvent -> onDownload());
+    }
+
+    private void onChoseFolder() {
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        jFileChooser.showSaveDialog(this);
+        directory = jFileChooser.getSelectedFile();
+        if(directory==null) return;
+        chosenFolderPanel.setText(directory.getPath());
+    }
+
+    private void onDownload() {
+        new Thread(() -> {
+            try {
+                if(directory==null) return;
+                for (int index : historyTable.getSelectedRows()) {
+                    File tmpfile = model.getChosenData(index);
+                    File saveFile = new File(directory.toPath() + "\\" + tmpfile.getName());
+                    Files.copy(tmpfile.toPath(), saveFile.toPath());
+                }
+                dispose();
+            } catch (IOException e) {
+                new ExceptionDialog(this, e.toString());
+            }
+        }).start();
+       setVisible(false);
     }
 
 
@@ -32,7 +76,7 @@ public class SaveRecordsComponent extends JDialog {
         chosenFolderPanel = new JTextField();
         selectFolderButton = new JButton();
         scrollPane1 = new JScrollPane();
-        histroyTable = new JTable();
+        historyTable = new JTable();
         buttonBar = new JPanel();
         okButton = new JButton();
 
@@ -49,9 +93,9 @@ public class SaveRecordsComponent extends JDialog {
             {
                 contentPanel.setLayout(new GridBagLayout());
                 ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {0, 101, 99, 90, 83, 150, 0};
-                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 26, 23, 371, 30, 0};
+                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {0, 0, 26, 23, 371, 29, 0, 30, 0};
                 ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
-                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
                 contentPanel.add(chosenFolderPanel, new GridBagConstraints(1, 1, 3, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
@@ -64,7 +108,7 @@ public class SaveRecordsComponent extends JDialog {
 
                 //======== scrollPane1 ========
                 {
-                    scrollPane1.setViewportView(histroyTable);
+                    scrollPane1.setViewportView(historyTable);
                 }
                 contentPanel.add(scrollPane1, new GridBagConstraints(1, 3, 5, 2, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
@@ -100,7 +144,7 @@ public class SaveRecordsComponent extends JDialog {
     private JTextField chosenFolderPanel;
     private JButton selectFolderButton;
     private JScrollPane scrollPane1;
-    private JTable histroyTable;
+    private JTable historyTable;
     private JPanel buttonBar;
     private JButton okButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on

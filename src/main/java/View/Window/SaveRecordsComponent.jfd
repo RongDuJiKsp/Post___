@@ -10,7 +10,7 @@ new FormModel {
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
 					"$columnSpecs": "0, 96, 94, 85, 78, 150"
-					"$rowSpecs": "0, 0, 21, 18, 366, 30"
+					"$rowSpecs": "0, 0, 21, 18, 366, 24, 0, 30"
 					"$hGap": 5
 					"$vGap": 5
 					"$alignLeft": true
@@ -34,7 +34,7 @@ new FormModel {
 					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 						name: "scrollPane1"
 						add( new FormComponent( "javax.swing.JTable" ) {
-							name: "histroyTable"
+							name: "historyTable"
 						} )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 1

@@ -1,6 +1,7 @@
 package View.Component;
 
 import Controller.SimpleFunction;
+import View.ViewConfig;
 import lombok.Getter;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
@@ -51,16 +52,23 @@ public class HttpResponseTabComponent extends JTabbedPane {
         }
         //save body
         if (httpResponse.containsHeader("content-type")) {
-            ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent());
-            lastResponseBody = byteArrayOutputStream.toByteArray();
             contentType = httpResponse.getFirstHeader("content-type").getValue();
-            httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), httpResponse.getFirstHeader("content-type").getValue());
-            byteArrayOutputStream.close();
-        }
+            if (ViewConfig.isUsingBufferedFile) {
+                try (ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent())) {
+                    lastResponseBody = byteArrayOutputStream.toByteArray();
+                    httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), contentType);
+
+                }
+            } else {
+                lastResponseBody = null;
+                httpResponseBodyComponent.setBody(httpResponse.getEntity().getContent(), contentType);
+            }
+
+        } else contentType = null;
     }
 
     public boolean isReceivedBinFile() {
-        return lastResponseBody != null && lastResponseBody.length > 0;
+        return lastResponseBody != null && contentType != null && lastResponseBody.length > 0;
     }
 
 }
