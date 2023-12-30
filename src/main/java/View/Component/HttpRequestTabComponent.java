@@ -5,6 +5,7 @@ import Model.BodyContain;
 import Model.HistoryStruct;
 import Model.HttpMethod;
 import org.apache.http.Header;
+import org.apache.http.HeaderElement;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
@@ -43,14 +44,15 @@ public class HttpRequestTabComponent extends JTabbedPane {
     }
 
     public void parseHistory(HistoryStruct historyStruct) {
+        httpRequestParamsComponent.clear();
+        httpRequestHeadComponent.clear();
+        httpRequestCookieComponent.clear();
+        httpRequestBodyComponent.clear();
+        Map<String, String> KVs = new HashMap<>();
+        String queryStr;
         if (historyStruct.getHttpMethod() == HttpMethod.Get) {
-            httpRequestParamsComponent.clear();
-            httpRequestHeadComponent.clear();
-            httpRequestCookieComponent.clear();
-            httpRequestBodyComponent.clear();
             //insert Params
-            Map<String, String> KVs = new HashMap<>();
-            String queryStr = historyStruct.getHttpGetData().getURI().getQuery();
+            queryStr = historyStruct.getHttpGetData().getURI().getQuery();
             if (queryStr != null) {
                 for (String paramKV : queryStr.split("&")) {
                     String[] KV = paramKV.split("=");
@@ -67,35 +69,61 @@ public class HttpRequestTabComponent extends JTabbedPane {
             KVs.clear();
             //insert cookie
             for (Header cookieHeader : historyStruct.getHttpGetData().getHeaders("Cookie")) {
-                cookieHeader.getElements();
+                for (HeaderElement headerElement : cookieHeader.getElements()) {
+                    KVs.put(headerElement.getName(), headerElement.getValue());
+                }
             }
 
-
         } else {
-
+            //insert  Params
+            queryStr = historyStruct.getHttpPostData().getURI().getQuery();
+            if (queryStr != null) {
+                for (String paramKV : queryStr.split("&")) {
+                    String[] aKV = paramKV.split("=");
+                    KVs.put(aKV[0], aKV[1]);
+                }
+                httpRequestParamsComponent.addKeyValue(KVs);
+                KVs.clear();
+            }
+            //insert  Head
+            for (Header header : historyStruct.getHttpPostData().getAllHeaders()) {
+                KVs.put(header.getName(), header.getValue());
+            }
+            httpRequestHeadComponent.addKeyValue(KVs);
+            KVs.clear();
+            //insert  cookie
+            for (Header cookieHeader : historyStruct.getHttpPostData().getHeaders("Cookie")) {
+                for (HeaderElement headerElement : cookieHeader.getElements()) {
+                    KVs.put(headerElement.getName(), headerElement.getValue());
+                }
+            }
         }
+        httpRequestCookieComponent.addKeyValue(KVs);
+        KVs.clear();
+        //insert body
+        httpRequestBodyComponent.setBody(historyStruct.getBodyContain());
     }
 
-    public HttpPost sendPost(String url) throws URISyntaxException, IOException {
+    synchronized public Map.Entry<HttpPost, BodyContain> sendPost(String url) throws URISyntaxException, IOException {
         BodyContain bodyContain = httpRequestBodyComponent.getBody();
         Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
         headerContain.put("Cookie", serializeCookieKeyValue(httpRequestCookieComponent.getKeyValueData()));
         URIBuilder uriBuilder = new URIBuilder(url);
         paramContain.forEach(uriBuilder::addParameter);
         if (!bodyContain.isUsingBin())
-            return HttpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), configSettingComponent.buildRequestConfig(), bodyContain.isUsingJSON(), headerContain);
+            return Map.entry(HttpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), configSettingComponent.buildRequestConfig(), bodyContain.isUsingJSON(), headerContain), bodyContain);
         else {
             headerContain.put("content-type", Files.probeContentType(bodyContain.getSelectedFile().toPath()));
-            return HttpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), configSettingComponent.buildRequestConfig(), headerContain);
+            return Map.entry(HttpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), configSettingComponent.buildRequestConfig(), headerContain), bodyContain);
         }
     }
 
-    public HttpGet sendGet(String url) throws URISyntaxException, IOException {
+    synchronized public Map.Entry<HttpGet, BodyContain> sendGet(String url) throws URISyntaxException, IOException {
         Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
         headerContain.put("Cookie", serializeCookieKeyValue(httpRequestCookieComponent.getKeyValueData()));
         URIBuilder uriBuilder = new URIBuilder(url);
         paramContain.forEach(uriBuilder::addParameter);
-        return HttpRequestCustomer.sendGetRequest(uriBuilder.build(), configSettingComponent.buildRequestConfig(), headerContain);
+        return Map.entry(HttpRequestCustomer.sendGetRequest(uriBuilder.build(), configSettingComponent.buildRequestConfig(), headerContain), httpRequestBodyComponent.getBody());
     }
 
 }

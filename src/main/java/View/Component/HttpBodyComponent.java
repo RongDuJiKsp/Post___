@@ -151,6 +151,17 @@ public class HttpBodyComponent extends JPanel {
         return new BodyContain(isUsingJSONButton.isSelected(), isUsingBinButton.isSelected(), selectedFile, textEditor.getText());
     }
 
+    public void setBody(BodyContain bodyContain) {
+        isUsingBinButton.setSelected(bodyContain.isUsingBin());
+        isUsingJSONButton.setSelected(bodyContain.isUsingJSON());
+        selectedFile = bodyContain.getSelectedFile();
+        try {
+            textEditor.setText(new String(bodyContain.getStringEntity().getBytes("GBK"), StandardCharsets.UTF_8));
+        } catch (UnsupportedEncodingException ignored) {
+
+        }
+    }
+
     public void setBodyBuffered(InputStream inputStream, String contentType) {
         try (ByteArrayOutputStream copiedStream = SimpleFunction.cloneInputStream(inputStream)) {
             try {

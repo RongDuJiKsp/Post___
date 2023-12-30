@@ -17,8 +17,6 @@ import View.Window.ExceptionDialog;
 import View.Window.SaveRecordsComponent;
 import com.alibaba.fastjson2.JSONObject;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 
 import javax.swing.*;
@@ -192,9 +190,9 @@ public class MainPage extends JPanel {
     private void sendPost() {
         new Promise<HttpResponse>((resolve, reject) -> {
             try {
-                HttpPost httpPost = httpRequestTabComponent.sendPost(url.getText());
-                HttpResponse httpResponse = HttpClients.createDefault().execute(httpPost);
-                historySaver.addData(new HistoryStruct(HttpMethod.Post, null, httpPost, httpResponse, new Date().toString()));
+                var toSend = httpRequestTabComponent.sendPost(url.getText());
+                HttpResponse httpResponse = HttpClients.createDefault().execute(toSend.getKey());
+                historySaver.addData(new HistoryStruct(HttpMethod.Post, null, toSend.getKey(), httpResponse, toSend.getValue(), new Date().toString()));
                 resolve.resolve(httpResponse);
             } catch (URISyntaxException | IOException | NumberFormatException e) {
                 reject.reject(e);
@@ -212,9 +210,9 @@ public class MainPage extends JPanel {
     private void sendGet() {
         new Promise<HttpResponse>(((resolve, reject) -> {
             try {
-                HttpGet httpGet = httpRequestTabComponent.sendGet(url.getText());
-                HttpResponse httpResponse = HttpClients.createDefault().execute(httpGet);
-                historySaver.addData(new HistoryStruct(HttpMethod.Get, httpGet, null, httpResponse, new Date().toString()));
+                var toSend = httpRequestTabComponent.sendGet(url.getText());
+                HttpResponse httpResponse = HttpClients.createDefault().execute(toSend.getKey());
+                historySaver.addData(new HistoryStruct(HttpMethod.Get, toSend.getKey(), null, httpResponse, toSend.getValue(), new Date().toString()));
                 resolve.resolve(httpResponse);
             } catch (URISyntaxException | IOException | NumberFormatException e) {
                 reject.reject(e);

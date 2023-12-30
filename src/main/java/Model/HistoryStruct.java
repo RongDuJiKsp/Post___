@@ -16,6 +16,7 @@ public class HistoryStruct {
     private HttpGet httpGetData;
     private HttpPost httpPostData;
     private HttpResponse httpResponseData;
+    private BodyContain bodyContain;
     private String sendDate;
 
     public HistoryStruct(JSONObject jsonObject) {
@@ -23,6 +24,7 @@ public class HistoryStruct {
         httpMethod = jsonObject.getObject("httpMethod", HttpMethod.class);
         httpResponseData = null;
         sendDate = jsonObject.getString("sendDate");
+        bodyContain = jsonObject.getJSONObject("bodyContain").to(BodyContain.class);
         //init get
         JSONObject get = jsonObject.getJSONObject("httpGetData");
         if (get != null) {
