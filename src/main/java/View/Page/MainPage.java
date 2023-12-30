@@ -15,6 +15,7 @@ import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
 import View.Window.SaveRecordsComponent;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -24,6 +25,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
@@ -57,6 +59,7 @@ public class MainPage extends JPanel {
         initChoicer();
         initAction();
         initOthers();
+        initHistory();
     }
 
     private void initOthers() {
@@ -101,6 +104,14 @@ public class MainPage extends JPanel {
         downloadBodyButton.addActionListener(actionEvent -> onDownloadBinFile());
         //init save history action
         saveHistoryButton.addActionListener(actionEvent -> onDownLoadHistory());
+    }
+
+    private void initHistory() {
+        try {
+            readFileAndUpdate(new File(new File(".").getCanonicalPath() + "\\dat.db"));
+        } catch (IOException ignore) {
+
+        }
     }
 
     private void initComponents() {
@@ -171,6 +182,7 @@ public class MainPage extends JPanel {
         httpResponseTabComponent.setVisible(!isRequestTab);
     }
 
+
     private void sendError(String error) {
         if (error == null) return;
         new ExceptionDialog(mainWindow, new String(error.getBytes(), StandardCharsets.UTF_8));
@@ -182,7 +194,7 @@ public class MainPage extends JPanel {
             try {
                 HttpPost httpPost = httpRequestTabComponent.sendPost(url.getText());
                 HttpResponse httpResponse = HttpClients.createDefault().execute(httpPost);
-                historySaver.addData(new HistoryStruct(HttpMethod.Post, null, httpPost, httpResponse, new Date()));
+                historySaver.addData(new HistoryStruct(HttpMethod.Post, null, httpPost, httpResponse, new Date().toString()));
                 resolve.resolve(httpResponse);
             } catch (URISyntaxException | IOException | NumberFormatException e) {
                 reject.reject(e);
@@ -202,7 +214,7 @@ public class MainPage extends JPanel {
             try {
                 HttpGet httpGet = httpRequestTabComponent.sendGet(url.getText());
                 HttpResponse httpResponse = HttpClients.createDefault().execute(httpGet);
-                historySaver.addData(new HistoryStruct(HttpMethod.Get, httpGet, null, httpResponse, new Date()));
+                historySaver.addData(new HistoryStruct(HttpMethod.Get, httpGet, null, httpResponse, new Date().toString()));
                 resolve.resolve(httpResponse);
             } catch (URISyntaxException | IOException | NumberFormatException e) {
                 reject.reject(e);
@@ -285,6 +297,18 @@ public class MainPage extends JPanel {
 
     private void onDownLoadHistory() {
         new SaveRecordsComponent(mainWindow, historySaver).setVisible(true);
+    }
+
+    public void readFileAndUpdate(File file) throws IOException {
+        try (FileInputStream fileInputStream = new FileInputStream(file)) {
+            String str = new String(fileInputStream.readAllBytes());
+            JSONObject jsonObject = JSONObject.parseObject(str);
+            HistoryStruct historyStruct = new HistoryStruct(jsonObject);
+            httpRequestTabComponent.parseHistory(historyStruct);
+            if (historyStruct.getHttpMethod() == HttpMethod.Get)
+                url.setText(historyStruct.getHttpGetData().getURI().getHost());
+            else url.setText(historyStruct.getHttpPostData().getURI().getHost());
+        }
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off

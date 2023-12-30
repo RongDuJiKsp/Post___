@@ -8,9 +8,8 @@ import lombok.Getter;
 
 import javax.swing.table.DefaultTableModel;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -37,9 +36,7 @@ public class HistorySaver {
             tmpFile = File.createTempFile("HttpPost-" + toSave.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toSave.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000), ".json");
         }
         tmpFile.deleteOnExit();
-        try (FileOutputStream fileOutputStream = new FileOutputStream(tmpFile)) {
-            fileOutputStream.write(JSONObject.from(toSave).toJSONString().getBytes(StandardCharsets.UTF_8));
-        }
+        Files.writeString(tmpFile.toPath(), JSONObject.toJSONString(toSave));
         return tmpFile;
     }
 

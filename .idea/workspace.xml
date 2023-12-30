@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了不对解析文件进行缓冲的功能喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了隐藏功能喵">
+      <change afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ArgsAnalysisFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ArgsAnalysisFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/HistoryStruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/HistoryStruct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/ViewConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/ViewConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +92,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Run",
+    "Gradle.PostMTF [build].executor": "Run",
     "Gradle.PostMTF [clean].executor": "Run",
     "Gradle.PostMTF [jar].executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -102,10 +111,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\codefile\PostMTF" />
+      <recent name="D:\codefile\PostMTF\build\classes\java\main" />
       <recent name="D:\codefile\PostMTF\src\main\java\View\Window" />
       <recent name="D:\codefile\PostMTF\src\main\resources" />
       <recent name="D:\codefile\PostMTF\src\main\java\View\Page" />
-      <recent name="D:\codefile\PostMTF\src\main\java\View\ExceptionDialog" />
     </key>
   </component>
   <component name="RunManager" selected="应用程序.PostMTFApplication">
@@ -115,6 +125,28 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="PostMTF [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="PostMTF [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -184,6 +216,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PostMTF [build]" />
         <item itemvalue="Gradle.PostMTF [jar]" />
         <item itemvalue="Gradle.PostMTF [clean]" />
         <item itemvalue="Gradle.PostMTF [dependencies]" />
@@ -244,7 +277,8 @@
       <workItem from="1703812009852" duration="7769000" />
       <workItem from="1703831583492" duration="8676000" />
       <workItem from="1703860567752" duration="805000" />
-      <workItem from="1703915344314" duration="10044000" />
+      <workItem from="1703915344314" duration="10087000" />
+      <workItem from="1703932305869" duration="14880000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -566,7 +600,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703925119233</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="添加了隐藏功能喵">
+      <option name="closed" value="true" />
+      <created>1703925459602</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1703925459602</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +627,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="没有测试，但是完工" />
     <MESSAGE value="顺手改个警告喵" />
     <MESSAGE value="寄了喵" />
     <MESSAGE value="史山代码写成了喵" />
@@ -610,6 +651,23 @@
     <MESSAGE value="修复了bug喵" />
     <MESSAGE value="添加了解析失败html时自动解析为文本的功能喵" />
     <MESSAGE value="添加了不对解析文件进行缓冲的功能喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了不对解析文件进行缓冲的功能喵" />
+    <MESSAGE value="添加了隐藏功能喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了隐藏功能喵" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Model.HistoryStruct" memberName="httpGetData" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

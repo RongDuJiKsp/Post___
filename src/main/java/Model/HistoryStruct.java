@@ -1,19 +1,86 @@
 package Model;
 
+import com.alibaba.fastjson2.JSONObject;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.apache.http.HttpResponse;
+import org.apache.http.ProtocolVersion;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 
-import java.util.Date;
-
-@AllArgsConstructor
 @Getter
+@AllArgsConstructor
 public class HistoryStruct {
     private HttpMethod httpMethod;
     private HttpGet httpGetData;
     private HttpPost httpPostData;
     private HttpResponse httpResponseData;
-    private Date sendDate;
+    private String sendDate;
+
+    public HistoryStruct(JSONObject jsonObject) {
+        //init Base
+        httpMethod = jsonObject.getObject("httpMethod", HttpMethod.class);
+        httpResponseData = null;
+        sendDate = jsonObject.getString("sendDate");
+        //init get
+        JSONObject get = jsonObject.getJSONObject("httpGetData");
+        if (get != null) {
+            httpGetData = new HttpGet(get.getString("URI"));
+            //init config
+            JSONObject config = get.getJSONObject("config");
+            RequestConfig.Builder builder = RequestConfig.custom();
+            builder.setAuthenticationEnabled(config.getBoolean("authenticationEnabled"))
+                    .setCircularRedirectsAllowed(config.getBoolean("circularRedirectsAllowed"))
+                    .setConnectTimeout(config.getIntValue("connectTimeout"))
+                    .setConnectionRequestTimeout(config.getIntValue("connectionRequestTimeout"))
+                    .setContentCompressionEnabled(config.getBoolean("contentCompressionEnabled"))
+                    .setDecompressionEnabled(config.getBoolean("decompressionEnabled"))
+                    .setExpectContinueEnabled(config.getBoolean("expectContinueEnabled"))
+                    .setMaxRedirects(config.getIntValue("maxRedirects"))
+                    .setNormalizeUri(config.getBoolean("normalizeUri"))
+                    .setRedirectsEnabled(config.getBoolean("redirectsEnabled"))
+                    .setRelativeRedirectsAllowed(config.getBoolean("relativeRedirectsAllowed"))
+                    .setSocketTimeout(config.getIntValue("socketTimeout"))
+                    .setStaleConnectionCheckEnabled(config.getBoolean("staleConnectionCheckEnabled"));
+            httpGetData.setConfig(builder.build());
+            //init protocol
+            JSONObject protocolConfig = get.getJSONObject("protocolVersion");
+            httpGetData.setProtocolVersion(new ProtocolVersion(protocolConfig.getString("protocol"), protocolConfig.getIntValue("minor"), protocolConfig.getIntValue("major")));
+            //init header
+            for (JSONObject headerObject : get.getJSONArray("allHeaders").toArray(JSONObject.class)) {
+                httpGetData.addHeader(headerObject.getString("name"), headerObject.getString("value"));
+            }
+        }
+        //init post
+        JSONObject post = jsonObject.getJSONObject("httpPostData");
+        if (post != null) {
+            httpPostData = new HttpPost(post.getString("URI"));
+            //init cfg
+            JSONObject config = post.getJSONObject("config");
+            RequestConfig.Builder builder = RequestConfig.custom();
+            builder.setAuthenticationEnabled(config.getBoolean("authenticationEnabled"))
+                    .setCircularRedirectsAllowed(config.getBoolean("circularRedirectsAllowed"))
+                    .setConnectTimeout(config.getIntValue("connectTimeout"))
+                    .setConnectionRequestTimeout(config.getIntValue("connectionRequestTimeout"))
+                    .setContentCompressionEnabled(config.getBoolean("contentCompressionEnabled"))
+                    .setDecompressionEnabled(config.getBoolean("decompressionEnabled"))
+                    .setExpectContinueEnabled(config.getBoolean("expectContinueEnabled"))
+                    .setMaxRedirects(config.getIntValue("maxRedirects"))
+                    .setNormalizeUri(config.getBoolean("normalizeUri"))
+                    .setRedirectsEnabled(config.getBoolean("redirectsEnabled"))
+                    .setRelativeRedirectsAllowed(config.getBoolean("relativeRedirectsAllowed"))
+                    .setSocketTimeout(config.getIntValue("socketTimeout"))
+                    .setStaleConnectionCheckEnabled(config.getBoolean("staleConnectionCheckEnabled"));
+            httpPostData.setConfig(builder.build());
+            //init protocol
+            JSONObject protocolConfig = post.getJSONObject("protocolVersion");
+            httpPostData.setProtocolVersion(new ProtocolVersion(protocolConfig.getString("protocol"), protocolConfig.getIntValue("minor"), protocolConfig.getIntValue("major")));
+            //init header
+            for (JSONObject headerObject : post.getJSONArray("allHeaders").toArray(JSONObject.class)) {
+                httpPostData.addHeader(headerObject.getString("name"), headerObject.getString("value"));
+            }
+        }
+
+    }
 }

@@ -2,16 +2,21 @@ package View.Window;
 
 import View.Page.MainPage;
 import View.ViewConfig;
+import lombok.Getter;
 
 import javax.swing.*;
 
+@Getter
 public class MainWindow extends JFrame {
+    private MainPage mainPage;
+
     private void init() {
-        ViewConfig.initUITheme();
         setTitle("PostMTF PortTest");
+        ViewConfig.initUITheme();
         setSize(1024, 768);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        add(new MainPage(this));
+        mainPage = new MainPage(this);
+        add(mainPage);
         setVisible(true);
     }
 
