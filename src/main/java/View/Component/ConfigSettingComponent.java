@@ -41,6 +41,21 @@ public class ConfigSettingComponent extends JPanel {
                 .build();
     }
 
+    public void parseRequestConfig(RequestConfig requestConfig) {
+        isEnableConfigButton.setSelected(true);
+        isAuthenticationEnabledButton.setSelected(requestConfig.isAuthenticationEnabled());
+        isCircularRedirectsAllowedButton.setSelected(requestConfig.isCircularRedirectsAllowed());
+        isNormalizeUriButton.setSelected(requestConfig.isNormalizeUri());
+        isContentCompressionEnabledButton.setSelected(requestConfig.isContentCompressionEnabled());
+        inputConnectionRequestTimeout.setText(String.valueOf(requestConfig.getConnectTimeout()));
+        inputConnectTimeout.setText(String.valueOf(requestConfig.getConnectTimeout()));
+        inputSocketTimeout.setText(String.valueOf(requestConfig.getSocketTimeout()));
+        if (requestConfig.getProxy() != null)
+            inputProxy.setText(requestConfig.getProxy().toString());
+        if (requestConfig.getLocalAddress() != null)
+            inputLocalAddress.setText(requestConfig.getLocalAddress().toString());
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         isEnableConfigButton = new JToggleButton();

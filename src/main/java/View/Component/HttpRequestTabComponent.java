@@ -73,6 +73,8 @@ public class HttpRequestTabComponent extends JTabbedPane {
                     KVs.put(headerElement.getName(), headerElement.getValue());
                 }
             }
+            //insert config
+            configSettingComponent.parseRequestConfig(historyStruct.getHttpGetData().getConfig());
 
         } else {
             //insert  Params
@@ -97,6 +99,8 @@ public class HttpRequestTabComponent extends JTabbedPane {
                     KVs.put(headerElement.getName(), headerElement.getValue());
                 }
             }
+            //insert config
+            configSettingComponent.parseRequestConfig(historyStruct.getHttpPostData().getConfig());
         }
         httpRequestCookieComponent.addKeyValue(KVs);
         KVs.clear();

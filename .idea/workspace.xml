@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了自动载入历史的功能喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="完善了自动载入历史的功能喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/BodyContain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/BodyContain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/HistoryStruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/HistoryStruct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/ConfigSettingComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/ConfigSettingComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +84,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Run",
+    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Debug",
     "Gradle.PostMTF [build].executor": "Run",
     "Gradle.PostMTF [clean].executor": "Run",
     "Gradle.PostMTF [jar].executor": "Run",
@@ -275,7 +271,7 @@
       <workItem from="1703831583492" duration="8676000" />
       <workItem from="1703860567752" duration="805000" />
       <workItem from="1703915344314" duration="10087000" />
-      <workItem from="1703932305869" duration="18027000" />
+      <workItem from="1703932305869" duration="18777000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -613,7 +609,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703947688376</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="完善了自动载入历史的功能喵">
+      <option name="closed" value="true" />
+      <created>1703950862330</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1703950862330</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +636,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="寄了喵" />
     <MESSAGE value="史山代码写成了喵" />
     <MESSAGE value="究极史山代码写成了喵" />
     <MESSAGE value="add log4j and builder" />
@@ -657,7 +660,8 @@
     <MESSAGE value="添加了不对解析文件进行缓冲的功能喵" />
     <MESSAGE value="添加了隐藏功能喵" />
     <MESSAGE value="添加了自动载入历史的功能喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了自动载入历史的功能喵" />
+    <MESSAGE value="完善了自动载入历史的功能喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善了自动载入历史的功能喵" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
