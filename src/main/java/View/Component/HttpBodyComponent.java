@@ -4,17 +4,18 @@
 
 package View.Component;
 
+import Controller.SimpleFunction;
 import Model.BodyContain;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.JSONWriter;
 
 import javax.swing.*;
-import javax.swing.text.Document;
+import javax.swing.text.html.HTMLEditorKit;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author rdjks
@@ -150,13 +151,25 @@ public class HttpBodyComponent extends JPanel {
         return new BodyContain(isUsingJSONButton.isSelected(), isUsingBinButton.isSelected(), selectedFile, textEditor.getText());
     }
 
-    public void setBody(InputStream inputStream, String contentType) {
-        try (inputStream) {
-            textEditor.setContentType(contentType);
-            Document document = textEditor.getDocument();
-            textEditor.read(new InputStreamReader(inputStream), document);
-        } catch (IOException e) {
-            textEditor.setText("Sorry," + e);
+    public void setBodyBuffered(InputStream inputStream, String contentType) {
+        try (ByteArrayOutputStream copiedStream = SimpleFunction.cloneInputStream(inputStream)) {
+            try {
+                Matcher charset = Pattern.compile("charset=\\w+-?\\w+").matcher(contentType);
+                textEditor.setEditorKit(new HTMLEditorKit());
+                if (charset.find())
+                    textEditor.read(new InputStreamReader(new ByteArrayInputStream(copiedStream.toByteArray()), charset.group().split("=")[1]), textEditor.getDocument());
+                else
+                    textEditor.read(new InputStreamReader(new ByteArrayInputStream(copiedStream.toByteArray()), StandardCharsets.UTF_8), textEditor.getDocument());
+            } catch (IOException e) {
+                Matcher charset = Pattern.compile("charset=\\w+-?\\w+").matcher(contentType);
+                textEditor.setContentType("text/plain");
+                if (charset.find())
+                    textEditor.setText(copiedStream.toString(charset.group().split("=")[1]));
+                else
+                    textEditor.setText(copiedStream.toString(StandardCharsets.UTF_8));
+            }
+        } catch (IOException ioException) {
+            textEditor.setText("Sorry qwq , " + ioException + " , but you can save as bin file");
         }
     }
 

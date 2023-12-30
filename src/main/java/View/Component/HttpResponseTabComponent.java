@@ -56,12 +56,14 @@ public class HttpResponseTabComponent extends JTabbedPane {
             if (ViewConfig.isUsingBufferedFile) {
                 try (ByteArrayOutputStream byteArrayOutputStream = SimpleFunction.cloneInputStream(httpResponse.getEntity().getContent())) {
                     lastResponseBody = byteArrayOutputStream.toByteArray();
-                    httpResponseBodyComponent.setBody(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), contentType);
+                    if (ViewConfig.isUsingShower)
+                        httpResponseBodyComponent.setBodyBuffered(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()), contentType);
 
                 }
             } else {
                 lastResponseBody = null;
-                httpResponseBodyComponent.setBody(httpResponse.getEntity().getContent(), contentType);
+                if (ViewConfig.isUsingShower)
+                    httpResponseBodyComponent.setBodyBuffered(httpResponse.getEntity().getContent(), contentType);
             }
 
         } else contentType = null;
