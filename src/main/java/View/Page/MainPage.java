@@ -11,10 +11,10 @@ import Model.HttpMethod;
 import Model.Protocol;
 import View.Component.HttpRequestTabComponent;
 import View.Component.HttpResponseTabComponent;
-import View.Window.SaveRecordsComponent;
 import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
+import View.Window.SaveRecordsComponent;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -251,6 +251,7 @@ public class MainPage extends JPanel {
         httpResponseTabComponent.setVisible(isSelectedHttp);
         toChangeReqResButton.setEnabled(isSelectedHttp);
         webSocketIOComponent.setVisible(!isSelectedHttp);
+        saveHistoryButton.setVisible(isSelectedHttp);
         webSocketIOComponent.clearWebSocketConnect();
         if (isSelectedHttp) updateTabs(isRequestTab);
         if (((JMenuItem) actionEvent.getSource()).getText().equals(Protocol.WebSocket.getValue()))
