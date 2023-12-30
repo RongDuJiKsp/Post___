@@ -173,6 +173,19 @@ public class HttpBodyComponent extends JPanel {
         }
     }
 
+    public void setBodyUnbuffered(InputStream inputStream, String contentType) {
+        try {
+            Matcher charset = Pattern.compile("charset=\\w+-?\\w+").matcher(contentType);
+            textEditor.setEditorKit(new HTMLEditorKit());
+            if (charset.find())
+                textEditor.read(new InputStreamReader(inputStream, charset.group().split("=")[1]), textEditor.getDocument());
+            else
+                textEditor.read(new InputStreamReader(inputStream, StandardCharsets.UTF_8), textEditor.getDocument());
+        } catch (Exception e) {
+            textEditor.setText("Sorry qwq , " + e + " , but you can save as bin file");
+        }
+    }
+
     public void clear() {
         textEditor.setText("");
         upLoadFileName.setText("");

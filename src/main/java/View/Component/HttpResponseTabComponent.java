@@ -63,7 +63,7 @@ public class HttpResponseTabComponent extends JTabbedPane {
             } else {
                 lastResponseBody = null;
                 if (ViewConfig.isUsingShower)
-                    httpResponseBodyComponent.setBodyBuffered(httpResponse.getEntity().getContent(), contentType);
+                    httpResponseBodyComponent.setBodyUnbuffered(httpResponse.getEntity().getContent(), contentType);
             }
 
         } else contentType = null;
