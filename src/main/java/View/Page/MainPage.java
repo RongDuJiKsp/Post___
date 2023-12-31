@@ -320,9 +320,11 @@ public class MainPage extends JPanel {
             }
             if (toSave == null) return;
             Files.writeString(new File(new File(".").getCanonicalPath() + "\\dat.db").toPath(), JSONObject.toJSONString(toSave));
+            System.exit(0);
 
         } catch (RuntimeException | IOException | URISyntaxException ignored) {
             new ExceptionDialog(null, "\"Failed to save for some reason :)\"");
+            System.exit(0);
         }
     }
 

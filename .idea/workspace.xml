@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修正了部分异常处理喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了bug喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +83,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Debug",
+    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Run",
     "Gradle.PostMTF [build].executor": "Run",
     "Gradle.PostMTF [clean].executor": "Run",
     "Gradle.PostMTF [jar].executor": "Run",
@@ -111,7 +110,7 @@
       <recent name="D:\codefile\PostMTF\src\main\java\View\Page" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.PostMTFApplication">
+  <component name="RunManager" selected="Gradle.PostMTF [jar]">
     <configuration name="PostMTFApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PostMTFApplication" />
       <module name="PostMTF.main" />
@@ -209,8 +208,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PostMTF [build]" />
         <item itemvalue="Gradle.PostMTF [jar]" />
+        <item itemvalue="Gradle.PostMTF [build]" />
         <item itemvalue="Gradle.PostMTF [clean]" />
         <item itemvalue="Gradle.PostMTF [dependencies]" />
         <item itemvalue="应用程序.PostMTFApplication" />
@@ -275,7 +274,7 @@
       <workItem from="1704004073801" duration="1527000" />
       <workItem from="1704005623856" duration="3583000" />
       <workItem from="1704024515217" duration="610000" />
-      <workItem from="1704025395307" duration="376000" />
+      <workItem from="1704025395307" duration="754000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -653,7 +652,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704009204259</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="修复了bug喵">
+      <option name="closed" value="true" />
+      <created>1704025896586</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1704025896586</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,7 +694,6 @@
     <MESSAGE value="压缩了文件喵" />
     <MESSAGE value="添加了历史记录相关的逻辑支持喵" />
     <MESSAGE value="添加了历史记录相关的用户界面支持喵" />
-    <MESSAGE value="修复了bug喵" />
     <MESSAGE value="添加了解析失败html时自动解析为文本的功能喵" />
     <MESSAGE value="添加了不对解析文件进行缓冲的功能喵" />
     <MESSAGE value="添加了隐藏功能喵" />
@@ -697,18 +703,10 @@
     <MESSAGE value="完成了自动保存历史的功能喵" />
     <MESSAGE value="修复了多个致命bug喵" />
     <MESSAGE value="修正了部分异常处理喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="修正了部分异常处理喵" />
+    <MESSAGE value="修复了bug喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了bug喵" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/View/Page/MainPage.java</url>
-          <line>333</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Model.HistoryStruct" memberName="httpGetData" />
