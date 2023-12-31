@@ -147,7 +147,7 @@ public class MainPage extends JPanel {
             new Insets(0, 0, 5, 5), 0, 0));
 
         //---- label2 ----
-        label2.setText("      Url:");
+        label2.setText("Host\uff1a");
         add(label2, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
@@ -200,7 +200,7 @@ public class MainPage extends JPanel {
     private void sendPost() {
         new Promise<HttpResponse>((resolve, reject) -> {
             try {
-                var toSend = httpRequestTabComponent.sendPost(url.getText());
+                var toSend = httpRequestTabComponent.sendPost("http://" + url.getText());
                 HttpResponse httpResponse = HttpClients.createDefault().execute(toSend.getKey());
                 historySaver.addData(new HistoryStruct(HttpMethod.Post, null, toSend.getKey(), httpResponse, toSend.getValue(), new Date().toString()));
                 resolve.resolve(httpResponse);
@@ -220,7 +220,7 @@ public class MainPage extends JPanel {
     private void sendGet() {
         new Promise<HttpResponse>(((resolve, reject) -> {
             try {
-                var toSend = httpRequestTabComponent.sendGet(url.getText());
+                var toSend = httpRequestTabComponent.sendGet("http://" + url.getText());
                 HttpResponse httpResponse = HttpClients.createDefault().execute(toSend.getKey());
                 historySaver.addData(new HistoryStruct(HttpMethod.Get, toSend.getKey(), null, httpResponse, toSend.getValue(), new Date().toString()));
                 resolve.resolve(httpResponse);
@@ -238,7 +238,7 @@ public class MainPage extends JPanel {
 
     private void connectWebSocket() {
         try {
-            webSocketIOComponent.connectWebSocket(new URI(url.getText()));
+            webSocketIOComponent.connectWebSocket(new URI("ws://" + url.getText()));
         } catch (Exception e) {
             sendError(e.toString());
         }
@@ -246,7 +246,7 @@ public class MainPage extends JPanel {
 
     private void connectSocketIO() {
         try {
-            webSocketIOComponent.connectSocketIO(new URI(url.getText()));
+            webSocketIOComponent.connectSocketIO(new URI("ws://" + url.getText()));
         } catch (Exception e) {
             sendError(e.toString());
         }
@@ -316,7 +316,7 @@ public class MainPage extends JPanel {
 
             } else if (methods.getText().equals(HttpMethod.Get.getValue())) {
                 var toSend = httpRequestTabComponent.sendGet(url.getText());
-                toSave = new HistoryStruct(HttpMethod.Post, toSend.getKey(), null, null, toSend.getValue(), new Date().toString());
+                toSave = new HistoryStruct(HttpMethod.Get, toSend.getKey(), null, null, toSend.getValue(), new Date().toString());
             }
             if (toSave == null) return;
             Files.writeString(new File(new File(".").getCanonicalPath() + "\\dat.db").toPath(), JSONObject.toJSONString(toSave));
