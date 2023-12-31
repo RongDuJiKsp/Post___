@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="完成了自动保存历史的功能喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修正了部分异常处理喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.jfd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +113,7 @@
       <recent name="D:\codefile\PostMTF\src\main\java\View\Page" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PostMTF [jar]">
+  <component name="RunManager" selected="应用程序.PostMTFApplication">
     <configuration name="PostMTFApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PostMTFApplication" />
       <module name="PostMTF.main" />
@@ -274,7 +275,7 @@
       <workItem from="1703915344314" duration="10087000" />
       <workItem from="1703932305869" duration="19351000" />
       <workItem from="1704004073801" duration="1527000" />
-      <workItem from="1704005623856" duration="1616000" />
+      <workItem from="1704005623856" duration="3569000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -636,7 +637,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704005544047</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="修复了多个致命bug喵">
+      <option name="closed" value="true" />
+      <created>1704007305730</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1704007305730</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,8 +664,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add log4j and builder" />
-    <MESSAGE value="准备解耦合，备份一手" />
     <MESSAGE value="重构成功！！！！哇哈哈哈哈哈&#10;哈哈哈哈哈" />
     <MESSAGE value="添加了cookie解析" />
     <MESSAGE value="大大重构了代码结构，现在代码可读性大大增加了喵" />
@@ -680,7 +687,9 @@
     <MESSAGE value="完善了自动载入历史的功能喵" />
     <MESSAGE value="完成了自动载入历史的功能喵" />
     <MESSAGE value="完成了自动保存历史的功能喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了自动保存历史的功能喵" />
+    <MESSAGE value="修复了多个致命bug喵" />
+    <MESSAGE value="修正了部分异常处理喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正了部分异常处理喵" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

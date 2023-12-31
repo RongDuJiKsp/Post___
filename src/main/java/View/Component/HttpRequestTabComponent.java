@@ -117,6 +117,7 @@ public class HttpRequestTabComponent extends JTabbedPane {
         if (!bodyContain.isUsingBin())
             return Map.entry(HttpRequestCustomer.sendPostRequest(uriBuilder.build(), bodyContain.getStringEntity(), configSettingComponent.buildRequestConfig(), bodyContain.isUsingJSON(), headerContain), bodyContain);
         else {
+            if (bodyContain.getSelectedFile() == null) throw new RuntimeException("No files selected!");
             headerContain.put("content-type", Files.probeContentType(bodyContain.getSelectedFile().toPath()));
             return Map.entry(HttpRequestCustomer.sendPostRequest(uriBuilder.build(), new FileEntity(bodyContain.getSelectedFile()), configSettingComponent.buildRequestConfig(), headerContain), bodyContain);
         }

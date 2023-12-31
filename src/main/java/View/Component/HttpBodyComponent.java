@@ -6,10 +6,13 @@ package View.Component;
 
 import Controller.SimpleFunction;
 import Model.BodyContain;
+import View.Window.ExceptionDialog;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.JSONWriter;
 
 import javax.swing.*;
+import javax.swing.text.Document;
+import javax.swing.text.PlainDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.awt.*;
 import java.io.*;
@@ -47,6 +50,10 @@ public class HttpBodyComponent extends JPanel {
         upLoadFileName.setEnabled(false);
         upLoadFileName.setEditable(false);
         formatJSONButton.setEnabled(false);
+        Document doc = textEditor.getDocument();
+        if (doc instanceof PlainDocument) {
+            doc.putProperty(PlainDocument.tabSizeAttribute, 1);
+        }
     }
 
     private void initComponents() {
@@ -129,12 +136,17 @@ public class HttpBodyComponent extends JPanel {
     private void onUploadFile() {
         jFileChooser.showOpenDialog(this);
         selectedFile = jFileChooser.getSelectedFile();
+        if (selectedFile == null) return;
         upLoadFileName.setText(selectedFile.getName());
     }
 
     private void onFormatJSON() {
-        JSONObject jsonObject = JSONObject.parseObject(textEditor.getText());
-        textEditor.setText(jsonObject.toJSONString(JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.WriteMapNullValue));
+        try {
+            JSONObject jsonObject = JSONObject.parseObject(textEditor.getText());
+            textEditor.setText(jsonObject.toJSONString(JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.WriteMapNullValue));
+        } catch (Exception e) {
+            new ExceptionDialog(null, e.toString());
+        }
     }
 
     public void setEditable(boolean flag) {
@@ -154,7 +166,9 @@ public class HttpBodyComponent extends JPanel {
     public void setBody(BodyContain bodyContain) {
         isUsingBinButton.setSelected(bodyContain.isUsingBin());
         isUsingJSONButton.setSelected(bodyContain.isUsingJSON());
+        formatJSONButton.setEnabled(bodyContain.isUsingJSON());
         selectedFile = bodyContain.getSelectedFile();
+        setIsTextEnabled(!isUsingBinButton.isSelected());
         try {
             textEditor.setText(new String(bodyContain.getStringEntity().getBytes("GBK"), StandardCharsets.UTF_8));
         } catch (UnsupportedEncodingException ignored) {

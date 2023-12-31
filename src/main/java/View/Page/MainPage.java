@@ -204,7 +204,7 @@ public class MainPage extends JPanel {
                 HttpResponse httpResponse = HttpClients.createDefault().execute(toSend.getKey());
                 historySaver.addData(new HistoryStruct(HttpMethod.Post, null, toSend.getKey(), httpResponse, toSend.getValue(), new Date().toString()));
                 resolve.resolve(httpResponse);
-            } catch (URISyntaxException | IOException | NumberFormatException e) {
+            } catch (URISyntaxException | IOException | RuntimeException e) {
                 reject.reject(e);
             }
         }).then(res -> {
@@ -321,8 +321,8 @@ public class MainPage extends JPanel {
             if (toSave == null) return;
             Files.writeString(new File(new File(".").getCanonicalPath() + "\\dat.db").toPath(), JSONObject.toJSONString(toSave));
 
-        } catch (URISyntaxException | IOException e) {
-            sendError(e.toString());
+        } catch (RuntimeException | IOException | URISyntaxException ignored) {
+            new ExceptionDialog(null, "\"Failed to save for some reason :)\"");
         }
     }
 
