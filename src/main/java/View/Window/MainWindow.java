@@ -14,7 +14,7 @@ public class MainWindow extends JFrame {
         setTitle("PostMTF PortTest");
         ViewConfig.initUITheme();
         setSize(1024, 768);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         mainPage = new MainPage(this);
         add(mainPage);
         setVisible(true);

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class HistorySaver {
-    private ArrayList<HistoryStruct> historyData;
+    private final ArrayList<HistoryStruct> historyData;
     @Getter
     private DefaultTableModel dataModel;
 
@@ -28,22 +28,25 @@ public class HistorySaver {
     }
 
     public File getChosenData(int index) throws IOException {
-        HistoryStruct toSave = historyData.get(index);
-        File tmpFile = null;
-        if (toSave.getHttpMethod() == HttpMethod.Get) {
-            tmpFile = File.createTempFile("HttpGet-" + toSave.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toSave.getHttpResponseData().getStatusLine().getReasonPhrase() + Math.floor(Math.random() * 10000), ".json");
+        return buildFIle(historyData.get(index));
+    }
+
+    public static File buildFIle(HistoryStruct toBuild) throws IOException {
+        File tmpFile;
+        if (toBuild.getHttpMethod() == HttpMethod.Get) {
+            tmpFile = File.createTempFile(toBuild.getSendDate() + "-HttpGet-" + toBuild.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toBuild.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000), ".json");
         } else {
-            tmpFile = File.createTempFile("HttpPost-" + toSave.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toSave.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000), ".json");
+            tmpFile = File.createTempFile(toBuild.getSendDate() + "-HttpPost-" + toBuild.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toBuild.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000), ".json");
         }
         tmpFile.deleteOnExit();
-        Files.writeString(tmpFile.toPath(), JSONObject.toJSONString(toSave));
+        Files.writeString(tmpFile.toPath(), JSONObject.toJSONString(toBuild));
         return tmpFile;
     }
 
     synchronized public void addData(HistoryStruct historyStruct) {
         historyData.add(historyStruct);
         Vector<String> col = new Vector<>();
-        col.add(historyStruct.getSendDate().toString());
+        col.add(historyStruct.getSendDate());
         if (historyStruct.getHttpMethod() == HttpMethod.Get) {
             col.add(historyStruct.getHttpGetData().getURI().getHost());
             col.add(HttpMethod.Get.getValue());

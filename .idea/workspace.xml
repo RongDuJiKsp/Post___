@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="完善了自动载入历史的功能喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="完成了自动保存历史的功能喵">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/ConfigSettingComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/ConfigSettingComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,28 +83,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Debug",
-    "Gradle.PostMTF [build].executor": "Run",
-    "Gradle.PostMTF [clean].executor": "Run",
-    "Gradle.PostMTF [jar].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "java.suggest.annotation.dependency": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.PostMTF [:PostMTFApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;java.suggest.annotation.dependency&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\codefile\PostMTF" />
@@ -271,7 +274,8 @@
       <workItem from="1703831583492" duration="8676000" />
       <workItem from="1703860567752" duration="805000" />
       <workItem from="1703915344314" duration="10087000" />
-      <workItem from="1703932305869" duration="18777000" />
+      <workItem from="1703932305869" duration="19351000" />
+      <workItem from="1704004073801" duration="1459000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -617,7 +621,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703950862330</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="完成了自动载入历史的功能喵">
+      <option name="closed" value="true" />
+      <created>1703951628583</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1703951628583</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,8 +648,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="史山代码写成了喵" />
-    <MESSAGE value="究极史山代码写成了喵" />
     <MESSAGE value="add log4j and builder" />
     <MESSAGE value="准备解耦合，备份一手" />
     <MESSAGE value="重构成功！！！！哇哈哈哈哈哈&#10;哈哈哈哈哈" />
@@ -661,7 +671,9 @@
     <MESSAGE value="添加了隐藏功能喵" />
     <MESSAGE value="添加了自动载入历史的功能喵" />
     <MESSAGE value="完善了自动载入历史的功能喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善了自动载入历史的功能喵" />
+    <MESSAGE value="完成了自动载入历史的功能喵" />
+    <MESSAGE value="完成了自动保存历史的功能喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了自动保存历史的功能喵" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

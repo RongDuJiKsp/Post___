@@ -22,13 +22,13 @@ import org.apache.http.impl.client.HttpClients;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -102,13 +102,23 @@ public class MainPage extends JPanel {
         downloadBodyButton.addActionListener(actionEvent -> onDownloadBinFile());
         //init save history action
         saveHistoryButton.addActionListener(actionEvent -> onDownLoadHistory());
+        //init exit action
+        mainWindow.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                super.windowClosed(e);
+                onExit();
+            }
+        });
     }
 
     private void initHistory() {
         try {
             readFileAndUpdate(new File(new File(".").getCanonicalPath() + "\\dat.db"));
-        } catch (IOException ignore) {
+        } catch (FileNotFoundException ignore) {
 
+        } catch (IOException e) {
+            sendError(e.toString());
         }
     }
 
@@ -297,6 +307,25 @@ public class MainPage extends JPanel {
         new SaveRecordsComponent(mainWindow, historySaver).setVisible(true);
     }
 
+    private void onExit() {
+        try {
+            HistoryStruct toSave = null;
+            if (methods.getText().equals(HttpMethod.Post.getValue())) {
+                var toSend = httpRequestTabComponent.sendPost(url.getText());
+                toSave = new HistoryStruct(HttpMethod.Post, null, toSend.getKey(), null, toSend.getValue(), new Date().toString());
+
+            } else if (methods.getText().equals(HttpMethod.Get.getValue())) {
+                var toSend = httpRequestTabComponent.sendGet(url.getText());
+                toSave = new HistoryStruct(HttpMethod.Post, toSend.getKey(), null, null, toSend.getValue(), new Date().toString());
+            }
+            if (toSave == null) return;
+            Files.writeString(new File(new File(".").getCanonicalPath() + "\\dat.db").toPath(), JSONObject.toJSONString(toSave));
+
+        } catch (URISyntaxException | IOException e) {
+            sendError(e.toString());
+        }
+    }
+
     public void readFileAndUpdate(File file) throws IOException {
         try (FileInputStream fileInputStream = new FileInputStream(file)) {
             String str = new String(fileInputStream.readAllBytes());
@@ -308,6 +337,7 @@ public class MainPage extends JPanel {
             else url.setText(historyStruct.getHttpPostData().getURI().getHost());
         }
     }
+
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JButton saveHistoryButton;
