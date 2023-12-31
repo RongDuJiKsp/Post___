@@ -333,8 +333,8 @@ public class MainPage extends JPanel {
             HistoryStruct historyStruct = new HistoryStruct(jsonObject);
             httpRequestTabComponent.parseHistory(historyStruct);
             if (historyStruct.getHttpMethod() == HttpMethod.Get)
-                url.setText(historyStruct.getHttpGetData().getURI().getHost());
-            else url.setText(historyStruct.getHttpPostData().getURI().getHost());
+                url.setText(historyStruct.getHttpGetData().getURI().getPath());
+            else url.setText(historyStruct.getHttpPostData().getURI().getPath());
         }
     }
 
