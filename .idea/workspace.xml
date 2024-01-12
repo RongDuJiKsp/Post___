@@ -7,10 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了部分代码分析的问题喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了更加详细的代码处理喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,15 +286,7 @@
       <workItem from="1704097274247" duration="39000" />
       <workItem from="1704363648500" duration="71000" />
       <workItem from="1705034349659" duration="5369000" />
-      <workItem from="1705060870786" duration="4768000" />
-    </task>
-    <task id="LOCAL-00008" summary="post能用了喵">
-      <option name="closed" value="true" />
-      <created>1700322281278</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1700322281278</updated>
+      <workItem from="1705060870786" duration="6515000" />
     </task>
     <task id="LOCAL-00009" summary="post能用了喵">
       <option name="closed" value="true" />
@@ -679,7 +672,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705064431126</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="添加了更加详细的代码处理喵">
+      <option name="closed" value="true" />
+      <created>1705066162071</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1705066162071</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -698,7 +699,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="实现了带有Js特色的promise对象，另外，为什么java不支持回调！！！！" />
     <MESSAGE value="基本实现了带有Js特色的promise对象喵" />
     <MESSAGE value="讨厌多线程喵" />
     <MESSAGE value="添加了使用参数 --music播放音乐的功能喵" />
@@ -723,7 +723,8 @@
     <MESSAGE value="添加了在错误栏自动换行的功能喵" />
     <MESSAGE value="对部分读取文件的操作做了缓存喵" />
     <MESSAGE value="修复了部分代码分析的问题喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复了部分代码分析的问题喵" />
+    <MESSAGE value="添加了更加详细的代码处理喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了更加详细的代码处理喵" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

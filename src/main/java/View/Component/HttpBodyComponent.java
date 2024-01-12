@@ -207,7 +207,7 @@ public class HttpBodyComponent extends JPanel {
             else
                 textEditor.read(new InputStreamReader(inputStream, StandardCharsets.UTF_8), textEditor.getDocument());
         } catch (Exception e) {
-            textEditor.setText("Sorry qwq , " + e + " , but you can save as bin file");
+            textEditor.setText("Sorry qwq , " + e);
         }
     }
 

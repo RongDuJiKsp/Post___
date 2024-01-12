@@ -32,12 +32,13 @@ public class HistorySaver {
     }
 
     public static File buildFile(HistoryStruct toBuild) throws IOException {
-        File tmpFile;
+        String filePrefix;
         if (toBuild.getHttpMethod() == HttpMethod.Get) {
-            tmpFile = File.createTempFile(toBuild.getSendDate() + "-HttpGet-" + toBuild.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toBuild.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000), ".json");
+            filePrefix = toBuild.getSendDate().replaceAll("[ :]","-") + "-HttpGet-" + toBuild.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toBuild.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000);
         } else {
-            tmpFile = File.createTempFile(toBuild.getSendDate() + "-HttpPost-" + toBuild.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toBuild.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000), ".json");
+            filePrefix = toBuild.getSendDate().replaceAll("[ :]","-") + "-HttpPost-" + toBuild.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toBuild.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000);
         }
+        File tmpFile = Files.createTempFile(filePrefix, ".json").toFile();
         tmpFile.deleteOnExit();
         Files.writeString(tmpFile.toPath(), JSONObject.toJSONString(toBuild));
         return tmpFile;
