@@ -101,7 +101,7 @@ public class MainPage extends JPanel {
         //init download action
         downloadBodyButton.addActionListener(actionEvent -> onDownloadBinFile());
         //init save history action
-        saveHistoryButton.addActionListener(actionEvent -> onDownLoadHistory());
+        saveHistoryButton.addActionListener(actionEvent -> onDownloadHistory());
         //init exit action
         mainWindow.addWindowListener(new WindowAdapter() {
             @Override
@@ -298,7 +298,7 @@ public class MainPage extends JPanel {
         }
     }
 
-    private void onDownLoadHistory() {
+    private void onDownloadHistory() {
         new SaveRecordsComponent(mainWindow, historySaver).setVisible(true);
     }
 
