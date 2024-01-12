@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="优化了部分代码喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了在错误栏自动换行的功能喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.jfd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,15 +281,7 @@
       <workItem from="1704097274247" duration="39000" />
       <workItem from="1704363648500" duration="71000" />
       <workItem from="1705034349659" duration="5369000" />
-      <workItem from="1705060870786" duration="1665000" />
-    </task>
-    <task id="LOCAL-00005" summary="壳子完工喵">
-      <option name="closed" value="true" />
-      <created>1700308419958</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1700308419958</updated>
+      <workItem from="1705060870786" duration="3028000" />
     </task>
     <task id="LOCAL-00006" summary="壳子完工喵">
       <option name="closed" value="true" />
@@ -675,7 +667,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705062727073</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="添加了在错误栏自动换行的功能喵">
+      <option name="closed" value="true" />
+      <created>1705062831665</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1705062831665</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,7 +694,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="添加了发送请求时携带cookies的功能喵" />
     <MESSAGE value="把奇奇怪怪的日志配置删了" />
     <MESSAGE value="添加了更改了请求配置的功能，优化了部分异常逻辑喵" />
     <MESSAGE value="实现了带有Js特色的promise对象，另外，为什么java不支持回调！！！！" />
@@ -719,7 +718,8 @@
     <MESSAGE value="添加了重新载入历史记录的功能喵" />
     <MESSAGE value="修改东西喵" />
     <MESSAGE value="优化了部分代码喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化了部分代码喵" />
+    <MESSAGE value="添加了在错误栏自动换行的功能喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了在错误栏自动换行的功能喵" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

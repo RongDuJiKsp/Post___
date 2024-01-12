@@ -32,7 +32,11 @@ public class ExceptionDialog extends JDialog {
             File tmpFile = File.createTempFile("%%%%%%error%%%%%", "png");
             tmpFile.deleteOnExit();
             try (FileOutputStream fileOutputStream = new FileOutputStream(tmpFile)) {
-                fileOutputStream.write(inputStream.readAllBytes());
+                byte[] buffered = new byte[512];
+                int len=-1;
+                while ((len=inputStream.read(buffered)) != -1) {
+                    fileOutputStream.write(buffered,0,len);
+                }
             }
             label1.setIcon(new ImageIcon(tmpFile.getPath()));
         } catch (IOException e) {
