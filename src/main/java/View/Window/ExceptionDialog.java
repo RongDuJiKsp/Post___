@@ -55,7 +55,7 @@ public class ExceptionDialog extends JDialog {
         contentPanel = new JPanel();
         label1 = new JLabel();
         scrollPane1 = new JScrollPane();
-        outPutTextArea = new JTextArea();
+        outPutTextArea = new JTextPane();
         buttonBar = new JPanel();
 
         //======== this ========
@@ -111,7 +111,7 @@ public class ExceptionDialog extends JDialog {
     private JPanel contentPanel;
     private JLabel label1;
     private JScrollPane scrollPane1;
-    private JTextArea outPutTextArea;
+    private JTextPane outPutTextArea;
     private JPanel buttonBar;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }
