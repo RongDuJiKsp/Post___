@@ -14,7 +14,7 @@ import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
 import View.Window.MainWindow;
-import View.Window.SaveRecordsComponent;
+import View.Window.SaveRecordsWindow;
 import com.alibaba.fastjson2.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.impl.client.HttpClients;
@@ -299,7 +299,7 @@ public class MainPage extends JPanel {
     }
 
     private void onDownloadHistory() {
-        new SaveRecordsComponent(mainWindow, historySaver).setVisible(true);
+        new SaveRecordsWindow(mainWindow, historySaver).setVisible(true);
     }
 
     private void onExit() {

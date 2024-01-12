@@ -16,12 +16,12 @@ import java.nio.file.Files;
 /**
  * @author rdjks
  */
-public class SaveRecordsComponent extends JDialog {
+public class SaveRecordsWindow extends JDialog {
     File directory;
     HistorySaver model;
     MainWindow owner;
 
-    public SaveRecordsComponent(MainWindow owner, HistorySaver model) {
+    public SaveRecordsWindow(MainWindow owner, HistorySaver model) {
         super(owner);
         this.owner = owner;
         initComponents();
