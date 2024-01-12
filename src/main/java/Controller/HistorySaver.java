@@ -13,10 +13,10 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Vector;
 
+@Getter
 public class HistorySaver {
     private final ArrayList<HistoryStruct> historyData;
-    @Getter
-    private DefaultTableModel dataModel;
+    private final DefaultTableModel dataModel;
 
     public HistorySaver() {
         historyData = new ArrayList<>();
@@ -28,10 +28,10 @@ public class HistorySaver {
     }
 
     public File getChosenData(int index) throws IOException {
-        return buildFIle(historyData.get(index));
+        return buildFile(historyData.get(index));
     }
 
-    public static File buildFIle(HistoryStruct toBuild) throws IOException {
+    public static File buildFile(HistoryStruct toBuild) throws IOException {
         File tmpFile;
         if (toBuild.getHttpMethod() == HttpMethod.Get) {
             tmpFile = File.createTempFile(toBuild.getSendDate() + "-HttpGet-" + toBuild.getHttpResponseData().getStatusLine().getStatusCode() + "-" + toBuild.getHttpResponseData().getStatusLine().getReasonPhrase() + "-" + (int) Math.floor(Math.random() * 10000), ".json");

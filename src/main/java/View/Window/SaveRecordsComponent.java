@@ -19,9 +19,11 @@ import java.nio.file.Files;
 public class SaveRecordsComponent extends JDialog {
     File directory;
     HistorySaver model;
+    MainWindow owner;
 
-    public SaveRecordsComponent(Window owner, HistorySaver model) {
+    public SaveRecordsComponent(MainWindow owner, HistorySaver model) {
         super(owner);
+        this.owner = owner;
         initComponents();
         initTable(model);
         initSettings();
@@ -40,6 +42,7 @@ public class SaveRecordsComponent extends JDialog {
     private void initAction() {
         selectFolderButton.addActionListener(actionEvent -> onChoseFolder());
         okButton.addActionListener(actionEvent -> onDownload());
+        reloadButton.addActionListener(actionEvent -> onReload());
     }
 
     private void onChoseFolder() {
@@ -47,14 +50,14 @@ public class SaveRecordsComponent extends JDialog {
         jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         jFileChooser.showSaveDialog(this);
         directory = jFileChooser.getSelectedFile();
-        if(directory==null) return;
+        if (directory == null) return;
         chosenFolderPanel.setText(directory.getPath());
     }
 
     private void onDownload() {
         new Thread(() -> {
             try {
-                if(directory==null) return;
+                if (directory == null) return;
                 for (int index : historyTable.getSelectedRows()) {
                     File tmpfile = model.getChosenData(index);
                     File saveFile = new File(directory.toPath() + "\\" + tmpfile.getName());
@@ -65,7 +68,15 @@ public class SaveRecordsComponent extends JDialog {
                 new ExceptionDialog(this, e.toString());
             }
         }).start();
-       setVisible(false);
+        setVisible(false);
+    }
+
+    private void onReload() {
+        if (historyTable.getSelectedRows().length > 0) {
+            int index=(historyTable.getSelectedRows()[0]);
+            owner.getMainPage().updateDataWithHistory(model.getHistoryData().get(index));
+        }
+        dispose();
     }
 
 
@@ -78,6 +89,7 @@ public class SaveRecordsComponent extends JDialog {
         scrollPane1 = new JScrollPane();
         historyTable = new JTable();
         buttonBar = new JPanel();
+        reloadButton = new JButton();
         okButton = new JButton();
 
         //======== this ========
@@ -124,6 +136,12 @@ public class SaveRecordsComponent extends JDialog {
                 ((GridBagLayout)buttonBar.getLayout()).rowHeights = new int[] {15, 0};
                 ((GridBagLayout)buttonBar.getLayout()).columnWeights = new double[] {1.0, 0.0, 0.0};
 
+                //---- reloadButton ----
+                reloadButton.setText("Reload");
+                buttonBar.add(reloadButton, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 5), 0, 0));
+
                 //---- okButton ----
                 okButton.setText("OK");
                 buttonBar.add(okButton, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0,
@@ -146,6 +164,7 @@ public class SaveRecordsComponent extends JDialog {
     private JScrollPane scrollPane1;
     private JTable historyTable;
     private JPanel buttonBar;
+    private JButton reloadButton;
     private JButton okButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

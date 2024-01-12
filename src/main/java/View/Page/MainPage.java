@@ -13,6 +13,7 @@ import View.Component.HttpResponseTabComponent;
 import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
 import View.Window.ExceptionDialog;
+import View.Window.MainWindow;
 import View.Window.SaveRecordsComponent;
 import com.alibaba.fastjson2.JSONObject;
 import org.apache.http.HttpResponse;
@@ -36,7 +37,7 @@ import java.util.Date;
  * @author rdjksp
  */
 public class MainPage extends JPanel {
-    private final JFrame mainWindow;
+    private final MainWindow mainWindow;
     private SelectItemComponent protocols, methods;
     private HttpRequestTabComponent httpRequestTabComponent;
     private HttpResponseTabComponent httpResponseTabComponent;
@@ -44,7 +45,7 @@ public class MainPage extends JPanel {
     private boolean isRequestTab;
     volatile private HistorySaver historySaver;
 
-    public MainPage(JFrame mainWindow) {
+    public MainPage(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
         init();
     }
@@ -209,7 +210,7 @@ public class MainPage extends JPanel {
                 writeResponseOnUI(httpResponse);
             } catch (URISyntaxException | IOException e) {
                 sendError(e.toString());
-            }catch (StringIndexOutOfBoundsException e){
+            } catch (StringIndexOutOfBoundsException e) {
                 sendError("If you didn't use JSON ,please off 'use json'");
             }
         }).start();
@@ -224,7 +225,7 @@ public class MainPage extends JPanel {
                 writeResponseOnUI(httpResponse);
             } catch (URISyntaxException | IOException e) {
                 sendError(e.toString());
-            }catch (StringIndexOutOfBoundsException e){
+            } catch (StringIndexOutOfBoundsException e) {
                 sendError("If you didn't use JSON ,please off 'use json'");
             }
         }).start();
@@ -327,11 +328,17 @@ public class MainPage extends JPanel {
             String str = new String(fileInputStream.readAllBytes());
             JSONObject jsonObject = JSONObject.parseObject(str);
             HistoryStruct historyStruct = new HistoryStruct(jsonObject);
-            httpRequestTabComponent.parseHistory(historyStruct);
-            if (historyStruct.getHttpMethod() == HttpMethod.Get)
-                url.setText(historyStruct.getHttpGetData().getURI().getPath());
-            else url.setText(historyStruct.getHttpPostData().getURI().getPath());
+            updateDataWithHistory(historyStruct);
         }
+    }
+
+    synchronized public void updateDataWithHistory(HistoryStruct historyStruct) {
+        httpRequestTabComponent.parseHistory(historyStruct);
+        URI uri = null;
+        if (historyStruct.getHttpMethod() == HttpMethod.Get)
+            uri = historyStruct.getHttpGetData().getURI();
+        else uri = historyStruct.getHttpPostData().getURI();
+        url.setText(uri.toASCIIString().replaceAll("^[a-z]+://","").replaceAll("\\?(&?\\w+=(\\w|%)+)*",""));
     }
 
 
