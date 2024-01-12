@@ -27,6 +27,7 @@ import java.awt.event.WindowEvent;
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -208,10 +209,14 @@ public class MainPage extends JPanel {
                 HttpResponse httpResponse = HttpClients.createDefault().execute(toSend.getKey());
                 historySaver.addData(new HistoryStruct(HttpMethod.Post, null, toSend.getKey(), httpResponse, toSend.getValue(), new Date().toString()));
                 writeResponseOnUI(httpResponse);
-            } catch (URISyntaxException | IOException e) {
-                sendError(e.toString());
+            } catch (UnknownHostException e) {
+                sendError("Host can't be dns syntax ,please check host");
             } catch (StringIndexOutOfBoundsException e) {
                 sendError("If you didn't use JSON ,please off 'use json'");
+            } catch (URISyntaxException e) {
+                sendError("URI Syntax Exception ,please check your url," + e.getReason());
+            } catch (IOException e) {
+                sendError(e.toString());
             }
         }).start();
     }
@@ -223,10 +228,14 @@ public class MainPage extends JPanel {
                 HttpResponse httpResponse = HttpClients.createDefault().execute(toSend.getKey());
                 historySaver.addData(new HistoryStruct(HttpMethod.Get, toSend.getKey(), null, httpResponse, toSend.getValue(), new Date().toString()));
                 writeResponseOnUI(httpResponse);
-            } catch (URISyntaxException | IOException e) {
-                sendError(e.toString());
+            } catch (UnknownHostException e) {
+                sendError("Host can't be dns syntax ,please check host");
             } catch (StringIndexOutOfBoundsException e) {
                 sendError("If you didn't use JSON ,please off 'use json'");
+            } catch (URISyntaxException e) {
+                sendError("URI Syntax Exception ,please check your url," + e.getReason());
+            } catch (IOException e) {
+                sendError(e.toString());
             }
         }).start();
     }
@@ -334,11 +343,11 @@ public class MainPage extends JPanel {
 
     synchronized public void updateDataWithHistory(HistoryStruct historyStruct) {
         httpRequestTabComponent.parseHistory(historyStruct);
-        URI uri ;
+        URI uri;
         if (historyStruct.getHttpMethod() == HttpMethod.Get)
             uri = historyStruct.getHttpGetData().getURI();
         else uri = historyStruct.getHttpPostData().getURI();
-        url.setText(uri.toASCIIString().replaceAll("^[a-z]+://","").replaceAll("\\?(&?\\w+=(\\w|%)+)*",""));
+        url.setText(uri.toASCIIString().replaceAll("^[a-z]+://", "").replaceAll("\\?(&?\\w+=(\\w|%)+)*", ""));
     }
 
 
