@@ -3,7 +3,8 @@ package Controller;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.sound.sampled.*;
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
 
 @Slf4j
 public class MusicPlayer {
@@ -57,7 +58,7 @@ public class MusicPlayer {
                     }
                     sourceDataLine.start();
                     byte[] buf = new byte[512];
-                    int len = -1;
+                    int len;
                     while (isPlaying && (len = audioIn.read(buf)) != -1) {
                         sourceDataLine.write(buf, 0, len);
                     }

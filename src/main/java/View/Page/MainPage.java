@@ -147,7 +147,7 @@ public class MainPage extends JPanel {
             new Insets(0, 0, 5, 5), 0, 0));
 
         //---- label2 ----
-        label2.setText("Host\uff1a");
+        label2.setText("Host: ");
         add(label2, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0,
             GridBagConstraints.CENTER, GridBagConstraints.BOTH,
             new Insets(0, 0, 5, 5), 0, 0));
@@ -334,7 +334,7 @@ public class MainPage extends JPanel {
 
     synchronized public void updateDataWithHistory(HistoryStruct historyStruct) {
         httpRequestTabComponent.parseHistory(historyStruct);
-        URI uri = null;
+        URI uri ;
         if (historyStruct.getHttpMethod() == HttpMethod.Get)
             uri = historyStruct.getHttpGetData().getURI();
         else uri = historyStruct.getHttpPostData().getURI();

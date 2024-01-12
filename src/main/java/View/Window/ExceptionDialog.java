@@ -33,7 +33,7 @@ public class ExceptionDialog extends JDialog {
             tmpFile.deleteOnExit();
             try (FileOutputStream fileOutputStream = new FileOutputStream(tmpFile)) {
                 byte[] buffered = new byte[512];
-                int len=-1;
+                int len;
                 while ((len=inputStream.read(buffered)) != -1) {
                     fileOutputStream.write(buffered,0,len);
                 }

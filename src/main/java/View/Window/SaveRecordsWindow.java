@@ -19,7 +19,7 @@ import java.nio.file.Files;
 public class SaveRecordsWindow extends JDialog {
     File directory;
     HistorySaver model;
-    MainWindow owner;
+    final MainWindow owner;
 
     public SaveRecordsWindow(MainWindow owner, HistorySaver model) {
         super(owner);
