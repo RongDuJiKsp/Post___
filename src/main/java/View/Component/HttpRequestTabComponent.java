@@ -108,7 +108,7 @@ public class HttpRequestTabComponent extends JTabbedPane {
         httpRequestBodyComponent.setBody(historyStruct.getBodyContain());
     }
 
-    synchronized public Map.Entry<HttpPost, BodyContain> sendPost(String url) throws URISyntaxException, IOException {
+    public Map.Entry<HttpPost, BodyContain> sendPost(String url) throws URISyntaxException, IOException {
         BodyContain bodyContain = httpRequestBodyComponent.getBody();
         Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
         headerContain.put("Cookie", serializeCookieKeyValue(httpRequestCookieComponent.getKeyValueData()));
@@ -123,7 +123,7 @@ public class HttpRequestTabComponent extends JTabbedPane {
         }
     }
 
-    synchronized public Map.Entry<HttpGet, BodyContain> sendGet(String url) throws URISyntaxException, IOException {
+    public Map.Entry<HttpGet, BodyContain> sendGet(String url) throws URISyntaxException, IOException {
         Map<String, String> headerContain = httpRequestHeadComponent.getKeyValueData(), paramContain = httpRequestParamsComponent.getKeyValueData();
         headerContain.put("Cookie", serializeCookieKeyValue(httpRequestCookieComponent.getKeyValueData()));
         URIBuilder uriBuilder = new URIBuilder(url);

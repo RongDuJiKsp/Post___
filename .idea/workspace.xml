@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了bug喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了无法正常退出的bug喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpRequestTabComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,28 +82,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Run",
-    "Gradle.PostMTF [build].executor": "Run",
-    "Gradle.PostMTF [clean].executor": "Run",
-    "Gradle.PostMTF [jar].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "java.suggest.annotation.dependency": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.PostMTF [:PostMTFApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;java.suggest.annotation.dependency&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\codefile\PostMTF" />
@@ -110,7 +113,7 @@
       <recent name="D:\codefile\PostMTF\src\main\java\View\Page" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PostMTF [jar]">
+  <component name="RunManager" selected="应用程序.PostMTFApplication">
     <configuration name="PostMTFApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PostMTFApplication" />
       <module name="PostMTF.main" />
@@ -209,8 +212,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.PostMTF [jar]" />
-        <item itemvalue="Gradle.PostMTF [build]" />
         <item itemvalue="Gradle.PostMTF [clean]" />
+        <item itemvalue="Gradle.PostMTF [build]" />
         <item itemvalue="Gradle.PostMTF [dependencies]" />
         <item itemvalue="应用程序.PostMTFApplication" />
       </list>
@@ -274,7 +277,12 @@
       <workItem from="1704004073801" duration="1527000" />
       <workItem from="1704005623856" duration="3583000" />
       <workItem from="1704024515217" duration="610000" />
-      <workItem from="1704025395307" duration="754000" />
+      <workItem from="1704025395307" duration="950000" />
+      <workItem from="1704027788391" duration="165000" />
+      <workItem from="1704096455452" duration="7000" />
+      <workItem from="1704097274247" duration="39000" />
+      <workItem from="1704363648500" duration="71000" />
+      <workItem from="1705034349659" duration="1040000" />
     </task>
     <task id="LOCAL-00001" summary="开始了喵">
       <option name="closed" value="true" />
@@ -660,7 +668,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704025896586</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="修复了无法正常退出的bug喵">
+      <option name="closed" value="true" />
+      <created>1704026258715</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1704026258715</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +695,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="重构成功！！！！哇哈哈哈哈哈&#10;哈哈哈哈哈" />
     <MESSAGE value="添加了cookie解析" />
     <MESSAGE value="大大重构了代码结构，现在代码可读性大大增加了喵" />
     <MESSAGE value="国际化了喵" />
@@ -704,7 +719,8 @@
     <MESSAGE value="修复了多个致命bug喵" />
     <MESSAGE value="修正了部分异常处理喵" />
     <MESSAGE value="修复了bug喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复了bug喵" />
+    <MESSAGE value="修复了无法正常退出的bug喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了无法正常退出的bug喵" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

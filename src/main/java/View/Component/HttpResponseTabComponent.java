@@ -32,7 +32,7 @@ public class HttpResponseTabComponent extends JTabbedPane {
         addTab("Response Cookies", httpResponseCookieComponent);
     }
 
-    synchronized public void parseHttpResponse(HttpResponse httpResponse) throws IOException {
+    public void parseHttpResponse(HttpResponse httpResponse) throws IOException {
         httpResponseCookieComponent.clear();
         httpResponseBodyComponent.clear();
         httpResponseHeadComponent.clear();

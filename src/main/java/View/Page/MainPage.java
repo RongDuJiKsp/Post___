@@ -5,7 +5,6 @@
 package View.Page;
 
 import Controller.HistorySaver;
-import Controller.Promise;
 import Model.HistoryStruct;
 import Model.HttpMethod;
 import Model.Protocol;
@@ -191,49 +190,44 @@ public class MainPage extends JPanel {
     }
 
 
-    private void sendError(String error) {
+    synchronized private void sendError(String error) {
         if (error == null) return;
         new ExceptionDialog(mainWindow, new String(error.getBytes(), StandardCharsets.UTF_8));
     }
 
+    synchronized private void writeResponseOnUI(HttpResponse res) throws IOException {
+        httpResponseTabComponent.parseHttpResponse(res);
+    }
+
 
     private void sendPost() {
-        new Promise<HttpResponse>((resolve, reject) -> {
+        new Thread(() -> {
             try {
                 var toSend = httpRequestTabComponent.sendPost("http://" + url.getText());
                 HttpResponse httpResponse = HttpClients.createDefault().execute(toSend.getKey());
                 historySaver.addData(new HistoryStruct(HttpMethod.Post, null, toSend.getKey(), httpResponse, toSend.getValue(), new Date().toString()));
-                resolve.resolve(httpResponse);
-            } catch (URISyntaxException | IOException | RuntimeException e) {
-                reject.reject(e);
+                writeResponseOnUI(httpResponse);
+            } catch (URISyntaxException | IOException e) {
+                sendError(e.toString());
+            }catch (StringIndexOutOfBoundsException e){
+                sendError("If you didn't use JSON ,please off 'use json'");
             }
-        }).then(res -> {
-            try {
-                httpResponseTabComponent.parseHttpResponse(res);
-            } catch (IOException ioException) {
-                sendError(ioException.toString());
-            }
-        }, req -> sendError(req.toString()));
-
+        }).start();
     }
 
     private void sendGet() {
-        new Promise<HttpResponse>(((resolve, reject) -> {
+        new Thread(() -> {
             try {
                 var toSend = httpRequestTabComponent.sendGet("http://" + url.getText());
                 HttpResponse httpResponse = HttpClients.createDefault().execute(toSend.getKey());
                 historySaver.addData(new HistoryStruct(HttpMethod.Get, toSend.getKey(), null, httpResponse, toSend.getValue(), new Date().toString()));
-                resolve.resolve(httpResponse);
-            } catch (URISyntaxException | IOException | NumberFormatException e) {
-                reject.reject(e);
+                writeResponseOnUI(httpResponse);
+            } catch (URISyntaxException | IOException e) {
+                sendError(e.toString());
+            }catch (StringIndexOutOfBoundsException e){
+                sendError("If you didn't use JSON ,please off 'use json'");
             }
-        })).then(res -> {
-            try {
-                httpResponseTabComponent.parseHttpResponse(res);
-            } catch (IOException ioException) {
-                sendError(ioException.toString());
-            }
-        }, req -> sendError(req.toString()));
+        }).start();
     }
 
     private void connectWebSocket() {
