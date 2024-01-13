@@ -7,11 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了更加详细的代码处理喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了非法字符无法保存文件的bug喵">
+      <change afterPath="$PROJECT_DIR$/src/Stlines.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HistorySaver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,29 +84,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Run",
-    "Gradle.PostMTF [build].executor": "Run",
-    "Gradle.PostMTF [clean].executor": "Run",
-    "Gradle.PostMTF [jar].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "java.suggest.annotation.dependency": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.PostMTF [:PostMTFApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostMTF [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;java.suggest.annotation.dependency&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\codefile\PostMTF" />
@@ -286,15 +286,10 @@
       <workItem from="1704097274247" duration="39000" />
       <workItem from="1704363648500" duration="71000" />
       <workItem from="1705034349659" duration="5369000" />
-      <workItem from="1705060870786" duration="6515000" />
-    </task>
-    <task id="LOCAL-00009" summary="post能用了喵">
-      <option name="closed" value="true" />
-      <created>1700372759686</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1700372759686</updated>
+      <workItem from="1705060870786" duration="6887000" />
+      <workItem from="1705133883825" duration="33000" />
+      <workItem from="1705135706228" duration="2000" />
+      <workItem from="1705135834216" duration="871000" />
     </task>
     <task id="LOCAL-00010" summary="get能用了喵">
       <option name="closed" value="true" />
@@ -680,7 +675,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705066162071</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="修复了非法字符无法保存文件的bug喵">
+      <option name="closed" value="true" />
+      <created>1705067858412</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1705067858412</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -699,7 +702,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="基本实现了带有Js特色的promise对象喵" />
     <MESSAGE value="讨厌多线程喵" />
     <MESSAGE value="添加了使用参数 --music播放音乐的功能喵" />
     <MESSAGE value="压缩了文件喵" />
@@ -724,7 +726,8 @@
     <MESSAGE value="对部分读取文件的操作做了缓存喵" />
     <MESSAGE value="修复了部分代码分析的问题喵" />
     <MESSAGE value="添加了更加详细的代码处理喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了更加详细的代码处理喵" />
+    <MESSAGE value="修复了非法字符无法保存文件的bug喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了非法字符无法保存文件的bug喵" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

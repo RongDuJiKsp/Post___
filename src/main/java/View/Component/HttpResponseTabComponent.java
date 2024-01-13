@@ -40,14 +40,16 @@ public class HttpResponseTabComponent extends JTabbedPane {
         if (httpResponse == null) return;
         //save headers
         for (Header header : httpResponse.getAllHeaders()) {
-            if (header.getValue().equals("Set-Cookie")) continue;
             httpResponseHeadComponent.getTableModel().addRow(new String[]{header.getName(), header.getValue()});
         }
         // save cookie
         if (httpResponse.containsHeader("Set-Cookie")) {
             for (Header header : httpResponse.getHeaders("Set-Cookie")) {
-                String[] kv = header.getValue().split("=");
-                httpResponseCookieComponent.getTableModel().addRow(new String[]{kv[0], kv[1]});
+                String[] kvs = header.getValue().split(";");
+                for(String pair:kvs){
+                    String[] kv=pair.split("=");
+                    httpResponseCookieComponent.getTableModel().addRow(new String[]{kv[0], kv[1]});
+                }
             }
         }
         //save body
