@@ -2,6 +2,7 @@ package View.Component;
 
 import Controller.SimpleFunction;
 import View.ViewConfig;
+import View.Window.MainWindow;
 import lombok.Getter;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
@@ -12,6 +13,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class HttpResponseTabComponent extends JTabbedPane {
+    private final MainWindow owner;
     private final HttpKeyValueComponent httpResponseHeadComponent, httpResponseCookieComponent;
     private final HttpBodyComponent httpResponseBodyComponent;
     @Getter
@@ -20,11 +22,12 @@ public class HttpResponseTabComponent extends JTabbedPane {
     private String contentType;
 
 
-    public HttpResponseTabComponent() {
+    public HttpResponseTabComponent(MainWindow owner) {
+        this.owner=owner;
         httpResponseHeadComponent = new HttpKeyValueComponent();
         httpResponseHeadComponent.setEditable(false);
         addTab("Response Head", httpResponseHeadComponent);
-        httpResponseBodyComponent = new HttpBodyComponent();
+        httpResponseBodyComponent = new HttpBodyComponent(owner);
         httpResponseBodyComponent.setEditable(false);
         addTab("Response Body", httpResponseBodyComponent);
         httpResponseCookieComponent = new HttpKeyValueComponent();

@@ -40,7 +40,7 @@ import java.util.Date;
  * @author rdjksp
  */
 public class MainPage extends JPanel implements RenderAble {
-    private final MainWindow mainWindow;
+    private final MainWindow owner;
     private SelectItemComponent protocols, methods;
     private HttpRequestTabComponent httpRequestTabComponent;
     private HttpResponseTabComponent httpResponseTabComponent;
@@ -48,8 +48,8 @@ public class MainPage extends JPanel implements RenderAble {
     private boolean isRequestTab;
     volatile private HistorySaver historySaver;
 
-    public MainPage(MainWindow mainWindow) {
-        this.mainWindow = mainWindow;
+    public MainPage(MainWindow owner) {
+        this.owner = owner;
         init();
     }
 
@@ -73,13 +73,13 @@ public class MainPage extends JPanel implements RenderAble {
                 new Insets(0, 0, 5, 5), 0, 0);
 
         //init http Tab
-        httpRequestTabComponent = new HttpRequestTabComponent();
+        httpRequestTabComponent = new HttpRequestTabComponent(owner);
         add(httpRequestTabComponent, tabsLocal);
         //init httpRepTab
-        httpResponseTabComponent = new HttpResponseTabComponent();
+        httpResponseTabComponent = new HttpResponseTabComponent(owner);
         add(httpResponseTabComponent, tabsLocal);
         //init WebSocket Tab
-        webSocketIOComponent = new WebSocketIOComponent();
+        webSocketIOComponent = new WebSocketIOComponent(owner);
         webSocketIOComponent.setVisible(false);
         add(webSocketIOComponent, tabsLocal);
     }
@@ -105,7 +105,7 @@ public class MainPage extends JPanel implements RenderAble {
         //init save history action
         saveHistoryButton.addActionListener(actionEvent -> onDownloadHistory());
         //init exit action
-        mainWindow.addWindowListener(new WindowAdapter() {
+        owner.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosed(WindowEvent e) {
                 super.windowClosed(e);
@@ -195,7 +195,7 @@ public class MainPage extends JPanel implements RenderAble {
 
     synchronized private void sendError(String error) {
         if (error == null) return;
-        new ExceptionDialog(mainWindow, new String(error.getBytes(), StandardCharsets.UTF_8)).render();
+        new ExceptionDialog(owner, new String(error.getBytes(), StandardCharsets.UTF_8)).render();
     }
 
     synchronized private void writeResponseOnUI(HttpResponse res) throws IOException {
@@ -309,7 +309,7 @@ public class MainPage extends JPanel implements RenderAble {
     }
 
     private void onDownloadHistory() {
-        new SaveRecordsWindow(mainWindow, historySaver).setVisible(true);
+        new SaveRecordsWindow(owner, historySaver).setVisible(true);
     }
 
     private void onExit() {

@@ -4,6 +4,7 @@ import Controller.HttpRequestCustomer;
 import Model.BodyContain;
 import Model.HistoryStruct;
 import Model.HttpMethod;
+import View.Window.MainWindow;
 import org.apache.http.Header;
 import org.apache.http.HeaderElement;
 import org.apache.http.client.methods.HttpGet;
@@ -19,14 +20,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HttpRequestTabComponent extends JTabbedPane {
+    private final MainWindow owner;
     private final HttpBodyComponent httpRequestBodyComponent;
     private final HttpKeyValueComponent httpRequestParamsComponent, httpRequestHeadComponent, httpRequestCookieComponent;
     private final ConfigSettingComponent configSettingComponent;
 
-    public HttpRequestTabComponent() {
+    public HttpRequestTabComponent(MainWindow owner) {
+        this.owner=owner;
         httpRequestParamsComponent = new HttpKeyValueComponent();
         addTab("Params", httpRequestParamsComponent);
-        httpRequestBodyComponent = new HttpBodyComponent();
+        httpRequestBodyComponent = new HttpBodyComponent(this.owner);
         addTab("Body", httpRequestBodyComponent);
         httpRequestHeadComponent = new HttpKeyValueComponent(Map.ofEntries(Map.entry("crossOrigin", "*"), Map.entry("User-Agent", "PostmtfRuntime/1.0.0"), Map.entry("Accept", "*/*"), Map.entry("Accept-Encoding", "gzip, deflate, br"), Map.entry("Connection", "keep-alive")));
         addTab("Head", httpRequestHeadComponent);

@@ -7,6 +7,7 @@ package View.Component;
 import Controller.SimpleFunction;
 import Model.BodyContain;
 import View.Window.ExceptionDialog;
+import View.Window.MainWindow;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.JSONWriter;
 
@@ -26,8 +27,10 @@ import java.util.regex.Pattern;
 public class HttpBodyComponent extends JPanel {
     File selectedFile;
     final JFileChooser jFileChooser;
+    private final MainWindow owner;
 
-    public HttpBodyComponent() {
+    public HttpBodyComponent(MainWindow owner) {
+        this.owner=owner;
         jFileChooser = new JFileChooser();
         init();
     }
@@ -145,7 +148,7 @@ public class HttpBodyComponent extends JPanel {
             JSONObject jsonObject = JSONObject.parseObject(textEditor.getText());
             textEditor.setText(jsonObject.toJSONString(JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.WriteMapNullValue));
         } catch (Exception e) {
-            new ExceptionDialog(null, e.toString()).render();
+            new ExceptionDialog(owner, e.toString()).render();
         }
     }
 
