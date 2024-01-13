@@ -8,6 +8,7 @@ public final class ViewConfig {
     public static boolean isUsingBufferedFile = true;
     public static final boolean isUsingShower = true;
     public static boolean addedUsersHistory=false;
+    public static boolean noNeedConfig=false;
 
     public static void initUITheme() {
         try {

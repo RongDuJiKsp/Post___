@@ -7,10 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了config无法正确解析的bug喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了httpBody无法正确解析的bug喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ArgsAnalysisFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ArgsAnalysisFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/WebSocketCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/WebSocketCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/ViewConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/ViewConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,15 +299,7 @@
       <workItem from="1705141738519" duration="722000" />
       <workItem from="1705142828690" duration="851000" />
       <workItem from="1705151302411" duration="63000" />
-      <workItem from="1705151718475" duration="4588000" />
-    </task>
-    <task id="LOCAL-00015" summary="顺手改个警告喵">
-      <option name="closed" value="true" />
-      <created>1700407552607</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1700407552607</updated>
+      <workItem from="1705151718475" duration="7921000" />
     </task>
     <task id="LOCAL-00016" summary="寄了喵">
       <option name="closed" value="true" />
@@ -690,7 +685,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705154340510</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="修复了httpBody无法正确解析的bug喵">
+      <option name="closed" value="true" />
+      <created>1705156745926</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1705156745926</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -709,7 +712,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="添加了解析失败html时自动解析为文本的功能喵" />
     <MESSAGE value="添加了不对解析文件进行缓冲的功能喵" />
     <MESSAGE value="添加了隐藏功能喵" />
     <MESSAGE value="添加了自动载入历史的功能喵" />
@@ -734,23 +736,10 @@
     <MESSAGE value="添加了owner生命周期喵" />
     <MESSAGE value="修复了奇奇怪怪的变小bug喵" />
     <MESSAGE value="修复了config无法正确解析的bug喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复了config无法正确解析的bug喵" />
+    <MESSAGE value="修复了httpBody无法正确解析的bug喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了httpBody无法正确解析的bug喵" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Model.HistoryStruct" memberName="httpGetData" />

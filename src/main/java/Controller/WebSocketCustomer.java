@@ -28,7 +28,7 @@ public class WebSocketCustomer extends WebSocketClient {
 
     @Override
     public void onClose(int code, String reason, boolean remote) {
-        webSocketCallBack.getMessage("connect closed in code" + code + " because of " + reason);
+        webSocketCallBack.getMessage("connect closed in code" + code + " because of   " + ("".equals(reason)?"None":reason));
     }
 
     @Override

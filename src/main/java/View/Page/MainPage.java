@@ -352,7 +352,7 @@ public class MainPage extends JPanel implements RenderAble {
     }
     @Override
     public void render() {
-        if (!ViewConfig.addedUsersHistory) initHistory();
+        if (!ViewConfig.addedUsersHistory&&!ViewConfig.noNeedConfig) initHistory();
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off

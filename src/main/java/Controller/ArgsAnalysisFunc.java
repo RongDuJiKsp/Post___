@@ -25,6 +25,7 @@ public class ArgsAnalysisFunc {
                     case "--music" -> musicArg();
                     case "--no-buf-arg" -> setBufferedArg();
                     case "--history" -> addHistoryArg(argIt.next());
+                    case "--no-cfg" -> setNoNeedCfg();
                     default -> throw new RuntimeException("Illegal parameter!");
                 }
             } catch (Exception e) {
@@ -48,6 +49,10 @@ public class ArgsAnalysisFunc {
     private static void addHistoryArg(String fileName) throws IOException {
         ViewConfig.addedUsersHistory = true;
         mainWindowRef.getMainPage().readFileAndUpdate(new File(fileName));
+    }
+
+    private static void setNoNeedCfg() {
+        ViewConfig.noNeedConfig = true;
     }
 
 }
