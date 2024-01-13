@@ -14,7 +14,6 @@ import com.alibaba.fastjson2.JSONWriter;
 import javax.swing.*;
 import javax.swing.text.Document;
 import javax.swing.text.PlainDocument;
-import javax.swing.text.html.HTMLEditorKit;
 import java.awt.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -30,7 +29,7 @@ public class HttpBodyComponent extends JPanel {
     private final MainWindow owner;
 
     public HttpBodyComponent(MainWindow owner) {
-        this.owner=owner;
+        this.owner = owner;
         jFileChooser = new JFileChooser();
         init();
     }
@@ -53,10 +52,6 @@ public class HttpBodyComponent extends JPanel {
         upLoadFileName.setEnabled(false);
         upLoadFileName.setEditable(false);
         formatJSONButton.setEnabled(false);
-        Document doc = textEditor.getDocument();
-        if (doc instanceof PlainDocument) {
-            doc.putProperty(PlainDocument.tabSizeAttribute, 1);
-        }
     }
 
     private void initComponents() {
@@ -144,6 +139,10 @@ public class HttpBodyComponent extends JPanel {
     }
 
     private void onFormatJSON() {
+        Document doc = textEditor.getDocument();
+        if (doc instanceof PlainDocument) {
+            doc.putProperty(PlainDocument.tabSizeAttribute, 1);
+        }
         try {
             JSONObject jsonObject = JSONObject.parseObject(textEditor.getText());
             textEditor.setText(jsonObject.toJSONString(JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.WriteMapNullValue));
@@ -183,7 +182,7 @@ public class HttpBodyComponent extends JPanel {
         try (ByteArrayOutputStream copiedStream = SimpleFunction.cloneInputStream(inputStream)) {
             try {
                 Matcher charset = Pattern.compile("charset=\\w+-?\\w+").matcher(contentType);
-                textEditor.setEditorKit(new HTMLEditorKit());
+                textEditor.setContentType(contentType);
                 if (charset.find())
                     textEditor.read(new InputStreamReader(new ByteArrayInputStream(copiedStream.toByteArray()), charset.group().split("=")[1]), textEditor.getDocument());
                 else
@@ -204,7 +203,7 @@ public class HttpBodyComponent extends JPanel {
     public void setBodyUnbuffered(InputStream inputStream, String contentType) {
         try {
             Matcher charset = Pattern.compile("charset=\\w+-?\\w+").matcher(contentType);
-            textEditor.setEditorKit(new HTMLEditorKit());
+            textEditor.setContentType(contentType);
             if (charset.find())
                 textEditor.read(new InputStreamReader(inputStream, charset.group().split("=")[1]), textEditor.getDocument());
             else
