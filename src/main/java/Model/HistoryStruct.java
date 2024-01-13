@@ -3,11 +3,15 @@ package Model;
 import com.alibaba.fastjson2.JSONObject;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 @Getter
 @AllArgsConstructor
@@ -19,7 +23,7 @@ public class HistoryStruct {
     private BodyContain bodyContain;
     private String sendDate;
 
-    public HistoryStruct(JSONObject jsonObject) {
+    public HistoryStruct(JSONObject jsonObject) throws UnknownHostException {
         //init Base
         httpMethod = jsonObject.getObject("httpMethod", HttpMethod.class);
         httpResponseData = null;
@@ -45,6 +49,11 @@ public class HistoryStruct {
                     .setRelativeRedirectsAllowed(config.getBoolean("relativeRedirectsAllowed"))
                     .setSocketTimeout(config.getIntValue("socketTimeout"))
                     .setStaleConnectionCheckEnabled(config.getBoolean("staleConnectionCheckEnabled"));
+            if (config.containsKey("localAddress"))
+                builder.setLocalAddress(InetAddress.getByName(config.getString("localAddress")));
+            if (config.containsKey("proxy"))
+                builder.setProxy(config.getJSONObject("proxy").to(HttpHost.class));
+
             httpGetData.setConfig(builder.build());
             //init protocol
             JSONObject protocolConfig = get.getJSONObject("protocolVersion");
@@ -74,6 +83,10 @@ public class HistoryStruct {
                     .setRelativeRedirectsAllowed(config.getBoolean("relativeRedirectsAllowed"))
                     .setSocketTimeout(config.getIntValue("socketTimeout"))
                     .setStaleConnectionCheckEnabled(config.getBoolean("staleConnectionCheckEnabled"));
+            if (config.containsKey("localAddress"))
+                builder.setLocalAddress(InetAddress.getByName(config.getString("localAddress")));
+            if (config.containsKey("proxy"))
+                builder.setProxy(config.getJSONObject("proxy").to(HttpHost.class));
             httpPostData.setConfig(builder.build());
             //init protocol
             JSONObject protocolConfig = post.getJSONObject("protocolVersion");

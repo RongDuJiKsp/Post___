@@ -7,14 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="添加了owner生命周期喵">
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了奇奇怪怪的变小bug喵">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpKeyValueComponent.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/HistoryStruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/HistoryStruct.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +87,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Debug",
+    "Gradle.PostMTF [:PostMTFApplication.main()].executor": "Run",
     "Gradle.PostMTF [build].executor": "Run",
     "Gradle.PostMTF [clean].executor": "Run",
     "Gradle.PostMTF [jar].executor": "Run",
@@ -123,7 +119,7 @@
       <recent name="D:\codefile\PostMTF\src\main\java\View\Page" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.PostMTFApplication">
+  <component name="RunManager" selected="Gradle.PostMTF [jar]">
     <configuration name="PostMTFApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PostMTFApplication" />
       <module name="PostMTF.main" />
@@ -300,15 +296,7 @@
       <workItem from="1705141738519" duration="722000" />
       <workItem from="1705142828690" duration="851000" />
       <workItem from="1705151302411" duration="63000" />
-      <workItem from="1705151718475" duration="629000" />
-    </task>
-    <task id="LOCAL-00013" summary="没有测试，但是完工">
-      <option name="closed" value="true" />
-      <created>1700407338841</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1700407338841</updated>
+      <workItem from="1705151718475" duration="2542000" />
     </task>
     <task id="LOCAL-00014" summary="没有测试，但是完工">
       <option name="closed" value="true" />
@@ -694,7 +682,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705139610593</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="修复了奇奇怪怪的变小bug喵">
+      <option name="closed" value="true" />
+      <created>1705152640387</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1705152640387</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +709,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="添加了历史记录相关的逻辑支持喵" />
     <MESSAGE value="添加了历史记录相关的用户界面支持喵" />
     <MESSAGE value="添加了解析失败html时自动解析为文本的功能喵" />
     <MESSAGE value="添加了不对解析文件进行缓冲的功能喵" />
@@ -738,7 +733,8 @@
     <MESSAGE value="修复了cookie切分bug喵" />
     <MESSAGE value="添加了render生命周期喵" />
     <MESSAGE value="添加了owner生命周期喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了owner生命周期喵" />
+    <MESSAGE value="修复了奇奇怪怪的变小bug喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了奇奇怪怪的变小bug喵" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
