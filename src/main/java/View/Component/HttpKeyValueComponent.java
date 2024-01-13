@@ -58,8 +58,8 @@ public class HttpKeyValueComponent extends JPanel {
 
         //======== this ========
         setLayout(new GridBagLayout());
-        ((GridBagLayout)getLayout()).columnWidths = new int[] {48, 51, 136, 194, 149, 195, 0};
-        ((GridBagLayout)getLayout()).rowHeights = new int[] {22, 134, 40, 33, 0};
+        ((GridBagLayout)getLayout()).columnWidths = new int[] {48, 51, 146, 200, 150, 196, 0};
+        ((GridBagLayout)getLayout()).rowHeights = new int[] {22, 387, 40, 33, 0};
         ((GridBagLayout)getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
         ((GridBagLayout)getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 1.0E-4};
         add(tableScrollPane, new GridBagConstraints(0, 1, 6, 1, 0.0, 0.0,
@@ -107,6 +107,8 @@ public class HttpKeyValueComponent extends JPanel {
     private void onAddKeyValue() {
         if (keyInputholder.getText().isEmpty()) return;
         keyValueTableModel.addRow(new String[]{keyInputholder.getText(), valueInputholder.getText()});
+        keyInputholder.setText("");
+        valueInputholder.setText("");
     }
 
     private void onDeleteKeyValue() {

@@ -23,7 +23,7 @@ public class HttpResponseTabComponent extends JTabbedPane {
 
 
     public HttpResponseTabComponent(MainWindow owner) {
-        this.owner=owner;
+        this.owner = owner;
         httpResponseHeadComponent = new HttpKeyValueComponent();
         httpResponseHeadComponent.setEditable(false);
         addTab("Response Head", httpResponseHeadComponent);
@@ -49,9 +49,11 @@ public class HttpResponseTabComponent extends JTabbedPane {
         if (httpResponse.containsHeader("Set-Cookie")) {
             for (Header header : httpResponse.getHeaders("Set-Cookie")) {
                 String[] kvs = header.getValue().split(";");
-                for(String pair:kvs){
-                    String[] kv=pair.split("=");
-                    httpResponseCookieComponent.getTableModel().addRow(new String[]{kv[0], kv[1]});
+                for (String pair : kvs) {
+                    String[] kv = pair.split("=");
+                    if (kv.length == 1) httpResponseCookieComponent.getTableModel().addRow(new String[]{kv[0], "true"});
+                    else if (kv.length > 0)
+                        httpResponseCookieComponent.getTableModel().addRow(new String[]{kv[0], kv[1]});
                 }
             }
         }

@@ -348,7 +348,7 @@ public class MainPage extends JPanel implements RenderAble {
         if (historyStruct.getHttpMethod() == HttpMethod.Get)
             uri = historyStruct.getHttpGetData().getURI();
         else uri = historyStruct.getHttpPostData().getURI();
-        url.setText(uri.toASCIIString().replaceAll("^[a-z]+://", "").replaceAll("\\?(&?\\w+=(\\w|%)+)*", ""));
+        url.setText(uri.toASCIIString().replaceAll("^[a-z]+://", "").replaceAll("\\?(&?\\w+=(\\w|%|-|_)+)*", ""));
     }
     @Override
     public void render() {

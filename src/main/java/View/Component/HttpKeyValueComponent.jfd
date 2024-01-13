@@ -1,11 +1,11 @@
-JFDML JFormDesigner: "8.2.0.0.331" Java: "17.0.9" encoding: "UTF-8"
+JFDML JFormDesigner: "8.2.1.0.348" Java: "17.0.9" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
-			"$columnSpecs": "43, 46, 131, 189, 144, 195"
-			"$rowSpecs": "17, 129, 35, 33"
+			"$columnSpecs": "43, 46, 141, 195, 145, 196"
+			"$rowSpecs": "17, 382, 35, 33"
 			"$hGap": 5
 			"$vGap": 5
 			"$alignLeft": true
@@ -68,7 +68,7 @@ new FormModel {
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 805, 255 )
+			"size": new java.awt.Dimension( 885, 500 )
 		} )
 	}
 }

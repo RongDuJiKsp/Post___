@@ -14,6 +14,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 /**
  * @author rdjks
@@ -28,18 +30,21 @@ public class ExceptionDialog extends JDialog implements RenderAble {
     }
 
     private void initImage() {
+        Path tmpPath=Path.of(System.getenv("TEMP") + "\\POSTMTFError.png");
+        if (Files.exists(tmpPath)) {
+            label1.setIcon(new ImageIcon(String.valueOf(tmpPath)));
+            return;
+        }
         try (InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("error.png")) {
             if (inputStream == null) return;
-            File tmpFile = File.createTempFile("%%%%%%error%%%%%", "png");
-            tmpFile.deleteOnExit();
-            try (FileOutputStream fileOutputStream = new FileOutputStream(tmpFile)) {
+            try (FileOutputStream fileOutputStream = new FileOutputStream(String.valueOf(tmpPath))) {
                 byte[] buffered = new byte[512];
                 int len;
-                while ((len=inputStream.read(buffered)) != -1) {
-                    fileOutputStream.write(buffered,0,len);
+                while ((len = inputStream.read(buffered)) != -1) {
+                    fileOutputStream.write(buffered, 0, len);
                 }
             }
-            label1.setIcon(new ImageIcon(tmpFile.getPath()));
+            label1.setIcon(new ImageIcon(String.valueOf(tmpPath)));
         } catch (IOException e) {
             log.error(e.getMessage());
         }
@@ -114,6 +119,7 @@ public class ExceptionDialog extends JDialog implements RenderAble {
     public void render() {
         setVisible(true);
     }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JPanel dialogPane;
     private JPanel contentPanel;
