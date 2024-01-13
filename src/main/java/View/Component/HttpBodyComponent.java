@@ -145,7 +145,7 @@ public class HttpBodyComponent extends JPanel {
             JSONObject jsonObject = JSONObject.parseObject(textEditor.getText());
             textEditor.setText(jsonObject.toJSONString(JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.WriteMapNullValue));
         } catch (Exception e) {
-            new ExceptionDialog(null, e.toString());
+            new ExceptionDialog(null, e.toString()).render();
         }
     }
 

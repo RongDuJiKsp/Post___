@@ -7,11 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了非法字符无法保存文件的bug喵">
-      <change afterPath="$PROJECT_DIR$/src/Stlines.class" afterDir="false" />
+    <list default="true" id="2fe7a715-6625-41b1-b1ac-a713f9e98869" name="更改" comment="修复了cookie切分bug喵">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/RenderAble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dat.db" beforeDir="false" afterPath="$PROJECT_DIR$/dat.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpResponseTabComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ArgsAnalysisFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ArgsAnalysisFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PostMTFApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/HttpBodyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Component/WebSocketIOComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Page/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/ExceptionDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Window/SaveRecordsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Window/SaveRecordsWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,9 +64,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -289,15 +296,7 @@
       <workItem from="1705060870786" duration="6887000" />
       <workItem from="1705133883825" duration="33000" />
       <workItem from="1705135706228" duration="2000" />
-      <workItem from="1705135834216" duration="871000" />
-    </task>
-    <task id="LOCAL-00010" summary="get能用了喵">
-      <option name="closed" value="true" />
-      <created>1700375121101</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1700375121101</updated>
+      <workItem from="1705135834216" duration="2692000" />
     </task>
     <task id="LOCAL-00011" summary="ws能用了(≧^.^≦)喵~">
       <option name="closed" value="true" />
@@ -683,7 +682,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705067858412</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="修复了cookie切分bug喵">
+      <option name="closed" value="true" />
+      <created>1705136793756</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1705136793756</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -702,7 +709,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="讨厌多线程喵" />
     <MESSAGE value="添加了使用参数 --music播放音乐的功能喵" />
     <MESSAGE value="压缩了文件喵" />
     <MESSAGE value="添加了历史记录相关的逻辑支持喵" />
@@ -727,7 +733,8 @@
     <MESSAGE value="修复了部分代码分析的问题喵" />
     <MESSAGE value="添加了更加详细的代码处理喵" />
     <MESSAGE value="修复了非法字符无法保存文件的bug喵" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复了非法字符无法保存文件的bug喵" />
+    <MESSAGE value="修复了cookie切分bug喵" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了cookie切分bug喵" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

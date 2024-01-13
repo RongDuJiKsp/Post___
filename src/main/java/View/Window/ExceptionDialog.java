@@ -4,6 +4,7 @@
 
 package View.Window;
 
+import Model.RenderAble;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.swing.*;
@@ -18,7 +19,7 @@ import java.io.InputStream;
  * @author rdjks
  */
 @Slf4j
-public class ExceptionDialog extends JDialog {
+public class ExceptionDialog extends JDialog implements RenderAble {
     public ExceptionDialog(Window owner, String message) {
         super(owner);
         initComponents();
@@ -46,7 +47,6 @@ public class ExceptionDialog extends JDialog {
 
     private void initSharp(String message) {
         setResizable(false);
-        setVisible(true);
         setSize(400, 350);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         outPutTextArea.setEditable(false);
@@ -110,6 +110,10 @@ public class ExceptionDialog extends JDialog {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
+    @Override
+    public void render() {
+        setVisible(true);
+    }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JPanel dialogPane;
     private JPanel contentPanel;

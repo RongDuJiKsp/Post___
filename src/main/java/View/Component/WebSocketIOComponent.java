@@ -5,8 +5,10 @@
 package View.Component;
 
 import Controller.WebSocketCustomer;
+import View.Window.ExceptionDialog;
 import io.socket.client.IO;
 import io.socket.client.Socket;
+import org.java_websocket.exceptions.WebsocketNotConnectedException;
 
 import javax.swing.*;
 import javax.swing.text.Document;
@@ -145,9 +147,13 @@ public class WebSocketIOComponent extends JPanel {
     }
 
     private void onSendMessage() {
-        addMessage(messageInputHolder.getText(), "you", isUsingWebSocket ? "" : ("---emit event : " + socketIOEventInputholder.getText()));
-        if (isUsingWebSocket) webSocketCustomer.send(messageInputHolder.getText());
-        else socketIO.emit(socketIOEventInputholder.getText(), messageInputHolder.getText());
+        try {
+            addMessage(messageInputHolder.getText(), "you", isUsingWebSocket ? "" : ("---emit event : " + socketIOEventInputholder.getText()));
+            if (isUsingWebSocket) webSocketCustomer.send(messageInputHolder.getText());
+            else socketIO.emit(socketIOEventInputholder.getText(), messageInputHolder.getText());
+        } catch (WebsocketNotConnectedException e) {
+            new ExceptionDialog(null, e.toString()).render();
+        }
     }
 
     private void onCloseConnect() {

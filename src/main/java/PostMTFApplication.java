@@ -5,7 +5,8 @@ public class PostMTFApplication {
 
 
     public static void main(String[] args) {
-        new MainWindow();
+        MainWindow mw = new MainWindow();
         ArgsAnalysisFunc.analysis(args);
+        mw.render();
     }
 }

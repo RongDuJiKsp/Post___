@@ -8,10 +8,12 @@ import Controller.HistorySaver;
 import Model.HistoryStruct;
 import Model.HttpMethod;
 import Model.Protocol;
+import Model.RenderAble;
 import View.Component.HttpRequestTabComponent;
 import View.Component.HttpResponseTabComponent;
 import View.Component.WebSocketIOComponent;
 import View.FunctionalComponent.SelectItemComponent;
+import View.ViewConfig;
 import View.Window.ExceptionDialog;
 import View.Window.MainWindow;
 import View.Window.SaveRecordsWindow;
@@ -37,7 +39,7 @@ import java.util.Date;
 /**
  * @author rdjksp
  */
-public class MainPage extends JPanel {
+public class MainPage extends JPanel implements RenderAble {
     private final MainWindow mainWindow;
     private SelectItemComponent protocols, methods;
     private HttpRequestTabComponent httpRequestTabComponent;
@@ -58,7 +60,6 @@ public class MainPage extends JPanel {
         initChoicer();
         initAction();
         initOthers();
-        initHistory();
     }
 
     private void initOthers() {
@@ -194,7 +195,7 @@ public class MainPage extends JPanel {
 
     synchronized private void sendError(String error) {
         if (error == null) return;
-        new ExceptionDialog(mainWindow, new String(error.getBytes(), StandardCharsets.UTF_8));
+        new ExceptionDialog(mainWindow, new String(error.getBytes(), StandardCharsets.UTF_8)).render();
     }
 
     synchronized private void writeResponseOnUI(HttpResponse res) throws IOException {
@@ -327,7 +328,7 @@ public class MainPage extends JPanel {
             System.exit(0);
 
         } catch (RuntimeException | IOException | URISyntaxException ignored) {
-            new ExceptionDialog(null, "\"Failed to save for some reason :)\"");
+            new ExceptionDialog(null, "\"Failed to save for some reason :)\"").render();
             System.exit(0);
         }
     }
@@ -349,7 +350,10 @@ public class MainPage extends JPanel {
         else uri = historyStruct.getHttpPostData().getURI();
         url.setText(uri.toASCIIString().replaceAll("^[a-z]+://", "").replaceAll("\\?(&?\\w+=(\\w|%)+)*", ""));
     }
-
+    @Override
+    public void render() {
+        if (!ViewConfig.addedUsersHistory) initHistory();
+    }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JButton saveHistoryButton;

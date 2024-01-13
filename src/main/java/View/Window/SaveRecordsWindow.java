@@ -65,7 +65,7 @@ public class SaveRecordsWindow extends JDialog {
                 }
                 dispose();
             } catch (IOException e) {
-                new ExceptionDialog(this, e.toString());
+                new ExceptionDialog(this, e.toString()).render();
             }
         }).start();
         setVisible(false);

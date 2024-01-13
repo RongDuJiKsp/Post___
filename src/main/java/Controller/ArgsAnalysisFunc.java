@@ -28,7 +28,7 @@ public class ArgsAnalysisFunc {
                     default -> throw new RuntimeException("Illegal parameter!");
                 }
             } catch (Exception e) {
-                new ExceptionDialog(mainWindowRef, "An exception occurred while parsing user parameters. exception param: " + arg + " ,exception : " + e);
+                new ExceptionDialog(mainWindowRef, "An exception occurred while parsing user parameters. exception param: " + arg + " ,exception : " + e).render();
             }
         }
 
@@ -38,7 +38,7 @@ public class ArgsAnalysisFunc {
     private static void musicArg() {
         if (musicPlayer != null) return;
         musicPlayer = new MusicPlayer(ArgsAnalysisFunc.class.getClassLoader().getResourceAsStream("UnrealSuperhero3_Loop.wav"));
-        musicPlayer.setLoop(true).setVolume(3).play();
+        musicPlayer.setLoop(true).setVolume(4).play();
     }
 
     private static void setBufferedArg() {
